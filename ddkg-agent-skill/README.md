@@ -133,7 +133,7 @@ This directory includes a versioned behavioral test protocol:
 
 The protocol requires fresh conversations, verbatim query capture, and execution of generated queries against a real DDKG instance. A query that merely looks plausible is not considered validated.
 
-The dated 18 August 2026 results file is explicitly marked **superseded**. It predates later skill repairs and states that its pass/fail results do not transfer to the current R2 archive. It should therefore be treated as a record of failure modes and prior testing, not as current validation evidence.
+The dated 18 August 2026 results file is only an example of the types of tests we used to test the performance of the skill.  It predates several later skill repairs and states that its pass/fail results do not transfer to the current R2 archive. We're including it here so you can see an example of how we tested the skill using a multi-step testing protocol.  
 
 New behavioral results should be stored in a new dated results file and stamped with the SHA-256 of the exact `ddkg.skill` archive under test.
 
