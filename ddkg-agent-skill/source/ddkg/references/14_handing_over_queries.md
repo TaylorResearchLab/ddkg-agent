@@ -14,19 +14,27 @@ they run a resolution query, read the result, decide which row is right, and
 paste it into the correct line. Four chances to go wrong, and avoiding those
 calls is why they asked.
 
-**Anchor by term match when no verified identifier exists.** A term match is a
-legitimate anchor needing nothing pre-filled:
+**Anchor by term match when no verified identifier exists, but reduce the
+candidate set first.** A tolerant name comparison is legitimate, but it should
+not force a scan of every Term when a source or identifier can narrow the
+search:
 
 ```cypher
-MATCH (c:Code {SAB:'HP'})-[]->(t:Term)
+MATCH (c:Code {SAB:'HP'})
+WITH c
+MATCH (c)-[]->(t:Term)
 WHERE trim(toLower(t.name)) = 'atrial septal defect'
 MATCH (pheno:Concept)-[:HAS_CODE]->(c)
 ```
 
 Leave the term edge unbound; bindings are source-specific. The `trim()` guards
-against trailing whitespace in Term names (see
-`04_identifier_conventions.md`). On an unindexed build this is a label scan — a performance cost, not a correctness one, and
-worth it to hand over something that runs.
+against trailing whitespace in Term names, but the function means a plain
+`Term.name` index cannot serve that predicate. The preceding Code anchor is
+therefore important: where `Code.SAB` is indexed it reduces candidates first.
+If an indexable `Term.name CONTAINS` or `STARTS WITH` candidate scan is more
+appropriate, use it to discover candidate Codes and verify the selected Code
+before the main traversal. On a deployment without applicable property indexes,
+say that the resolution may be expensive and stage it separately when needed.
 
 Ordering: a verified identifier from `04_identifier_conventions.md` if one
 covers the entity; otherwise resolve inline by term match; a separate

@@ -24,6 +24,8 @@ For older Petagraph or DDKG Docker builds, use the documentation that matches th
 
 The DDKG project is transitioning toward the [JSON Knowledge Graph (JKG)](https://github.com/x-atlas-consortia/json-knowledge-graph/tree/main) representation. Future DDKG releases will therefore require corresponding updates to the skill.
 
+Current R7 archive: **303258 bytes**, SHA-256 `eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60`.
+
 ## What the skill does
 
 The skill helps an Agent Skills-compatible AI client:
@@ -42,7 +44,7 @@ The skill is especially useful for questions that require combining information 
 
 `ddkg.skill` is an installable archive containing a small, self-routed knowledge and validation system. `SKILL.md` is the controller, but most of the DDKG-specific knowledge is deliberately separated into curated references, primary source documents, machine-readable registries, and a routing layer.
 
-The current R6 package contains **38 bundled files**. Its internal routing graph contains **239 relationships** checked by `route.py --check`.
+The current R7 package contains **38 bundled files**. Its internal routing graph contains **239 relationships** checked by `route.py --check`.
 
 A simplified view of the archive is:
 
@@ -152,7 +154,7 @@ The skill has been developed iteratively against real DDKG instances. Behavioral
 
 The test protocol includes regression, novel, adversarial, ambiguity, evidence-semantics, scale, and result-grain cases. Tests are run in fresh conversations, generated queries are captured verbatim, and the queries are executed against the target DDKG release. The model's own claim that a query is correct is not a pass criterion.
 
-Later skill revisions incorporated failures discovered during these live tests. For example, the R6 revision repaired two documented assumptions that produced silent-zero queries, added source-specific topology for DisGeNET, clarified mouse knockout and orthology evidence, and expanded routing for anatomy, cell-type, and marker questions. This is why the skill should be viewed as a **versioned, release-calibrated query instrument**, not a static prompt.
+Later skill revisions incorporated failures discovered during these live tests. For example, the R6 revision repaired two documented assumptions that produced silent-zero queries, added source-specific topology for DisGeNET, clarified mouse knockout and orthology evidence, and expanded routing for anatomy, cell-type, and marker questions. This is why the skill should be viewed as a **versioned, release-specific query instrument**, not a static prompt.
 
 The current archive is an engineered and curated Agent Skill package. It is not a separately fine-tuned language model and does not modify model weights. Its performance comes from the package's controller, routing graph, curated evidence, structured registries, validated query patterns, and iterative testing against the DDKG release.
 
@@ -178,6 +180,20 @@ You need:
 2. an AI client that can load an [Agent Skills](https://agentskills.io/home) skill archive.
 
 For the December 2025 DDKG distribution, obtain a UMLS license and download the appropriate DDKG package through the UBKG/DDKG distribution mechanism. The repository-level [README](../README.md) contains the shared DDKG access and installation links.
+
+## Reproducible source and release checks
+
+The unpacked public source for the archive is kept under [`source/ddkg/`](source/ddkg/).
+`build_skill.py` rebuilds `ddkg.skill` deterministically after running
+`route.py --check`. `check_public_skill_hygiene.py` scans either the source tree
+or a built archive for generic local/private artifacts and can also accept an
+external deployment-specific denylist at release time. Keep that denylist
+outside the repository.
+
+A release should not encode assumptions about a private deployment. Query-cost
+guidance therefore begins by inspecting `SHOW INDEXES`, and deployment-specific
+hostnames, filesystem paths, credentials, and internal project links do not
+belong in the public skill.
 
 ## Install the skill
 

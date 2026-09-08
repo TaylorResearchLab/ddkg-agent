@@ -215,38 +215,58 @@ direction.
 
 ## Indexes
 
-A deployment may have **no property indexes** — the CHOP instance has only
-the two automatic `LOOKUP` indexes for labels and relationship types. Where
-that is the case:
+**Check the deployment before assuming anything about query cost.**
 
-- Anchoring on `(c:Code {SAB:..., CODE:...})` is a full scan of ~20.6M nodes.
-- Resolving by `Term.name` scans ~11.1M nodes.
-- Anchoring on a relationship type *is* index-backed, because the
-  relationship-type LOOKUP index serves it.
+```cypher
+SHOW INDEXES YIELD name, type, entityType, labelsOrTypes, properties
+```
 
-Check with `SHOW INDEXES YIELD name RETURN count(*)`. This does not change
-what is correct, only what is fast, and it means the User Guide's ~20x
-"anchor on the smaller side" advice was measured on an indexed build.
+DDKG deployments may have different index configurations. A deployment may
+include property indexes on fields such as `Code.CodeID`, `Code.SAB`, and
+`Concept.CUI`, and may include a TEXT index on `Term.name`. Where appropriate
+indexes are present, identifier and source anchors can be served by indexes
+rather than full node scans.
 
-## Query cost on an unindexed build
+Neo4j databases also normally include token `LOOKUP` indexes for node labels
+and relationship types. These help resolve labels and relationship types but
+do not index node properties.
 
-The skill records that a deployment may have no property indexes. That fact
-has to change how queries are written, not merely be mentioned. A query that
-is correct and unaffordable is not an answer.
+**Do not wrap an indexed property in a function unless the resulting query
+plan has been checked.** Expressions such as `toLower(t.name)` or
+`trim(toLower(t.name))` prevent a plain index on `Term.name` from serving that
+property predicate. The overall query can still be efficient if another
+indexed anchor, such as `Code.SAB` or `Code.CodeID`, first reduces the
+candidate set.
+
+When case or whitespace normalization is required, reduce candidates with an
+indexable identifier, source, or raw text predicate where possible, then apply
+the normalization test to those candidates. If a deployment maintains an
+appropriately normalized property or full-text index, use that facility
+instead.
+
+The anchoring and staging guidance below applies regardless of deployment.
+The expected cost can differ substantially depending on the available indexes.
+
+## Query cost
+
+Anchoring and staging determine whether a query finishes. Check the active
+deployment before assigning a cost to a property match. A query that is
+logically correct but impractical to execute is not a usable answer.
 
 ### What costs what
 
-| Construct | Cost without indexes |
-| --- | --- |
-| `(c:Code {SAB:'HP'})` | full scan of ~20.6M Code nodes |
-| `(c:Concept {CUI:...})` | full scan of ~19.4M Concepts |
-| `WHERE toLower(t.name) CONTAINS ...` | scan of ~11.1M Terms, unindexable |
-| `-[]->(t:Term)` unbound type | every term edge from every matched Code |
-| `-[r:predicate]-` | **cheap** — the relationship-type LOOKUP index serves it |
-| `(c:Code {CodeID:'X:Y'})` | still a scan, but one row survives it |
+| Construct | With an applicable property index | Without one |
+| --- | --- | --- |
+| `(c:Code {CodeID:'X:Y'})` | index-backed anchor | scan of `Code` nodes |
+| `(c:Code {SAB:'HP'})` | index-backed but potentially broad | scan of `Code` nodes |
+| `(c:Concept {CUI:...})` | index-backed anchor | scan of `Concept` nodes |
+| `t.name CONTAINS '…'` | may use a TEXT index | scan of `Term` nodes |
+| `toLower(t.name) = '…'` | plain `Term.name` index cannot serve this predicate | scan/filter of `Term` nodes |
+| `-[]->(t:Term)` with unbound relationship type | expands every matching term edge | same |
+| `-[r:predicate]-` | relationship-type LOOKUP can serve the type | same |
 
-The relationship-type index is the one thing working in your favour, so
-anchoring on a predicate is cheap and anchoring on a node property is not.
+Use `EXPLAIN` or `PROFILE` when query cost matters rather than inferring the
+plan from a different DDKG installation.
 
 ### Anchor on the smallest enumerable set
 

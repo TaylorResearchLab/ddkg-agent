@@ -104,12 +104,12 @@ write a query	must_read_with	03_schema_this_build.md#structural-edges--the-curre
 write a query	must_read_with	03_schema_this_build.md#direction
 intersection	must_read_with	SKILL.md#5-apply-the-fixed-rules	count the intersection before listing it
 intersection	answers	03_schema_this_build.md#reduce-between-halves
-intersection	must_read_with	03_schema_this_build.md#query-cost-on-an-unindexed-build
+intersection	must_read_with	03_schema_this_build.md#query-cost
 intersection	must_read_with	11_interpreting_results.md#errors-amplify-across-hops
 multi-hop	must_read_with	SKILL.md#5-apply-the-fixed-rules	count at each hop before pulling the next
 multi-hop	answers	11_interpreting_results.md#errors-amplify-across-hops
 multi-hop	must_read_with	05_entity_resolution.md#a-predicate-can-be-one-hop-from-the-anchor-and-two-from-the-answer
-slow query	answers	03_schema_this_build.md#query-cost-on-an-unindexed-build
+slow query	answers	03_schema_this_build.md#query-cost
 slow query	must_read_with	03_schema_this_build.md#indexes
 slow query	must_read_with	03_schema_this_build.md#anchor-on-the-smallest-enumerable-set
 empty result	must_read_with	SKILL.md#5-apply-the-fixed-rules	an absent group may be truncation rather than absence

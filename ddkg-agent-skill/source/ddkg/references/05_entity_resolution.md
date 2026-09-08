@@ -81,24 +81,35 @@ were wanted.
 
 ## Resolve inside the query where you can
 
-Resolution does not have to be a separate step the user performs. A term match
-anchors a query directly:
+Resolution can stay inside the query when a source or identifier gives a
+useful anchor. Prefer, in order: a verified `CodeID`; a known or candidate
+`Code.SAB` set followed by term comparison; an indexable raw `Term.name`
+predicate for candidate discovery when a TEXT index is present; and only then
+a global function-wrapped name scan as an explicit fallback.
+
+Do not start a large query by applying `toLower()` or `trim(toLower())` to every
+`Term.name`. Those functions prevent a plain `Term.name` index from serving the
+name predicate. If the source is known, reduce on the Code first and apply the
+tolerant comparison only to its terms:
 
 ```cypher
-MATCH (c:Code {SAB:'HP'})-[]->(t:Term)
+MATCH (c:Code {SAB:'HP'})
+WITH c
+MATCH (c)-[]->(t:Term)
 WHERE trim(toLower(t.name)) = toLower($name)
 MATCH (anchor:Concept)-[:HAS_CODE]->(c)
 ```
 
-That runs as pasted, needs no verified CodeID, and leaves the term edge
-unbound as it should be. Prefer it to handing over a resolution query plus a
-main query with a blank to fill.
+On a deployment with a `Code.SAB` index, the Code anchor can reduce the
+candidate set before the function-wrapped term comparison. If an appropriate
+`Term.name` TEXT index is present and a case-preserving fragment is available,
+`CONTAINS` or `STARTS WITH` can instead be used for candidate discovery; inspect
+the returned term and Code before traversing onward.
 
-A standalone resolution step earns its place in two cases: when the name is
-genuinely ambiguous and the user must choose, or when the user wants to see
-what the graph knows a name by. Not when the assistant is merely uncertain
-which code is right — resolving that uncertainty is the skill's job, not the
-user's.
+A standalone resolution step earns its place when the name is genuinely
+ambiguous, when the candidate source is unknown, or when the user needs to see
+what the graph calls the entity. Do not hide an unconstrained all-Term scan
+inside a much larger traversal.
 
 ## Step 1 — resolve the name to an anchor
 
@@ -106,9 +117,11 @@ Never bind a term edge type on an unfamiliar source. Leave it open and
 return which one matched:
 
 ```cypher
-MATCH (c:Code)-[tr]->(t:Term)
+MATCH (c:Code)
+WHERE c.SAB IN $candidate_sabs
+WITH c
+MATCH (c)-[tr]->(t:Term)
 WHERE trim(toLower(t.name)) = toLower($name)
-  AND c.SAB IN $candidate_sabs
 MATCH (concept:Concept)-[:HAS_CODE]->(c)
 RETURN c.SAB, c.CodeID, c.CODE, concept.CUI, type(tr) AS term_edge, t.name
 LIMIT 25
@@ -118,9 +131,10 @@ Give several candidate SABs at once rather than guessing one — a disease may
 live in `HP`, `MONDO`, `ORDO`, `OMIM`, `DOID`, `MEDGEN` or `SNOMEDCT_US`, and
 the result shows which actually carry it.
 
-If nothing returns, try `CONTAINS` before concluding absence. Substring
-matches routinely hit descriptions rather than symbols, so return the matched
-term and check it rather than traversing onward from it.
+If nothing returns, use an indexable `t.name CONTAINS $fragment` or `STARTS WITH`
+candidate scan when the deployment has a suitable TEXT index, then inspect the
+matched terms and Codes before traversing onward. Substring matches routinely hit
+descriptions rather than symbols, so candidate discovery is not entity resolution.
 
 **Ambiguous abbreviations must be disambiguated with the user, never
 silently.** "ASD" is atrial septal defect and autism spectrum disorder. Picking
