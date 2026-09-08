@@ -1,3 +1,4 @@
+# rerun after hygiene checker refinement
 name: R7 review check
 
 on:
@@ -28,13 +29,13 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import subprocess
+          from io import BytesIO
+          from zipfile import ZipFile
 
           current = Path('ddkg-agent-skill/source/ddkg/assets/skill_graph.tsv').read_text(encoding='utf-8')
           old_skill = subprocess.check_output([
               'git','show','origin/main:ddkg-agent-skill/ddkg.skill'
           ])
-          from io import BytesIO
-          from zipfile import ZipFile
           with ZipFile(BytesIO(old_skill)) as zf:
               old = zf.read('ddkg/assets/skill_graph.tsv').decode('utf-8')
 
