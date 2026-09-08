@@ -46,7 +46,7 @@ The DDKG User Guide includes a tutorial and release-specific examples. The UBKG 
 1. Go to the DDKG/UBKG downloads site:  
    https://ubkg-downloads.xconsortia.org/
 2. Log in using your UMLS account.
-3. Download the most recent DDKG  release available to you.
+3. Download one of these:
 
 ```text
 DataDistillery_2025_04_DEC_NEO.zip or
