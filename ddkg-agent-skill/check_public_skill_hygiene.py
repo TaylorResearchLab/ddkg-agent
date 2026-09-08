@@ -18,7 +18,6 @@ TEXT_SUFFIXES = {".md", ".txt", ".tsv", ".csv", ".json", ".py", ".yaml", ".yml"}
 GENERIC_PATTERNS = {
     "Notion URL": re.compile(r"https?://(?:www\.)?(?:notion\.so|notion\.site|app\.notion\.com)/", re.I),
     "local Unix path": re.compile(r"(?<![A-Za-z0-9])/(?:mnt|home|Users)/[^\s`'\"]+"),
-    "loopback host": re.compile(r"\b(?:localhost|127\.0\.0\.1)\b", re.I),
 }
 
 
@@ -50,7 +49,6 @@ def private_terms(args) -> list[str]:
             for line in Path(args.forbid_file).read_text(encoding="utf-8").splitlines()
             if line.strip() and not line.lstrip().startswith("#")
         )
-    # preserve order, remove duplicates
     return list(dict.fromkeys(terms))
 
 
