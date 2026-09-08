@@ -1,0 +1,48 @@
+name: R7 unpack skill source
+
+on:
+  push:
+    branches:
+      - fix/r7-portable-index-aware-skill
+    paths:
+      - .github/workflows/r7-unpack-skill.yml
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/r7-portable-index-aware-skill
+      - name: Unpack current ddkg.skill
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf ddkg-agent-skill/source
+          mkdir -p ddkg-agent-skill/source
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+
+          src = Path('ddkg-agent-skill/ddkg.skill')
+          dst = Path('ddkg-agent-skill/source')
+          with ZipFile(src) as zf:
+              zf.extractall(dst)
+          print(f'extracted {len(zf.namelist())} archive members')
+          PY
+      - name: Commit unpacked source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ddkg-agent-skill/source
+          if git diff --cached --quiet; then
+            echo "No source changes to commit"
+          else
+            git commit -m "Expose R6 skill source for R7 review"
+            git push origin HEAD:fix/r7-portable-index-aware-skill
+          fi
