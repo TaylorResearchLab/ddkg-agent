@@ -38,6 +38,124 @@ The skill helps an Agent Skills-compatible AI client:
 
 The skill is especially useful for questions that require combining information across multiple DDKG sources rather than querying a single ontology or database in isolation.
 
+## The skill is not a single Markdown prompt
+
+`ddkg.skill` is an installable archive containing a small, self-routed knowledge and validation system. `SKILL.md` is the controller, but most of the DDKG-specific knowledge is deliberately separated into curated references, primary source documents, machine-readable registries, and a routing layer.
+
+The current R6 package contains **38 bundled files**. Its internal routing graph contains **239 relationships** checked by `route.py --check`.
+
+A simplified view of the archive is:
+
+```text
+ddkg/
+├── SKILL.md                  # controller, behavior contract, workflow, output rules
+├── scripts/
+│   └── route.py              # topic routing and internal consistency checks
+├── references/               # 18 curated working-knowledge documents
+├── sources/                  # 8 bundled primary documentation sources
+└── assets/                   # 10 machine-readable registries and routing assets
+    └── skill_graph.tsv       # topic-to-evidence relationship index
+```
+
+This structure is intentional. A large graph such as DDKG contains many source-specific conventions that are easy for a language model to confuse. Putting all of them into one long prompt would make maintenance, precedence, validation, and release-specific repair difficult. The package instead separates **behavior**, **navigation**, **curated interpretation**, **primary evidence**, and **machine-readable facts**.
+
+## How the skill was designed
+
+### 1. `SKILL.md` is the controller, not the whole knowledge base
+
+`SKILL.md` defines when the skill should activate, the expected DDKG schema family, the query-generation workflow, fixed query rules, output behavior, and maintenance expectations. It acts as a behavior contract for the AI client.
+
+The controller directs the model toward supporting material rather than expecting it to recall every DDKG convention from one document.
+
+### 2. The routing layer determines what supporting material must be read
+
+The navigation layer consists primarily of:
+
+- `scripts/route.py`, which traverses and validates the skill graph; and
+- `assets/skill_graph.tsv`, which links user topics to the references needed to answer them safely.
+
+The routing graph does more than map a keyword to a page. It records relationships such as:
+
+- `answers`
+- `must_read_with`
+- `demonstrated_by`
+- `invalidated_by`
+- `supersedes`
+
+That allows a topic such as a phenotype, tissue, cell type, compound, eQTL, pathway, or source-specific query to pull in not only an answer pattern but also required caveats and prerequisites. It also provides a maintenance mechanism: when a finding invalidates an older assumption, the dependency can be represented rather than silently leaving contradictory guidance in the package.
+
+`route.py` also provides mechanical checks so broken file or heading targets can be caught before a skill build is accepted.
+
+### 3. Curated references contain working DDKG knowledge
+
+The `references/` directory contains the operational knowledge needed to query this release correctly. These files cover topics such as:
+
+- source and documentation precedence;
+- the DDKG/UBKG data model and actual release schema;
+- identifier conventions and entity resolution;
+- source abbreviation (`SAB`) behavior;
+- predicates and inverse-predicate handling;
+- Data Coordinating Center and other source-specific endpoint models;
+- validated query patterns and task indexing;
+- query-construction rules;
+- interpretation of returned evidence;
+- setup and access behavior; and
+- later failure classes discovered during live testing, including row multiplicity, identity sinks, minted Concept twins, result grain, and source-specific topology.
+
+These references are curated working knowledge rather than copies of external documentation. They encode what was learned by reconciling documentation with the behavior of the actual DDKG release.
+
+### 4. Primary documentation is bundled separately from interpretation
+
+The `sources/` directory contains primary DDKG and UBKG documentation used to verify claims and settle conflicts, including the DDKG User Guide and relevant UBKG documentation for APIs, contexts, the data model, downloads, glossary, ingest formats, and versioning.
+
+Keeping primary sources separate from curated references makes the provenance of a rule clearer. The skill can distinguish a statement taken from project documentation from an operational rule derived from testing the actual graph.
+
+### 5. Machine-readable assets constrain composition
+
+The `assets/` directory contains registries and tables that are better represented as structured data than prose. These include resources for items such as:
+
+- node and edge SABs;
+- predicates;
+- inverse-predicate pairs;
+- evidence classes;
+- DDKG endpoint mappings;
+- curated triples and sample codes; and
+- the skill routing graph itself.
+
+These assets reduce the need for the model to reconstruct graph facts from prose or memory when composing a query.
+
+## Runtime workflow
+
+The skill uses a staged query workflow rather than immediately asking the language model to invent Cypher from scratch:
+
+1. **Find the closest validated query pattern.** Start from the validated task/query index where possible rather than composing entirely from memory.
+2. **Resolve and disambiguate the entity.** Prefer stable DDKG identifiers such as `CodeID`; clarify scientific ambiguity when it changes the intended query.
+3. **Profile the anchor.** Inspect which predicates and sources actually touch the selected entity when the route is uncertain.
+4. **Compose the graph route.** Use the endpoint, predicate, and SAB registries and traverse through real DDKG intermediates.
+5. **Apply fixed query rules.** Handle relationship direction, inverse pairs, nullable properties, species, bins, grouping, row grain, limits, and other known silent-failure modes.
+6. **Hand over a runnable query.** The intended product is executable Cypher with appropriate audit information, not a predicted database answer.
+7. **Interpret the returned result.** Only after execution should the assistant discuss evidence type, source scope, independence, truncation, coverage, or the possible meanings of an empty result.
+
+A central design rule is that **the graph, not the model, determines the result**. Worked examples teach query shape and interpretation. They are not cached answers to be repeated as though they were current graph output.
+
+## Why the skill has so many guardrails
+
+Many important DDKG query failures are *silent*. A syntactically valid Cypher query can return zero rows or the wrong number of rows without producing an error. Examples encountered during development included stale structural edge names, source-specific predicate direction, identifier conventions, duplicated assertions across minted Concept twins, hidden row multiplication, parent-term fan-out, placeholder identifiers, species-specific sources, and source models that require an intermediate association node.
+
+For that reason, the skill was designed around **falsifiability and inspection**, not just fluent query generation. A good-looking query is not considered evidence that the query is correct.
+
+The package also distinguishes **result grain** from query syntax. Before returning a list or table, the query should make explicit what one row represents and key the output on the biological identifier the user intends to count or inspect. This prevents a Concept-level fan-out from masquerading as multiple biological entities.
+
+## Validation-driven development
+
+The skill has been developed iteratively against real DDKG instances. Behavioral tests are used to find failures that cannot be detected reliably by reading the generated Cypher alone.
+
+The test protocol includes regression, novel, adversarial, ambiguity, evidence-semantics, scale, and result-grain cases. Tests are run in fresh conversations, generated queries are captured verbatim, and the queries are executed against the target DDKG release. The model's own claim that a query is correct is not a pass criterion.
+
+Later skill revisions incorporated failures discovered during these live tests. For example, the R6 revision repaired two documented assumptions that produced silent-zero queries, added source-specific topology for DisGeNET, clarified mouse knockout and orthology evidence, and expanded routing for anatomy, cell-type, and marker questions. This is why the skill should be viewed as a **versioned, release-calibrated query instrument**, not a static prompt.
+
+The current archive is an engineered and curated Agent Skill package. It is not a separately fine-tuned language model and does not modify model weights. Its performance comes from the package's controller, routing graph, curated evidence, structured registries, validated query patterns, and iterative testing against the DDKG release.
+
 ## What the skill does not do
 
 The current public skill:
@@ -133,7 +251,7 @@ This directory includes a versioned behavioral test protocol:
 
 The protocol requires fresh conversations, verbatim query capture, and execution of generated queries against a real DDKG instance. A query that merely looks plausible is not considered validated.
 
-The dated 18 August 2026 results file is only an example of the types of tests we used to test the performance of the skill.  It predates several later skill repairs and states that its pass/fail results do not transfer to the current R2 archive. We're including it here so you can see an example of how we tested the skill using a multi-step testing protocol.  
+The dated 18 August 2026 results file is only an example of the types of tests we used to test the performance of the skill. It predates several later skill repairs and states that its pass/fail results do not transfer to the current archive. It is included so users can see an example of the multi-step testing protocol.
 
 New behavioral results should be stored in a new dated results file and stamped with the SHA-256 of the exact `ddkg.skill` archive under test.
 
