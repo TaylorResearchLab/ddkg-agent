@@ -1,0 +1,283 @@
+# skill_graph.tsv — a relationship index over this skill's own content.
+#
+# A keyword index answers "where is X documented". This answers "what else
+# must I know before X is usable", which is the question that goes unasked,
+# because you have to already suspect the answer to look for it.
+#
+# Format: subject <TAB> edge <TAB> object <TAB> note
+# Node ids are file#anchor for content, or bare words for tasks and topics.
+#
+# Edges:
+#   answers         topic/task -> section that addresses it
+#   must_read_with  section -> section you will be wrong without
+#   demonstrated_by task -> a validated query that shows it working
+#   supersedes      source -> source it overrides on conflict
+#   invalidated_by  claim -> the event that will make it stale
+#
+# must_read_with is the load-bearing edge. Every silent failure recorded in
+# this skill was a missing one of those, not a missing file.
+#
+# Traverse with scripts/route.py, grep it, or load it into a graph tool.
+
+# --------------------------------------------------------------- maintenance
+maintain	answers	SKILL.md#maintaining-this-skill	how to extend content and this graph
+update the skill	answers	SKILL.md#maintaining-this-skill
+add to the graph	answers	SKILL.md#maintaining-this-skill
+schema change	answers	SKILL.md#when-the-schema-changes
+schema change	must_read_with	01_sources_and_precedence.md#what-ports-across-generations
+
+# ---------------------------------------------------------------- entry points
+gene symbol	answers	04_identifier_conventions.md#gene-symbols-use-acr	ACR carries the symbol, PT the descriptive name
+gene symbol	demonstrated_by	10_query_examples.md#query-24	ALOX5 by name, the canonical lookup
+gene lookup	answers	04_identifier_conventions.md#gene-symbols-use-acr
+find a gene	answers	04_identifier_conventions.md#gene-symbols-use-acr
+resolve a name	must_read_with	SKILL.md#5-apply-the-fixed-rules	candidates may span several sources: count per source first
+resolve a name	answers	05_entity_resolution.md#step-1--resolve-the-name-to-an-anchor
+resolve a name	must_read_with	04_identifier_conventions.md#anchor-on-codeid	CODE formatting varies by source
+resolve a name	must_read_with	05_entity_resolution.md#species	the name may belong to a mouse vocabulary
+disease	must_read_with	SKILL.md#5-apply-the-fixed-rules	candidates span HP, MONDO, ORDO, OMIM, DOID: aggregate before listing
+disease	answers	05_entity_resolution.md#step-1--resolve-the-name-to-an-anchor
+disease	must_read_with	04_identifier_conventions.md#mthu-codes	a source may hold the domain at subtype level
+disease	must_read_with	05_entity_resolution.md#species	the name may belong to a mouse or rat vocabulary
+phenotype	must_read_with	SKILL.md#5-apply-the-fixed-rules	candidates span several vocabularies: aggregate before listing
+phenotype	answers	05_entity_resolution.md#step-1--resolve-the-name-to-an-anchor
+phenotype	must_read_with	11_interpreting_results.md#what-each-evidence-type-actually-asserts
+phenotype	must_read_with	05_entity_resolution.md#species	MP and MPMGI are mouse phenotype vocabularies; EMAPA is mouse developmental anatomy
+
+expression	must_read_with	SKILL.md#5-apply-the-fixed-rules	GTEx spans tissues: count per tissue before listing
+expression	answers	08_dcc_endpoints.md#gtex-expression-gtexexp
+expression	must_read_with	03_schema_this_build.md#quantitative-values	EXPBINS carries no numeric properties
+expression	must_read_with	11_interpreting_results.md#adult-expression-data-censors-developmental-genes
+expression threshold	must_read_with	SKILL.md#5-apply-the-fixed-rules	bins are a group: enumerate them, do not list under a LIMIT
+expression threshold	answers	03_schema_this_build.md#quantitative-values
+expression threshold	must_read_with	08_dcc_endpoints.md#observed-codeid-formats	select bins by CodeID, never split them
+tissue	must_read_with	SKILL.md#5-apply-the-fixed-rules	enumerate the tissue set per source before filtering
+tissue	answers	08_dcc_endpoints.md#gtex-heart-tissues
+tissue	must_read_with	08_dcc_endpoints.md#gtex-heart-tissues	organ strings match assays and adjacent organs
+tissue	must_read_with	05_entity_resolution.md#species	EMAPA is mouse developmental anatomy
+tissue	must_read_with	18_row_multiplicity_and_identity_sinks.md#2-mth-nocode-is-an-identity-sink	an unbound Code lets a Term-name match land on a 258,919-Concept hub
+
+eqtl	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans tissues and chromosomes: aggregate before pulling
+eqtl	answers	08_dcc_endpoints.md#gtex-eqtl-gtexeqtl
+chromatin loop	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans datasets and chromosomes: aggregate first
+chromatin loop	answers	08_dcc_endpoints.md#4dn-chromatin-loops
+chromatin loop	demonstrated_by	10_query_examples.md#query-37	the full 4DN model
+genomic interval	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans chromosomes: count per chromosome first
+genomic interval	answers	08_dcc_endpoints.md#joining-loops-to-genomic-features
+genomic interval	must_read_with	11_interpreting_results.md#positional-overlap-is-not-biological-co-occurrence
+
+compound	must_read_with	SKILL.md#5-apply-the-fixed-rules	compound sources differ: count per source before pulling
+compound	answers	08_dcc_endpoints.md#idgp
+compound	must_read_with	11_interpreting_results.md#idgp-bioactivity-is-attributed-at-assay-level
+drug	must_read_with	SKILL.md#5-apply-the-fixed-rules	compound sources differ: count per source before pulling
+drug	answers	08_dcc_endpoints.md#idgp
+drug	must_read_with	11_interpreting_results.md#idgp-bioactivity-is-attributed-at-assay-level
+perturbation	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans compounds: count before listing
+perturbation	answers	08_dcc_endpoints.md#lincs
+perturbation	must_read_with	05_entity_resolution.md#step-2--profile-the-anchor	LINCS covers few genes; profile before promising
+
+pathway	answers	11_interpreting_results.md#pathway-membership-is-set-membership-and-sets-vary-in-scope
+pathway	must_read_with	05_entity_resolution.md#a-sab-is-a-source-not-a-kind-of-thing	NCI holds genes and drugs too
+pathway	must_read_with	05_entity_resolution.md#species	Reactome mixes R-HSA and R-MMU
+pathway	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans four sources: aggregate counts first, never list under a LIMIT
+pathway	must_read_with	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next	selection is a user decision, not a placeholder
+gene disease	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans several gene-disease sources: count per source first
+gene disease	answers	11_interpreting_results.md#what-each-evidence-type-actually-asserts
+gene disease	must_read_with	11_interpreting_results.md#clingen-carries-its-own-confidence--and-it-can-be-negative
+gene disease	must_read_with	05_entity_resolution.md#species	MPMGI is mouse genotype-phenotype mapping
+metabolite	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans conditions: count per group before listing
+metabolite	answers	08_dcc_endpoints.md#mw
+variant	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans cohorts and sources: aggregate first
+variant	answers	08_dcc_endpoints.md#kf
+
+# ------------------------------------------------------------- query mechanics
+boolean	answers	SKILL.md#5-apply-the-fixed-rules	AND binds tighter than OR; parenthesise mixed conditions
+where clause	answers	SKILL.md#5-apply-the-fixed-rules	unparenthesised OR/AND silently drops half the filter
+filter	answers	SKILL.md#5-apply-the-fixed-rules
+multi-step	answers	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next
+staged query	answers	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next
+placeholder	answers	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next	never emit one; stage instead
+user decision	answers	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next
+multi-hop	must_read_with	14_handing_over_queries.md#staged-queries-hand-over-one-step-then-rebuild-the-next	verify hop one before chaining
+write a query	answers	SKILL.md#5-apply-the-fixed-rules
+write a query	must_read_with	03_schema_this_build.md#structural-edges--the-current-names
+write a query	must_read_with	03_schema_this_build.md#direction
+intersection	must_read_with	SKILL.md#5-apply-the-fixed-rules	count the intersection before listing it
+intersection	answers	03_schema_this_build.md#reduce-between-halves
+intersection	must_read_with	03_schema_this_build.md#query-cost-on-an-unindexed-build
+intersection	must_read_with	11_interpreting_results.md#errors-amplify-across-hops
+multi-hop	must_read_with	SKILL.md#5-apply-the-fixed-rules	count at each hop before pulling the next
+multi-hop	answers	11_interpreting_results.md#errors-amplify-across-hops
+multi-hop	must_read_with	05_entity_resolution.md#a-predicate-can-be-one-hop-from-the-anchor-and-two-from-the-answer
+slow query	answers	03_schema_this_build.md#query-cost-on-an-unindexed-build
+slow query	must_read_with	03_schema_this_build.md#indexes
+slow query	must_read_with	03_schema_this_build.md#anchor-on-the-smallest-enumerable-set
+empty result	must_read_with	SKILL.md#5-apply-the-fixed-rules	an absent group may be truncation rather than absence
+empty result	answers	05_entity_resolution.md#step-2--profile-the-anchor
+empty result	must_read_with	03_schema_this_build.md#structural-edges--the-current-names	old edge names return nothing silently
+empty result	must_read_with	11_interpreting_results.md#absence-has-several-meanings
+truncated	answers	12_setup_and_access.md#browser-row-cap
+truncated	must_read_with	SKILL.md#5-apply-the-fixed-rules	never ORDER BY a low-cardinality column with a LIMIT
+order by	answers	SKILL.md#5-apply-the-fixed-rules	low-cardinality sort plus LIMIT drops whole groups
+enumerate	answers	SKILL.md#5-apply-the-fixed-rules	aggregate first: count per group cannot truncate
+spans groups	answers	SKILL.md#5-apply-the-fixed-rules	aggregate, do not list; a LIMIT drops whole groups
+candidate set	answers	SKILL.md#5-apply-the-fixed-rules	count per group before pulling any of it
+compare sources	answers	SKILL.md#5-apply-the-fixed-rules	one row per source, then one source per query
+duplicate rows	answers	07_predicate_registry.md#inverse-pairs-and-direction
+counting	must_read_with	SKILL.md#5-apply-the-fixed-rules	count per group before pulling any of it
+counting	answers	11_interpreting_results.md#one-entity-several-concepts
+string filter	must_read_with	SKILL.md#5-apply-the-fixed-rules	a string match spans every source: count per source first
+string filter	answers	08_dcc_endpoints.md#gtex-heart-tissues	false friends
+string filter	must_read_with	05_entity_resolution.md#a-sab-is-a-source-not-a-kind-of-thing
+codeid	answers	04_identifier_conventions.md#anchor-on-codeid
+codeid	must_read_with	08_dcc_endpoints.md#observed-codeid-formats	match, never split
+
+# ------------------------------------------------------------------- reporting
+interpret	answers	11_interpreting_results.md#what-to-say-in-an-answer
+report a result	answers	11_interpreting_results.md#what-to-say-in-an-answer
+report a result	must_read_with	11_interpreting_results.md#never-state-a-result-that-has-not-been-run
+evidence	must_read_with	SKILL.md#5-apply-the-fixed-rules	spans sources of differing size: count per source before listing
+evidence	answers	11_interpreting_results.md#what-each-evidence-type-actually-asserts
+evidence	must_read_with	11_interpreting_results.md#a-rough-stringency-ordering
+ranking	must_read_with	SKILL.md#5-apply-the-fixed-rules	a sorted list at its LIMIT is the head, not the set
+ranking	answers	11_interpreting_results.md#multi-source-agreement-is-the-signal
+ranking	must_read_with	11_interpreting_results.md#clingen-carries-its-own-confidence--and-it-can-be-negative	a hit can be negative
+
+# --------------------------------------------------------------------- setup
+install	answers	12_setup_and_access.md#licensing
+deploy	answers	12_setup_and_access.md#deployment
+api	answers	12_setup_and_access.md#the-rest-api
+api	must_read_with	12_setup_and_access.md#connecting-an-agent
+connect	answers	12_setup_and_access.md#connecting-an-agent
+schema version	answers	SKILL.md#which-release-and-schema-this-skill-targets
+schema version	must_read_with	01_sources_and_precedence.md#schema-generations
+
+# ------------------------------------------------------ document relationships
+sources/ddkg_user_guide.md	supersedes	sources/ubkg_data_model.md	edge names: HAS_CODE not CODE
+live enumeration	supersedes	assets/data_dictionary_triples.json	August 2025 dictionary is an earlier build
+03_schema_this_build.md	supersedes	02_data_model.md	model doc predates the rename
+02_data_model.md	answers	why the graph is shaped this way	semantics, not current names
+
+# ------------------------------------------------------------------- staleness
+03_schema_this_build.md#structural-edges--the-current-names	invalidated_by	JKG generation	Code node folded into an edge
+04_identifier_conventions.md#anchor-on-codeid	invalidated_by	JKG generation	access path changes, values survive
+05_entity_resolution.md	invalidated_by	JKG generation	every recipe
+09_query_task_index.md	invalidated_by	JKG generation	every query
+10_query_examples.md	invalidated_by	JKG generation	every query
+03_schema_this_build.md#quantitative-values	invalidated_by	JKG generation	bin bounds expected to be populated
+assets/predicates.csv	invalidated_by	source refresh	counts, predicates, source coverage, and endpoint combinations may drift
+assets/node_sabs.csv	invalidated_by	source refresh
+06_sab_registry.md	invalidated_by	source refresh	source membership and counts may drift
+pathway	must_read_with	08_dcc_endpoints.md#msigdb	five MSigDB subsets only; no KEGG, no GO, no oncogenic sets
+gene disease	must_read_with	08_dcc_endpoints.md#clinvar	ClinVar filtered to pathogenic/likely pathogenic with assertion criteria
+perturbation	must_read_with	08_dcc_endpoints.md#lincs	top 25 up and down per perturbagen; ~4,419 genes total
+eqtl	must_read_with	08_dcc_endpoints.md#gtexeqtl-codeids-and-tissue-multiplicity	filtered to eQTLs present in every tissue; CodeID embeds tissue; one Code per tissue per position
+tissue	must_read_with	08_dcc_endpoints.md#gtexeqtl-codeids-and-tissue-multiplicity	one Code per tissue per variant position
+expression	must_read_with	08_dcc_endpoints.md#gtexeqtl-codeids-and-tissue-multiplicity	tissue multiplicity in eQTL CodeIDs
+coverage	answers	08_dcc_endpoints.md#ingestion-scope-what-was-loaded-and-what-was-not	a source in the graph is rarely the whole source
+ingestion	answers	08_dcc_endpoints.md#ingestion-scope-what-was-loaded-and-what-was-not
+what is in this source	answers	08_dcc_endpoints.md#ingestion-scope-what-was-loaded-and-what-was-not
+pathway	must_read_with	08_dcc_endpoints.md#msigdb-c2-cp-overlaps-reactome-and-wp	MSigDB C2:CP redistributes Reactome and WP: not independent sources
+ranking	must_read_with	11_interpreting_results.md#sources-are-not-always-independent	redistributed content inflates apparent agreement
+evidence	must_read_with	11_interpreting_results.md#sources-are-not-always-independent
+shape of result	answers	14_handing_over_queries.md#do-not-predict-what-the-query-will-return	predicting what a result will look like is still predicting
+what to expect	answers	14_handing_over_queries.md#do-not-predict-what-the-query-will-return	say what to look for, not what will be there
+drug	must_read_with	08_dcc_endpoints.md#idgp-compounds-and-clinical-drug-vocabularies-do-not-overlap	IDGP compounds carry no DRUGBANK/RXNORM/ATC codes: that filter is always empty
+compound	must_read_with	08_dcc_endpoints.md#idgp-compounds-and-clinical-drug-vocabularies-do-not-overlap
+empty result	must_read_with	11_interpreting_results.md#two-sources-can-be-present-and-unjoinable	check the two sources share any Concepts before reporting absence
+cross-source	answers	11_interpreting_results.md#two-sources-can-be-present-and-unjoinable
+empirical findings	answers	13_empirical_findings_aug2025_validation.md	validation campaign against the December 2025 release on the August 2025 schema
+validation	answers	13_empirical_findings_aug2025_validation.md
+query hangs	answers	13_empirical_findings_aug2025_validation.md	staged per-hop expansion; superhub hash-joins cause hangs
+staged funnel	answers	13_empirical_findings_aug2025_validation.md	one leg per statement; first zero is the dead constraint
+evidence	must_read_with	03_schema_this_build.md#relationship-properties	evidence_class is heterogeneous: report, never filter
+gene symbol	must_read_with	04_identifier_conventions.md#gene-symbols-use-acr	bind ACR alone; MTH_ACR appends ' gene' and doubles rows
+resolve a name	must_read_with	04_identifier_conventions.md#gene-symbols-use-acr	Term names may carry trailing whitespace
+expression	must_read_with	13_empirical_findings_aug2025_validation.md	expresses and expressed_in are an inverse pair; tissue-side directed traversal uses expresses
+empty result	must_read_with	13_empirical_findings_aug2025_validation.md	nine failure classes and the diagnosis order
+slow query	must_read_with	13_empirical_findings_aug2025_validation.md	stage per hop; WITH DISTINCT between stages
+anchor	answers	15_query_rules.md#anchoring-and-cost
+cost	answers	15_query_rules.md#anchoring-and-cost
+identity	answers	15_query_rules.md#identity-and-matching
+properties	answers	15_query_rules.md#values-and-properties
+query rules	answers	references/15_query_rules.md	the rules not held in SKILL.md step 5
+hand over	answers	14_handing_over_queries.md
+falsification	answers	14_handing_over_queries.md#give-a-falsification-criterion
+staged query	must_read_with	16_manuscript_validated_queries.md#per-hop-staged-form-with-per-row-caps	CALL{} per-row caps and the t <> g walk-back guard
+slow query	must_read_with	16_manuscript_validated_queries.md#per-hop-staged-form-with-per-row-caps
+multi-hop	must_read_with	16_manuscript_validated_queries.md#caps-can-amputate	a zero under caps is not conclusive
+cross-species	answers	16_manuscript_validated_queries.md#cross-species-bridge	HCOP, MPMGI, HPOMP, RATHCOP: the verified routes
+ortholog	answers	16_manuscript_validated_queries.md#cross-species-bridge
+mouse	answers	16_manuscript_validated_queries.md#cross-species-bridge
+gene prioritisation	answers	16_manuscript_validated_queries.md#neighbourhood-proximity-scoring
+proximity	answers	16_manuscript_validated_queries.md#neighbourhood-proximity-scoring
+chromatin loop	must_read_with	16_manuscript_validated_queries.md#query-index	Q01 is the validated loop-eQTL form
+manuscript queries	answers	16_manuscript_validated_queries.md
+validated query	answers	16_manuscript_validated_queries.md
+expression bin	answers	17_gtex_bins_addendum.md#expbins-decoded-159-bins-median-tpm-gtex-v8
+TPM	answers	17_gtex_bins_addendum.md#expbins-decoded-159-bins-median-tpm-gtex-v8
+p-value bin	answers	17_gtex_bins_addendum.md#pvaluebins-decoded-17-bins-eqtl-p-values
+pvaluebins	must_read_with	17_gtex_bins_addendum.md#pvaluebins-decoded-17-bins-eqtl-p-values	PVALUEBINS:0.1e-12 means [0, 1e-12]: the misparse landmine
+zero expression	answers	17_gtex_bins_addendum.md#occupancy-facts-for-the-december-2025-release
+missing p_value	answers	17_gtex_bins_addendum.md#occupancy-facts-for-the-december-2025-release
+expression threshold	must_read_with	17_gtex_bins_addendum.md#expbins-decoded-159-bins-median-tpm-gtex-v8	159 bins, logarithmic by decade except 10-100 TPM at unit width
+expression	must_read_with	17_gtex_bins_addendum.md#occupancy-facts-for-the-december-2025-release	half of gene-tissue pairs have median TPM exactly zero
+eqtl	must_read_with	17_gtex_bins_addendum.md#occupancy-facts-for-the-december-2025-release	p_value coverage unresolved: dictionary and occupancy disagree
+# ------------------------------------ row multiplicity and identity sinks
+row multiplicity	answers	18_row_multiplicity_and_identity_sinks.md	a LIMIT that returns N rows may hold far fewer entities
+duplicate rows	answers	18_row_multiplicity_and_identity_sinks.md	label fans, stored inverses, and hidden grouping variables
+example output	answers	18_row_multiplicity_and_identity_sinks.md	printing rows is what exposes grain errors; counts alone do not
+grain	answers	18_row_multiplicity_and_identity_sinks.md	one row per combination of everything bound, not per thing asked about
+MTH:NOCODE	answers	18_row_multiplicity_and_identity_sinks.md	259,349 Terms across 258,919 Concepts; matches almost any name
+identity sink	answers	18_row_multiplicity_and_identity_sinks.md	placeholder Code joining unrelated Concepts
+term edge types	answers	18_row_multiplicity_and_identity_sinks.md	PT, SY, and per-source PT_<SAB>; UBERON has no bare PT
+stored inverse	answers	18_row_multiplicity_and_identity_sinks.md	inverse_ prefix and _regulated_by suffix conventions
+labels	must_read_with	18_row_multiplicity_and_identity_sinks.md	OPTIONAL is not enough: an unbound term edge fans over synonyms
+string filter	must_read_with	18_row_multiplicity_and_identity_sinks.md	Term-name matching across an unbound Code hits MTH:NOCODE
+anatomy selection	must_read_with	18_row_multiplicity_and_identity_sinks.md	bind the UBERON CodeID; a name match is not a constraint
+orthology	must_read_with	18_row_multiplicity_and_identity_sinks.md	HCOP 1:1 predicate resolves to family-level mappings
+capped sample	must_read_with	18_row_multiplicity_and_identity_sinks.md	per-entity caps are storage-ordered, never a top-N
+runtime	answers	18_row_multiplicity_and_identity_sinks.md	measured wall times by anchor cardinality on the December 2025 build
+18_row_multiplicity_and_identity_sinks.md	must_read_with	15_query_rules.md	extends the identity and matching rules
+18_row_multiplicity_and_identity_sinks.md	must_read_with	13_empirical_findings_aug2025_validation.md	same campaign, December 2025 release
+
+# --------------------------------------------------------- R5a: identity/grain
+metabolite	must_read_with	18_row_multiplicity_and_identity_sinks.md#3-minted-cui-twins-duplicate-assertions	PubChem Codes sit on twin Concepts; group by Code
+compound	must_read_with	18_row_multiplicity_and_identity_sinks.md#3-minted-cui-twins-duplicate-assertions	PUBCHEM:2247 carries LINCS edges on the minted twin only
+protein	must_read_with	18_row_multiplicity_and_identity_sinks.md#3-minted-cui-twins-duplicate-assertions	UniProtKB Codes are twinned too
+drug	must_read_with	18_row_multiplicity_and_identity_sinks.md#3-minted-cui-twins-duplicate-assertions	never LIMIT 1 across Code->Concept without the next edge
+disease	must_read_with	18_row_multiplicity_and_identity_sinks.md#4-one-concept-several-diseases	name by displayed Code, not CUI name
+condition	must_read_with	18_row_multiplicity_and_identity_sinks.md#4-one-concept-several-diseases	code counts are vocabulary membership
+tissue	must_read_with	18_row_multiplicity_and_identity_sinks.md#5-gtex-measurements-attach-to-a-tissue-and-its-parent-term	parent-term columns duplicate; group by measurement Code
+expression	must_read_with	18_row_multiplicity_and_identity_sinks.md#5-gtex-measurements-attach-to-a-tissue-and-its-parent-term	57 UBERON columns for 54 GTEx tissues
+gene family	must_read_with	05_entity_resolution.md#name-scans-versus-symbol-anchors	symbol prefix via ACR; name scans miss members
+protein name	must_read_with	05_entity_resolution.md#name-scans-versus-symbol-anchors	trailing space on UniProtKB PT names; use CONTAINS
+gene symbol	must_read_with	05_entity_resolution.md#name-scans-versus-symbol-anchors	retrieve families by symbol prefix through ACR, not by protein name
+string filter	must_read_with	05_entity_resolution.md#name-scans-versus-symbol-anchors	name scans miss members; trailing spaces break equality
+resolve a name	must_read_with	05_entity_resolution.md#name-scans-versus-symbol-anchors	a name scan is a discovery aid whose misses are assumed
+13_empirical_findings_aug2025_validation.md#5-verified-anchors-december-2025-release	invalidated_by	18_row_multiplicity_and_identity_sinks.md#3-minted-cui-twins-duplicate-assertions	the missing term was the untwinned Concept
+
+# -------------------------------------------- R5b: mechanics and process
+staged query	must_read_with	15_query_rules.md#caps-count-what-the-distinct-tuple-contains	edge variables in the tuple make caps count edges
+figure	must_read_with	15_query_rules.md#caps-count-what-the-distinct-tuple-contains	funnel on Concepts, re-match edges for display
+example output	must_read_with	15_query_rules.md#caps-count-what-the-distinct-tuple-contains	cap per anchor so every member prints
+browser	must_read_with	12_setup_and_access.md#browser-behavior-that-changes-results	one statement per run; only returned edges drawn
+release comparison	answers	12_setup_and_access.md#comparing-releases-on-an-old-schema-build
+old schema	must_read_with	12_setup_and_access.md#comparing-releases-on-an-old-schema-build	CODE for HAS_CODE; ACR|MTH_ACR
+gene symbol	must_read_with	12_setup_and_access.md#comparing-releases-on-an-old-schema-build	ACR alone on December; ACR and MTH_ACR for July-build portability
+loop	must_read_with	08_dcc_endpoints.md#4dn	four anchor edges; span overlap saturates
+reaction	must_read_with	08_dcc_endpoints.md#glycans	no Term edges; identify by CodeID
+placeholder	must_read_with	14_handing_over_queries.md#bracket-at-drafting	bracket any number without a run behind it
+# ----------------------------------------------------- R6: Tier 7 corrections
+expression	must_read_with	08_dcc_endpoints.md#gtex-expression-gtexexp	do not bind a single name on the expresses/expressed_in pair
+gene disease	must_read_with	08_dcc_endpoints.md#disgenet-dgn	DGN routes through association nodes; report by class
+DisGeNET	answers	08_dcc_endpoints.md#disgenet-dgn
+literature evidence	answers	08_dcc_endpoints.md#disgenet-dgn
+mouse	must_read_with	11_interpreting_results.md#what-each-evidence-type-actually-asserts	MPMGI is knockout evidence; HCOP source assertions use the 1:1 relation
+ortholog	must_read_with	11_interpreting_results.md#what-each-evidence-type-actually-asserts	HCOP can drop unmapped genes silently; inspect Concept-level multiplicity
+cell type	answers	08_dcc_endpoints.md#azimuth-az-and-hmaz	AZ codes cell types; HMAZ carries the marker edges
+cell type	must_read_with	05_entity_resolution.md#species	AZ carries model-organism reference atlases
+anatomy	answers	06_sab_registry.md#naming-traps	UBERON for species-neutral anatomy; EMAPA is mouse
+anatomy	must_read_with	05_entity_resolution.md#species
+marker	answers	08_dcc_endpoints.md#azimuth-az-and-hmaz
+marker	must_read_with	11_interpreting_results.md#what-each-evidence-type-actually-asserts	Azimuth markers are label-transfer discriminators, not expression profiles
