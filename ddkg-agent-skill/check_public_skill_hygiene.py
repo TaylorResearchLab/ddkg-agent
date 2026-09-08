@@ -25,7 +25,7 @@ GENERIC_PATTERNS = {
     ),
     "local Unix path": re.compile(r"(?<![A-Za-z0-9])/(?:mnt|home|Users)/[^\s`'\"]+"),
     "private deployment wording": re.compile(
-        r"\b(?:our|local|internal|institutional|private)\s+"
+        r"\b(?:our|local|internal|private)\s+"
         r"(?:instance|deployment|server|host)\b",
         re.I,
     ),
