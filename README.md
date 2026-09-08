@@ -41,24 +41,22 @@ Before installing the graph, review these resources:
 
 The DDKG User Guide includes a tutorial and release-specific examples. The UBKG context documentation is useful for understanding the graph organization and the source-specific contexts that are incorporated into DDKG.
 
-## Step 3: Download the DDKG Docker release
+## Step 3: Download the DDKG December 2025 release
 
 1. Go to the DDKG/UBKG downloads site:  
    https://ubkg-downloads.xconsortia.org/
 2. Log in using your UMLS account.
-3. Download the most recent DDKG Docker release available to you.
-
-The ISMB 2026 DDKG installation materials identify the December 2025 Docker build as:
+3. Download the most recent DDKG  release available to you.
 
 ```text
-DataDistillery_2025_04_DEC_NEO.zip
+DataDistillery_2025_04_DEC_NEO.zip or
+DataDistillery_2025_04_DEC_CSV.zip
 ```
-
-Because DDKG releases are versioned, check the downloads page for the newest available package rather than assuming that this filename remains current.
+Because DDKG releases are versioned, this skill build is focused on December 2025 release. If you are using a different release, there should be a skill file in this repo for your particular release.
 
 ## Step 4: Install and run the Docker instance
 
-Follow the UBKG Docker installation instructions:
+Follow the UBKG installation instructions for your download:
 
 https://ubkg.docs.xconsortia.org/downloads/
 
@@ -70,15 +68,16 @@ After installation, connect to the Neo4j instance using the connection details c
 
 The DDKG Agent Skill in this repository currently targets the **December 2025 DDKG release** (`DataDistillery_2025_04_DEC`) and the DDKG schema used for releases after August 2025.
 
-Use the July 2026 documentation for this release family:
+Use the August 2025 documentation for this release family:
 
-https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery09July2026
+https://github.com/nih-cfde/data-distillery/blob/main/DataDistillery29August2025
 
-For original Petagraph builds or DDKG Docker builds from before July 2025, the older documentation is here:
+For original Petagraph builds or DDKG Docker builds from before August 2025, the older documentation is here:
 
 https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery03Jan2025
+https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery09July2026 
 
-The DDKG project is transitioning toward the JSON Knowledge Graph (JKG) representation. Future DDKG releases may therefore require a corresponding update to this skill.
+The DDKG project is transitioning toward the JSON Knowledge Graph (JKG) representation. Future DDKG releases will  therefore require a corresponding update to this skill in 2026.
 
 ---
 
@@ -101,7 +100,7 @@ The directory contains the current skill archive plus the public test protocol a
 
 ## Load the skill into your AI client
 
-Import or upload `ddkg.skill` using the normal skill-installation mechanism for an **Agent Skills-compatible** AI client. The exact interface depends on the client.
+Import or upload `ddkg.skill` using the normal skill-installation mechanism for an **Agent Skills-compatible** AI client. The exact interface depends on the client. See [Agent Skills](https://agentskills.io/home)
 
 For best results, start a new conversation with the DDKG skill enabled and tell the model which DDKG release you are using if it differs from the December 2025 release.
 
