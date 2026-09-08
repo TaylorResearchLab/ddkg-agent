@@ -5,7 +5,7 @@ This repository provides public tools for working with the NIH Common Fund Data 
 The repository currently contains two distinct projects:
 
 - [`ddkg-agent-skill/`](ddkg-agent-skill/) contains the portable **DDKG Agent Skill** for generating release-aware Cypher queries from biomedical questions.
-- [`website-version/`](website-version/) contains the developing browser-based DDKG query assistant. This is a development scaffold and is not yet a public production service.
+- [`ddkg-mcp-server/`](ddkg-mcp-server/) contains the developing **DDKG MCP Server**, which is intended to provide controlled, read-only access to a DDKG instance for MCP-compatible AI clients.
 
 ## Quick start
 
@@ -52,7 +52,8 @@ The DDKG User Guide includes a tutorial and release-specific examples. The UBKG 
 DataDistillery_2025_04_DEC_NEO.zip or
 DataDistillery_2025_04_DEC_CSV.zip
 ```
-Because DDKG releases are versioned, this skill build is focused on December 2025 release. If you are using a different release, there should be a skill file in this repo for your particular release.
+
+Because DDKG releases are versioned, this skill build is focused on the December 2025 release. If you are using a different release, use a skill build explicitly validated for that release when one is available.
 
 ## Step 4: Install and run the Docker instance
 
@@ -75,9 +76,9 @@ https://github.com/nih-cfde/data-distillery/blob/main/DataDistillery29August2025
 For original Petagraph builds or DDKG Docker builds from before August 2025, the older documentation is here:
 
 https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery03Jan2025
-https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery09July2026 
+https://github.com/nih-cfde/data-distillery/tree/main/DataDistillery09July2026
 
-The DDKG project is transitioning toward the JSON Knowledge Graph (JKG) representation. Future DDKG releases will  therefore require a corresponding update to this skill in 2026.
+The DDKG project is transitioning toward the JSON Knowledge Graph (JKG) representation. Future DDKG releases will therefore require corresponding updates to the release-specific skill and MCP-server compatibility layer.
 
 ---
 
@@ -100,7 +101,7 @@ The directory contains the current skill archive plus the public test protocol a
 
 ## Load the skill into your AI client
 
-Import or upload `ddkg.skill` using the normal skill-installation mechanism for an **Agent Skills-compatible** AI client. The exact interface depends on the client. See [Agent Skills](https://agentskills.io/home)
+Import or upload `ddkg.skill` using the normal skill-installation mechanism for an **Agent Skills-compatible** AI client. The exact interface depends on the client. See [Agent Skills](https://agentskills.io/home).
 
 For best results, start a new conversation with the DDKG skill enabled and tell the model which DDKG release you are using if it differs from the December 2025 release.
 
@@ -178,27 +179,34 @@ For behavioral validation of the skill, see:
 
 ---
 
-# 5. Website version
+# 5. DDKG MCP Server
 
-[`website-version/`](website-version/) contains a separate browser-oriented implementation under development. Its planned execution path is:
+[`ddkg-mcp-server/`](ddkg-mcp-server/) is a separate implementation under development for the **Model Context Protocol (MCP)**. Its purpose is to let an MCP-compatible AI client interact with an actual DDKG instance through a controlled server interface rather than requiring the model to hold database credentials or connect directly to Neo4j.
+
+The planned architecture is:
 
 ```text
-Natural-language question
-        ↓
-Typed DDKG query plan
-        ↓
-Schema-aware deterministic compiler
-        ↓
-Static validation
-        ↓
-Neo4j EXPLAIN and bounded preview
-        ↓
-Bounded read-only execution
-        ↓
-Results, graph path, sources, and limitations
+MCP-compatible AI client
+          ↓
+     DDKG MCP Server
+          ↓
+release/schema checks
+validation and guardrails
+bounded read-only execution
+          ↓
+      DDKG Neo4j
 ```
 
-This component is intended to become a natural-language interface that can execute bounded queries against a DDKG instance. It is distinct from the portable `ddkg.skill` package and is not currently presented as a public production website.
+The MCP server is intended to expose release-aware DDKG capabilities such as schema and source inspection, identifier resolution, concept search, validated query execution, and provenance-aware result return. The exact public MCP tool surface is still under development.
+
+The DDKG Agent Skill and the MCP server have complementary roles:
+
+- the **skill** provides release-specific DDKG schema semantics, identifier conventions, query guidance, and biological caveats;
+- the **MCP server** provides controlled access to a live DDKG instance and returns results derived from actual graph execution.
+
+A browser or website could later be built as one possible client of the MCP server, but the primary deliverable in this directory is the MCP server itself.
+
+The current code is an early development scaffold and should not yet be treated as a public production MCP service. See [`ddkg-mcp-server/README.md`](ddkg-mcp-server/README.md) for the development plan and current status.
 
 ---
 
