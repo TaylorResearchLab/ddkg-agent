@@ -1,0 +1,95 @@
+name: Finalize R7 public README
+
+on:
+  push:
+    branches:
+      - fix/r7-portable-index-aware-skill
+    paths:
+      - .github/workflows/r7-readme-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/r7-portable-index-aware-skill
+      - name: Update README inventory and validation note
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('ddkg-agent-skill/README.md')
+          s = p.read_text(encoding='utf-8')
+
+          old = '''This directory includes a versioned behavioral test protocol:
+
+- [`ddkg_test_protocol.md`](ddkg_test_protocol.md)
+- [`ddkg_test_results_TEMPLATE.md`](ddkg_test_results_TEMPLATE.md)
+- [`ddkg_test_results_2026-08-18.md`](ddkg_test_results_2026-08-18.md)
+
+The protocol requires fresh conversations, verbatim query capture, and execution of generated queries against a real DDKG instance. A query that merely looks plausible is not considered validated.
+
+The dated 18 August 2026 results file is only an example of the types of tests we used to test the performance of the skill. It predates several later skill repairs and states that its pass/fail results do not transfer to the current archive. It is included so users can see an example of the multi-step testing protocol.
+
+New behavioral results should be stored in a new dated results file and stamped with the SHA-256 of the exact `ddkg.skill` archive under test.
+'''
+          new = '''This directory includes a versioned behavioral test protocol and an earlier example results file:
+
+- [`ddkg_test_protocol.md`](ddkg_test_protocol.md)
+- [`ddkg_test_results_TEMPLATE.md`](ddkg_test_results_TEMPLATE.md)
+- [`ddkg_test_results_2026-08-18.md`](ddkg_test_results_2026-08-18.md)
+
+The protocol requires fresh conversations, verbatim query capture, and execution of generated queries against a real DDKG instance. A query that merely looks plausible is not considered validated.
+
+The dated 18 August 2026 results file predates later skill repairs and is retained only as an example of the testing method. Its pass/fail results do not transfer to R7. The orthogonal Tier 7 evaluation described in the accompanying manuscript was performed on an earlier R5b-rebased archive, SHA-256 `c092480a61f2e46efb3586aacfe2240a3cebb83a0c769c5dfa0eb5ea54b8c52b`, and likewise must not be presented as validation of R7. The complete Tier 7 record is supplied with that manuscript as supplementary material.
+
+New behavioral results should be stored in a new dated results file and stamped with the SHA-256 of the exact `ddkg.skill` archive under test.
+'''
+          if old not in s:
+              raise SystemExit('behavioral validation block not found')
+          s = s.replace(old, new)
+
+          old = '''```text
+ddkg-agent-skill/
+├── README.md
+├── ddkg.skill
+├── ddkg_test_protocol.md
+├── ddkg_test_results_2026-08-18.md
+└── ddkg_test_results_TEMPLATE.md
+```
+
+`ddkg.skill` is the installable public artifact. The protocol and result files document how behavior is evaluated without treating an older test run as evidence for a newer archive.
+'''
+          new = '''```text
+ddkg-agent-skill/
+├── README.md
+├── R7_BUILD.md
+├── build_skill.py
+├── check_public_skill_hygiene.py
+├── ddkg.skill
+├── source/
+│   └── ddkg/                    # unpacked source used to build ddkg.skill
+├── ddkg_test_protocol.md
+├── ddkg_test_results_2026-08-18.md
+└── ddkg_test_results_TEMPLATE.md
+```
+
+`ddkg.skill` is the installable public artifact. The `source/ddkg/` tree is the reviewable source for that archive, `build_skill.py` rebuilds it deterministically, and `R7_BUILD.md` records the exact public build metadata. The protocol and historical result file document the testing method without treating an older test run as evidence for a newer archive.
+'''
+          if old not in s:
+              raise SystemExit('directory contents block not found')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit and remove workflow
+        run: |
+          rm -f .github/workflows/r7-readme-finalize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize R7 skill documentation"
+          git push origin HEAD:fix/r7-portable-index-aware-skill
