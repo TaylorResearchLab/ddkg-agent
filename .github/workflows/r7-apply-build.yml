@@ -19,7 +19,9 @@ jobs:
           ref: fix/r7-portable-index-aware-skill
 
       - name: Apply R7 source repairs
-        run: python ddkg-agent-skill/tools/apply_r7.py
+        run: |
+          python ddkg-agent-skill/tools/apply_r7.py
+          sed -i 's/03_schema_this_build.md#query-cost-on-an-unindexed-build/03_schema_this_build.md#query-cost/g' ddkg-agent-skill/source/ddkg/assets/skill_graph.tsv
 
       - name: Validate source and build archive
         run: |
