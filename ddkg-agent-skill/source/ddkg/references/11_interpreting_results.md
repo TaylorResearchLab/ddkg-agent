@@ -314,8 +314,10 @@ names include supplier catalogue entries — grade, purity, packaging, vendor
 part numbers — so truncating a name list can leave a row with no recognisable
 chemical name.
 
-Return enough names to be useful, prefer the shortest as a display label, and
-do not assume the first is canonical.
+Use one verified source-specific preferred-term edge as the display label when
+that edge is known. Synonyms may be returned as additional audit information,
+but do not choose the first or shortest synonym as the entity name. If no
+preferred-term edge is verified, display the source `CodeID`.
 
 ## Errors amplify across hops
 

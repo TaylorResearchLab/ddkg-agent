@@ -22,8 +22,8 @@ Relevant documentation:
 
 The DDKG project is moving toward the [JSON Knowledge Graph (JKG)](https://github.com/x-atlas-consortia/json-knowledge-graph/tree/main) representation. Later DDKG releases will therefore require corresponding skill versions rather than assuming that this release's query rules remain valid.
 
-**Current R8 release candidate:** 305,646 bytes  
-**SHA-256:** `f33334b293a4572b64198e1a7c039c61702bf6182b19ce7f5648d86102530546`
+**Current R8 release candidate:** 305,719 bytes  
+**SHA-256:** `a8f24199de1855cb95fc2d0391ab6d1674ef00b7942dd40e9dfbdf27eac97486`
 
 See [`R8_BUILD.md`](R8_BUILD.md) for the build record and freeze requirement.
 
