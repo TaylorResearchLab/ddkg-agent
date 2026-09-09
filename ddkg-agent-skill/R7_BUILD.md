@@ -12,6 +12,6 @@
 - Made index and query-cost guidance deployment-neutral and based on `SHOW INDEXES`.
 - Documented the index consequence of function-wrapped `Term.name` predicates.
 - Reworked entity-resolution and hand-over recipes to reduce candidates before tolerant name matching.
-- Added deterministic source-to-archive rebuilding and a public-release hygiene check.
+- Added deterministic source-to-archive rebuilding.
 
 The DDKG schema target is unchanged. R7 is a skill repair for the December 2025 release.
