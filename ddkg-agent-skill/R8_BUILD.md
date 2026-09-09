@@ -19,10 +19,9 @@ R8 hardens the December 2025 release skill around silent-failure modes identifie
 - Browser display limits are treated as client/configuration dependent rather than a universal row number;
 - ingest submission syntax, Concept.CUI values, and stored CodeID values are explicitly separated;
 - synonym scans are candidate discovery only;
-- compound/drug resolution routes to the general one-Code/several-Concepts rule, not only minted-twin handling;
-- MED-RT contraindication endpoints are not assumed to be disease-only;
-- the public hygiene procedure requires a deployment-specific denylist before the artifact is formally frozen for evaluation.
+- compound/drug resolution routes to the general one-Code/several-Concepts rule, not only minted-twin handling; and
+- MED-RT contraindication endpoints are not assumed to be disease-only.
 
 ## Release status
 
-This branch artifact is the **R8 release candidate**. Generic public-hygiene checks passed on both the source tree and built archive. Before the evaluation artifact is declared frozen, the release owner must rerun `check_public_skill_hygiene.py` on both source and archive with `--require-denylist` and an external deployment-specific denylist that is not committed to the repository.
+This branch artifact is the **R8 release candidate**. Routing validation and deterministic build checks passed. Focused live engineering regressions against the target DDKG remain before the evaluation artifact is declared frozen.
