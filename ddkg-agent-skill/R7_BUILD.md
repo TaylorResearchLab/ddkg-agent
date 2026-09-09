@@ -8,7 +8,7 @@
 
 ## R7 changes
 
-- Removed the private-deployment index assumption from the shipped schema reference.
+- Removed a deployment-specific index assumption from the shipped schema reference.
 - Made index and query-cost guidance deployment-neutral and based on `SHOW INDEXES`.
 - Documented the index consequence of function-wrapped `Term.name` predicates.
 - Reworked entity-resolution and hand-over recipes to reduce candidates before tolerant name matching.
