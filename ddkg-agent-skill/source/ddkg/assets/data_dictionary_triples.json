@@ -1,0 +1,1178 @@
+[
+ {
+  "subject_sab": "4DND",
+  "predicate": "has_assay_type",
+  "object_sab": "EFO",
+  "count": "12",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DND",
+  "predicate": "has_assay_type",
+  "object_sab": "OBI",
+  "count": "12",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DND",
+  "predicate": "dataset_involved_cell_type",
+  "object_sab": "EFO",
+  "count": "11",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DND",
+  "predicate": "dataset_involved_cell_type",
+  "object_sab": "UBERON",
+  "count": "1",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DND",
+  "predicate": "dataset_has_file",
+  "object_sab": "4DNF",
+  "count": "12",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNF",
+  "predicate": "file_has_loop",
+  "object_sab": "4DNL",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNL",
+  "predicate": "loop_has_qvalue_bin",
+  "object_sab": "4DNQ",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNL",
+  "predicate": "loop_us_start",
+  "object_sab": "HSCLO",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNL",
+  "predicate": "loop_us_end",
+  "object_sab": "HSCLO",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNL",
+  "predicate": "loop_ds_start",
+  "object_sab": "HSCLO",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "4DNL",
+  "predicate": "loop_ds_end",
+  "object_sab": "HSCLO",
+  "count": "215822",
+  "section": "4DN Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "overlaps",
+  "object_sab": "ENSEMBL",
+  "count": "500660",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.HepG2",
+  "predicate": "overlaps",
+  "object_sab": "ENSEMBL",
+  "count": "265453",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "molecularly_interacts_with",
+  "object_sab": "ENCODE.RBS.HepG2",
+  "count": "335238",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.K562",
+  "predicate": "overlaps",
+  "object_sab": "ENSEMBL",
+  "count": "333141",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "molecularly_interacts_with",
+  "object_sab": "ENCODE.RBS.K562",
+  "count": "304175",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "is_subsequence_of",
+  "object_sab": "ENCODE.RBS.HepG2",
+  "count": "225437",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "is_subsequence_of",
+  "object_sab": "ENCODE.RBS.K562",
+  "count": "192320",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.HepG2.K562",
+  "predicate": "overlaps",
+  "object_sab": "ENSEMBL",
+  "count": "56565",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "molecularly_interacts_with",
+  "object_sab": "ENCODE.RBS.HepG2.K562",
+  "count": "51506",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "is_subsequence_of",
+  "object_sab": "ENCODE.RBS.HepG2.K562",
+  "count": "44713",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "correlated_in",
+  "object_sab": "UBERON",
+  "count": "22092",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "predicted_in",
+  "object_sab": "UBERON",
+  "count": "268",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "not_predicted_in",
+  "object_sab": "UBERON",
+  "count": "116",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.RBS.150.NO.OVERLAP",
+  "predicate": "not_correlated_in",
+  "object_sab": "UBERON",
+  "count": "102",
+  "section": "ERCC RBP Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.CCRE.ACTIVITY",
+  "predicate": "regulates",
+  "object_sab": "ENSEMBL",
+  "count": "4804247",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.CCRE",
+  "predicate": "part_of",
+  "object_sab": "ENCODE.CCRE.ACTIVITY",
+  "count": "2196935",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "UBERON",
+  "predicate": "part_of",
+  "object_sab": "ENCODE.CCRE.ACTIVITY",
+  "count": "2196935",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.CCRE.ACTIVITY",
+  "predicate": "isa",
+  "object_sab": "ENCODE.CCRE.H3K4ME3",
+  "count": "1712682",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.CCRE.ACTIVITY",
+  "predicate": "isa",
+  "object_sab": "ENCODE.CCRE.H3K27AC",
+  "count": "1570234",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "ENCODE.CCRE.ACTIVITY",
+  "predicate": "isa",
+  "object_sab": "ENCODE.CCRE.CTCF",
+  "count": "1510150",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "CLINGEN.ALLELE.REGISTRY",
+  "predicate": "part_of",
+  "object_sab": "GTEXEQTL",
+  "count": "265965",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "UBERON",
+  "predicate": "part_of",
+  "object_sab": "GTEXEQTL",
+  "count": "265965",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "negatively_regulates",
+  "object_sab": "ENSEMBL",
+  "count": "156836",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "positively_regulates",
+  "object_sab": "ENSEMBL",
+  "count": "154093",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "CLINGEN.ALLELE.REGISTRY",
+  "predicate": "located_in",
+  "object_sab": "ENCODE.CCRE",
+  "count": "63051",
+  "section": "ERCC Regulatory Element Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "isa",
+  "object_sab": "FALDO",
+  "count": "13",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "begin",
+  "object_sab": "FALDO",
+  "count": "2",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "end",
+  "object_sab": "FALDO",
+  "count": "2",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "member",
+  "object_sab": "FALDO",
+  "count": "2",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "after",
+  "object_sab": "FALDO",
+  "count": "1",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "before",
+  "object_sab": "FALDO",
+  "count": "1",
+  "section": "GlyGen FALDO Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "GLYCOSYLATION",
+  "count": "1",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "PROTEIN",
+  "count": "1",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "SIO",
+  "predicate": "isa",
+  "object_sab": "SIO",
+  "count": "3",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "SIO",
+  "predicate": "SIO_000628",
+  "object_sab": "SIO",
+  "count": "1",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "CODAO",
+  "predicate": "isa",
+  "object_sab": "SIO",
+  "count": "1",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "FALDO",
+  "predicate": "isa",
+  "object_sab": "FALDO",
+  "count": "3",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "GLYCAN",
+  "count": "5",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "CONJUGATE",
+  "predicate": "isa",
+  "object_sab": "GLYCAN",
+  "count": "4",
+  "section": "GlyGen GLYCOCOO Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "GLYCOSYLATION",
+  "count": "1",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "IMAGE",
+  "count": "1",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "isa",
+  "object_sab": "GLYCAN",
+  "count": "92",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "PROTEIN",
+  "predicate": "isa",
+  "object_sab": "GLYCAN",
+  "count": "1",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "glycan_has_monosaccharide",
+  "object_sab": "GLYCAN",
+  "count": "1",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCAN",
+  "predicate": "glycan_has_signal",
+  "object_sab": "GLYCAN",
+  "count": "1",
+  "section": "GlyGen GLYCORDF Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "has_isoform",
+  "object_sab": "UNIPROTKB.ISOFORM",
+  "count": "8404",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOPROTEIN",
+  "predicate": "has_evidence",
+  "object_sab": "GLYCOPROTEIN.EVIDENCE",
+  "count": "120158",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOPROTEIN",
+  "predicate": "sequence",
+  "object_sab": "UNIPROTKB.ISOFORM",
+  "count": "61353",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOPROTEIN.EVIDENCE",
+  "predicate": "citation",
+  "object_sab": "GLYGEN.CITATION",
+  "count": "2088",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOPROTEIN",
+  "predicate": "has_pro_entry",
+  "object_sab": "GP.ID2PRO",
+  "count": "61353",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOPROTEIN",
+  "predicate": "glycosylated_at",
+  "object_sab": "GLYCOSYLATION.SITE",
+  "count": "52450",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOSYLATION.SITE",
+  "predicate": "location",
+  "object_sab": "GLYGEN.LOCATION",
+  "count": "52450",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOSYLATION.SITE",
+  "predicate": "has_saccharide",
+  "object_sab": "GLYTOUCAN",
+  "count": "44763",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYGEN.LOCATION",
+  "predicate": "has_amino_acid",
+  "object_sab": "AMINO.ACID",
+  "count": "52450",
+  "section": "GlyGen PROTEOFORM Edge Counts"
+ },
+ {
+  "subject_sab": "GLYGEN.GLYCOSYLATION",
+  "predicate": "has_enzyme_protein",
+  "object_sab": "UNIPROTKB",
+  "count": "91",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYCOSYLTRANSFERASE.REACTION",
+  "predicate": "has_enzyme_protein",
+  "object_sab": "UNIPROTKB",
+  "count": "91",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYTOUCAN",
+  "predicate": "is_from_source",
+  "object_sab": "GLYGEN.SRC",
+  "count": "30986",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYTOUCAN",
+  "predicate": "has_glycosequence",
+  "object_sab": "GLYGEN.GLYCOSEQUENCE",
+  "count": "117146",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYGEN.RESIDUE",
+  "predicate": "attached_by",
+  "object_sab": "GLYGEN.GLYCOSYLATION",
+  "count": "349",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYTOUCAN",
+  "predicate": "synthesized_by",
+  "object_sab": "GLYCOSYLTRANSFERASE.REACTION",
+  "count": "210563",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYTOUCAN",
+  "predicate": "has_motif",
+  "object_sab": "GLYCAN.MOTIF",
+  "count": "19321",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYTOUCAN",
+  "predicate": "has_canonical_residue",
+  "object_sab": "GLYGEN.RESIDUE",
+  "count": "86033",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GLYGEN.RESIDUE",
+  "predicate": "has_parent",
+  "object_sab": "GLYGEN.RESIDUE",
+  "count": "79",
+  "section": "GlyGen GLYCANS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEXP",
+  "predicate": "expressed_in",
+  "object_sab": "HGNC",
+  "count": "1573380",
+  "section": "GTEx GTEXEXP/EXPBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEXP",
+  "predicate": "has_expression",
+  "object_sab": "EXPBINS",
+  "count": "1573380",
+  "section": "GTEx GTEXEXP/EXPBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEXP",
+  "predicate": "expressed_in",
+  "object_sab": "UBERON",
+  "count": "1503452",
+  "section": "GTEx GTEXEXP/EXPBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEXP",
+  "predicate": "expressed_in",
+  "object_sab": "EFO",
+  "count": "69928",
+  "section": "GTEx GTEXEXP/EXPBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "located_in",
+  "object_sab": "HGNC",
+  "count": "2047088",
+  "section": "GTEx GTEXEQTL/PVALUEBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "p_value",
+  "object_sab": "PVALUEBINS",
+  "count": "1251403",
+  "section": "GTEx GTEXEQTL/PVALUEBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "located_in",
+  "object_sab": "HSCLO",
+  "count": "1240810",
+  "section": "GTEx GTEXEQTL/PVALUEBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "located_in",
+  "object_sab": "UBERON",
+  "count": "1193338",
+  "section": "GTEx GTEXEQTL/PVALUEBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXEQTL",
+  "predicate": "located_in",
+  "object_sab": "EFO",
+  "count": "47472",
+  "section": "GTEx GTEXEQTL/PVALUEBINS Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Adipose\\_\\_\\_Subcutaneous",
+  "object_sab": "HGNC",
+  "count": "15485",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Adipose\\_\\_\\_Visceral\\_(Omentum)",
+  "object_sab": "HGNC",
+  "count": "2646",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Adrenal_Gland",
+  "object_sab": "HGNC",
+  "count": "37897",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Artery\\_\\_\\_Aorta",
+  "object_sab": "HGNC",
+  "count": "642521",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Artery\\_\\_\\_Coronary",
+  "object_sab": "HGNC",
+  "count": "612950",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Artery\\_\\_\\_Tibial",
+  "object_sab": "HGNC",
+  "count": "10237",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Bladder",
+  "object_sab": "HGNC",
+  "count": "529181",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Amygdala",
+  "object_sab": "HGNC",
+  "count": "22221",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Anterior_cingulate_cortex\\_(BA24)",
+  "object_sab": "HGNC",
+  "count": "102887",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Caudate\\_(basal_ganglia)",
+  "object_sab": "HGNC",
+  "count": "7309",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Cerebellar_Hemisphere",
+  "object_sab": "HGNC",
+  "count": "40983",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Cerebellum",
+  "object_sab": "HGNC",
+  "count": "106195",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Cortex",
+  "object_sab": "HGNC",
+  "count": "764276",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Frontal_Cortex\\_(BA9)",
+  "object_sab": "HGNC",
+  "count": "27760",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Hippocampus",
+  "object_sab": "HGNC",
+  "count": "84051",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Hypothalamus",
+  "object_sab": "HGNC",
+  "count": "185487",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Nucleus_accumbens\\_(basal_ganglia)",
+  "object_sab": "HGNC",
+  "count": "1198329",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Putamen\\_(basal_ganglia)",
+  "object_sab": "HGNC",
+  "count": "1146393",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Spinal_cord\\_(cervical_c_1)",
+  "object_sab": "HGNC",
+  "count": "267533",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Brain\\_\\_\\_Substantia_nigra",
+  "object_sab": "HGNC",
+  "count": "143792",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Breast\\_\\_\\_Mammary_Tissue",
+  "object_sab": "HGNC",
+  "count": "3094",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Cells\\_\\_\\_Cultured_fibroblasts",
+  "object_sab": "HGNC",
+  "count": "11652",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Cells\\_\\_\\_EBV_transformed_lymphocytes",
+  "object_sab": "HGNC",
+  "count": "90051",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Cervix\\_\\_\\_Ectocervix",
+  "object_sab": "HGNC",
+  "count": "817624",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Cervix\\_\\_\\_Endocervix",
+  "object_sab": "HGNC",
+  "count": "805252",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Colon\\_\\_\\_Sigmoid",
+  "object_sab": "HGNC",
+  "count": "11358",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Colon\\_\\_\\_Transverse",
+  "object_sab": "HGNC",
+  "count": "22786",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Esophagus\\_\\_\\_Gastroesophageal_Junction",
+  "object_sab": "HGNC",
+  "count": "12874",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Esophagus\\_\\_\\_Mucosa",
+  "object_sab": "HGNC",
+  "count": "20463",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Esophagus\\_\\_\\_Muscularis",
+  "object_sab": "HGNC",
+  "count": "79416",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Fallopian_Tube",
+  "object_sab": "HGNC",
+  "count": "769999",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Heart\\_\\_\\_Atrial_Appendage",
+  "object_sab": "HGNC",
+  "count": "168057",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Heart\\_\\_\\_Left_Ventricle",
+  "object_sab": "HGNC",
+  "count": "600676",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Kidney\\_\\_\\_Cortex",
+  "object_sab": "HGNC",
+  "count": "583782",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Kidney\\_\\_\\_Medulla",
+  "object_sab": "HGNC",
+  "count": "10461695",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Liver",
+  "object_sab": "HGNC",
+  "count": "20645",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Lung",
+  "object_sab": "HGNC",
+  "count": "17156",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Minor_Salivary_Gland",
+  "object_sab": "HGNC",
+  "count": "47164",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Muscle\\_\\_\\_Skeletal",
+  "object_sab": "HGNC",
+  "count": "4061",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Nerve\\_\\_\\_Tibial",
+  "object_sab": "HGNC",
+  "count": "12460",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Ovary",
+  "object_sab": "HGNC",
+  "count": "20177",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Pancreas",
+  "object_sab": "HGNC",
+  "count": "24183",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Pituitary",
+  "object_sab": "HGNC",
+  "count": "28152",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Prostate",
+  "object_sab": "HGNC",
+  "count": "4197",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Skin\\_\\_\\_Not_Sun_Exposed\\_(Suprapubic)",
+  "object_sab": "HGNC",
+  "count": "1516",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Skin\\_\\_\\_Sun_Exposed\\_(Lower_leg)",
+  "object_sab": "HGNC",
+  "count": "84793",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Small_Intestine\\_\\_\\_Terminal_Ileum",
+  "object_sab": "HGNC",
+  "count": "73157",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Spleen",
+  "object_sab": "HGNC",
+  "count": "375064",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Stomach",
+  "object_sab": "HGNC",
+  "count": "12964",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Testis",
+  "object_sab": "HGNC",
+  "count": "141440",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Thyroid",
+  "object_sab": "HGNC",
+  "count": "31593",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Uterus",
+  "object_sab": "HGNC",
+  "count": "16498",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Vagina",
+  "object_sab": "HGNC",
+  "count": "20584",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "GTEXCOEXP",
+  "predicate": "coexpression_Whole_Blood",
+  "object_sab": "HGNC",
+  "count": "13845",
+  "section": "GTEx GTEXCOEXP Edge Counts"
+ },
+ {
+  "subject_sab": "AZ",
+  "predicate": "has_marker_gene_in_kidney",
+  "object_sab": "HGNC",
+  "count": "485",
+  "section": "HuBMAP Az Edge Counts"
+ },
+ {
+  "subject_sab": "AZ",
+  "predicate": "has_marker_gene_in_liver",
+  "object_sab": "HGNC",
+  "count": "225",
+  "section": "HuBMAP Az Edge Counts"
+ },
+ {
+  "subject_sab": "AZ",
+  "predicate": "has_marker_gene_in_heart",
+  "object_sab": "HGNC",
+  "count": "200",
+  "section": "HuBMAP Az Edge Counts"
+ },
+ {
+  "subject_sab": "PUBCHEM",
+  "predicate": "bioactivity",
+  "object_sab": "UNIPROTKB",
+  "count": "454957",
+  "section": "IDG IDGP (compound/protein) Edge Counts"
+ },
+ {
+  "subject_sab": "PUBCHEM",
+  "predicate": "indication",
+  "object_sab": "SNOMEDCT_US",
+  "count": "9015",
+  "section": "IDG IDGD (compound/disease) Edge Counts"
+ },
+ {
+  "subject_sab": "KFPT",
+  "predicate": "has_phenotype",
+  "object_sab": "HPO",
+  "count": "44611",
+  "section": "GMKF Edge Counts"
+ },
+ {
+  "subject_sab": "KFGENEBIN",
+  "predicate": "belongs_to_cohort",
+  "object_sab": "KFCOHORT",
+  "count": "13375",
+  "section": "GMKF Edge Counts"
+ },
+ {
+  "subject_sab": "KFGENEBIN",
+  "predicate": "gene_has_variants",
+  "object_sab": "HGNC",
+  "count": "13375",
+  "section": "GMKF Edge Counts"
+ },
+ {
+  "subject_sab": "KFPT",
+  "predicate": "belongs_to_cohort",
+  "object_sab": "KFCOHORT",
+  "count": "5329",
+  "section": "GMKF Edge Counts"
+ },
+ {
+  "subject_sab": "HGNC",
+  "predicate": "negatively_regulated_by",
+  "object_sab": "PUBCHEM",
+  "count": "112759",
+  "section": "LINCS Edge Counts"
+ },
+ {
+  "subject_sab": "HGNC",
+  "predicate": "positively_regulated_by",
+  "object_sab": "PUBCHEM",
+  "count": "112747",
+  "section": "LINCS Edge Counts"
+ },
+ {
+  "subject_sab": "PUBCHEM",
+  "predicate": "in_similarity_relationship_with",
+  "object_sab": "PUBCHEM",
+  "count": "20785",
+  "section": "LINCS Edge Counts"
+ },
+ {
+  "subject_sab": "NCBI",
+  "predicate": "positively_regulated_by",
+  "object_sab": "PUBCHEM",
+  "count": "3",
+  "section": "LINCS Edge Counts"
+ },
+ {
+  "subject_sab": "MOTRPAC",
+  "predicate": "associated_with",
+  "object_sab": "ENSEMBL",
+  "count": "8570",
+  "section": "MoTrPAC Edge Counts"
+ },
+ {
+  "subject_sab": "MOTRPAC",
+  "predicate": "located_in",
+  "object_sab": "UBERON",
+  "count": "8571",
+  "section": "MoTrPAC Edge Counts"
+ },
+ {
+  "subject_sab": "MOTRPAC",
+  "predicate": "sex",
+  "object_sab": "PATO",
+  "count": "8571",
+  "section": "MoTrPAC Edge Counts"
+ },
+ {
+  "subject_sab": "UBERON",
+  "predicate": "produces",
+  "object_sab": "PUBCHEM",
+  "count": "34471",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "CL",
+  "predicate": "produces",
+  "object_sab": "PUBCHEM",
+  "count": "6777",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "CLO",
+  "predicate": "produces",
+  "object_sab": "PUBCHEM",
+  "count": "536",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "HGNC",
+  "predicate": "causally influences",
+  "object_sab": "PUBCHEM",
+  "count": "5527",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "PUBCHEM",
+  "predicate": "correlated with condition",
+  "object_sab": "DOID",
+  "count": "3856",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "HMDB",
+  "predicate": "correlated with condition",
+  "object_sab": "DOID",
+  "count": "27",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "PUBCHEM",
+  "predicate": "correlated with condition",
+  "object_sab": "HPO",
+  "count": "77",
+  "section": "MW Edge Counts"
+ },
+ {
+  "subject_sab": "NPOKB",
+  "predicate": "hasInstanceInTaxon",
+  "object_sab": "NCBI",
+  "count": "569",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "NPOKB",
+  "predicate": "hasInstanceInTaxon",
+  "object_sab": "SNOMEDCT_US",
+  "count": "567",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "NPOKB",
+  "predicate": "isa",
+  "object_sab": "ILX.TR",
+  "count": "434",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "ILX",
+  "predicate": "isa",
+  "object_sab": "UBERON",
+  "count": "385",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "ILX",
+  "predicate": "isa",
+  "object_sab": "NCI",
+  "count": "311",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "ILX",
+  "predicate": "isa",
+  "object_sab": "FMA",
+  "count": "288",
+  "section": "SPARC Edge Counts"
+ },
+ {
+  "subject_sab": "UNIPROTKB",
+  "predicate": "gene_product_of",
+  "object_sab": "HGNC",
+  "count": "20212",
+  "section": "UNIPROTKB Edge Counts"
+ },
+ {
+  "subject_sab": "HGNC",
+  "predicate": "has_gene_product",
+  "object_sab": "UNIPROTKB",
+  "count": "20212",
+  "section": "UNIPROTKB Edge Counts"
+ }
+]

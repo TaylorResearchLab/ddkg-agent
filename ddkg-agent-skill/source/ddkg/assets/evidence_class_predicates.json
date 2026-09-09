@@ -1,0 +1,128 @@
+{
+ "assertion_pending": {
+  "evidence_class_mandatory": true
+ },
+ "autosomal_dominant_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "autosomal_dominant_inheritance_with_paternal_imprinting_hp_0012274": {
+  "evidence_class_mandatory": true
+ },
+ "autosomal_recessive_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "bioactivity": {
+  "evidence_class_mandatory": false
+ },
+ "characterized_by": {
+  "evidence_class_mandatory": false
+ },
+ "coexpressed_with": {
+  "evidence_class_mandatory": true
+ },
+ "definitive_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "gene_disease_validity": {
+  "evidence_class_mandatory": true
+ },
+ "has_variant_associated_with_disease": {
+  "evidence_class_mandatory": true
+ },
+ "in_similarity_relationship_with": {
+  "evidence_class_mandatory": true
+ },
+ "interacts_with": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_assertion_pending": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_autosomal_dominant_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_autosomal_dominant_inheritance_with_paternal_imprinting_hp_0012274": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_autosomal_recessive_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_bioactivity": {
+  "evidence_class_mandatory": false
+ },
+ "inverse_characterized_by": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_coexpressed_with": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_definitive_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_gene_disease_validity": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_has_variant_associated_with_disease": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_in_similarity_relationship_with": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_interacts_with": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_limited_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_moderate_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_no_assertion__scoring_group_absence": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_semidominant_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_strong_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_x_linked_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "inverse_x_linked_inheritance_dominant_hp_0001423": {
+  "evidence_class_mandatory": true
+ },
+ "limited_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "moderate_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "negatively_regulated_by": {
+  "evidence_class_mandatory": false
+ },
+ "negatively_regulates": {
+  "evidence_class_mandatory": false
+ },
+ "no_assertion__scoring_group_absence": {
+  "evidence_class_mandatory": true
+ },
+ "positively_regulated_by": {
+  "evidence_class_mandatory": false
+ },
+ "positively_regulates": {
+  "evidence_class_mandatory": false
+ },
+ "semidominant_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "strong_actionability": {
+  "evidence_class_mandatory": true
+ },
+ "x_linked_inheritance": {
+  "evidence_class_mandatory": true
+ },
+ "x_linked_inheritance_dominant_hp_0001423": {
+  "evidence_class_mandatory": true
+ }
+}

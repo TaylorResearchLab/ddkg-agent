@@ -1,0 +1,7708 @@
+[
+ {
+  "edge_sab": "4DN",
+  "predicate": "dataset_involves_cell_type",
+  "subject_sabs": [
+   "4DND"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_dataset_involves_cell_type",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "4DND"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "has_assay_type",
+  "subject_sabs": [
+   "4DND"
+  ],
+  "object_sabs": [
+   "EFO",
+   "OBI"
+  ],
+  "n_subjects": 1,
+  "n_objects": 2,
+  "triples": 2
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_has_assay_type",
+  "subject_sabs": [
+   "EFO",
+   "OBI"
+  ],
+  "object_sabs": [
+   "4DND"
+  ],
+  "n_subjects": 2,
+  "n_objects": 1,
+  "triples": 2
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "dataset_has_file",
+  "subject_sabs": [
+   "4DND"
+  ],
+  "object_sabs": [
+   "4DNF"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "file_has_loop",
+  "subject_sabs": [
+   "4DNF"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_dataset_has_file",
+  "subject_sabs": [
+   "4DNF"
+  ],
+  "object_sabs": [
+   "4DND"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_file_has_loop",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "4DNF"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "loop_ds_end",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "loop_ds_start",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "loop_has_qvalue_bin",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "4DNQ"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "loop_us_end",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "loop_us_start",
+  "subject_sabs": [
+   "4DNL"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_loop_has_qvalue_bin",
+  "subject_sabs": [
+   "4DNQ"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_loop_ds_end",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_loop_ds_start",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_loop_us_end",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "4DN",
+  "predicate": "inverse_loop_us_start",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "4DNL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "CMAP",
+  "predicate": "positively_correlated_with_chemical_or_drug",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 20,
+  "n_objects": 31,
+  "triples": 585
+ },
+ {
+  "edge_sab": "CMAP",
+  "predicate": "inverse_positively_correlated_with_chemical_or_drug",
+  "subject_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 31,
+  "n_objects": 20,
+  "triples": 585
+ },
+ {
+  "edge_sab": "CMAP",
+  "predicate": "inverse_negatively_correlated_with_chemical_or_drug",
+  "subject_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 31,
+  "n_objects": 19,
+  "triples": 549
+ },
+ {
+  "edge_sab": "CMAP",
+  "predicate": "negatively_correlated_with_chemical_or_drug",
+  "subject_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 19,
+  "n_objects": 31,
+  "triples": 549
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_overlaps",
+  "subject_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "overlaps",
+  "subject_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "object_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_correlated_in",
+  "subject_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "n_subjects": 14,
+  "n_objects": 1,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_not_correlated_in",
+  "subject_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "n_subjects": 14,
+  "n_objects": 1,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_not_predicted_in",
+  "subject_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 14,
+  "n_objects": 1,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_predicted_in",
+  "subject_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 14,
+  "n_objects": 1,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "correlated_in",
+  "subject_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 14,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "not_correlated_in",
+  "subject_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 14,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "not_predicted_in",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 14,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "predicted_in",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHV",
+   "CSP",
+   "FMA",
+   "HL7V2.5",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PSY",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 14,
+  "triples": 14
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "inverse_molecularly_interacts_with",
+  "subject_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "ERCCRBP",
+  "predicate": "molecularly_interacts_with",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "ENCODE.RBS.150.NO.OVERLAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "part_of",
+  "subject_sabs": [
+   "CHV",
+   "CL",
+   "CLINGEN.ALLELE.REGISTRY",
+   "CSP",
+   "ENCODE.CCRE",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ENCODE.CCRE.ACTIVITY",
+   "GTEXEQTL"
+  ],
+  "n_subjects": 26,
+  "n_objects": 2,
+  "triples": 50
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "has_part",
+  "subject_sabs": [
+   "ENCODE.CCRE.ACTIVITY",
+   "GTEXEQTL"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CL",
+   "CLINGEN.ALLELE.REGISTRY",
+   "CSP",
+   "ENCODE.CCRE",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 2,
+  "n_objects": 26,
+  "triples": 50
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "regulated_by",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "ENCODE.CCRE.ACTIVITY"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "regulates",
+  "subject_sabs": [
+   "ENCODE.CCRE.ACTIVITY"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "negatively_regulated_by",
+  "subject_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "GTEXEQTL"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "negatively_regulates",
+  "subject_sabs": [
+   "GTEXEQTL"
+  ],
+  "object_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "positively_regulated_by",
+  "subject_sabs": [
+   "AOT",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "GTEXEQTL"
+  ],
+  "n_subjects": 18,
+  "n_objects": 1,
+  "triples": 18
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "positively_regulates",
+  "subject_sabs": [
+   "GTEXEQTL"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 18,
+  "triples": 18
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "isa",
+  "subject_sabs": [
+   "ENCODE.CCRE.ACTIVITY"
+  ],
+  "object_sabs": [
+   "ENCODE.CCRE.CTCF",
+   "ENCODE.CCRE.H3K27AC",
+   "ENCODE.CCRE.H3K4ME3"
+  ],
+  "n_subjects": 1,
+  "n_objects": 3,
+  "triples": 3
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "ENCODE.CCRE.CTCF",
+   "ENCODE.CCRE.H3K27AC",
+   "ENCODE.CCRE.H3K4ME3"
+  ],
+  "object_sabs": [
+   "ENCODE.CCRE.ACTIVITY"
+  ],
+  "n_subjects": 3,
+  "n_objects": 1,
+  "triples": 3
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "located_in",
+  "subject_sabs": [
+   "CLINGEN.ALLELE.REGISTRY"
+  ],
+  "object_sabs": [
+   "ENCODE.CCRE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "ERCCREG",
+  "predicate": "location_of",
+  "subject_sabs": [
+   "ENCODE.CCRE"
+  ],
+  "object_sabs": [
+   "CLINGEN.ALLELE.REGISTRY"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "located_in",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US",
+   "UWDA"
+  ],
+  "n_subjects": 21,
+  "n_objects": 15,
+  "triples": 277
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "location_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 15,
+  "n_objects": 21,
+  "triples": 277
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "is_directional_form_of",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "GENCODE_VS"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "is_feature_type",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "GENCODE_VS"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "transcribed_to",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "transcribed_from",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_is_directional_form_of",
+  "subject_sabs": [
+   "GENCODE_VS"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_is_feature_type",
+  "subject_sabs": [
+   "GENCODE_VS"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "is_gene_biotype",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "GENCODE_VS"
+  ],
+  "n_subjects": 20,
+  "n_objects": 1,
+  "triples": 20
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_is_gene_biotype",
+  "subject_sabs": [
+   "GENCODE_VS"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 20,
+  "triples": 20
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "has_gene_product",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "has_refseq_id",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "REFSEQ"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "isa",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "PGO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "is_transcript_biotype",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "GENCODE_VS"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_is_transcript_biotype",
+  "subject_sabs": [
+   "GENCODE_VS"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "PGO"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "inverse_has_refseq_id",
+  "subject_sabs": [
+   "REFSEQ"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODE",
+  "predicate": "gene_product_of",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GENCODEHSCLO",
+  "predicate": "ds_3_prime",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODEHSCLO",
+  "predicate": "us_5_prime",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 21,
+  "n_objects": 1,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODEHSCLO",
+  "predicate": "inverse_ds_3_prime",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GENCODEHSCLO",
+  "predicate": "inverse_us_5_prime",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 21,
+  "triples": 21
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "has_enzyme_protein",
+  "subject_sabs": [
+   "GLYCOSYLTRANSFERASE.REACTION",
+   "GLYGEN.GLYCOSYLATION"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 2,
+  "n_objects": 1,
+  "triples": 2
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_has_enzyme_protein",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "GLYCOSYLTRANSFERASE.REACTION",
+   "GLYGEN.GLYCOSYLATION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 2,
+  "triples": 2
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_has_motif",
+  "subject_sabs": [
+   "GLYCAN.MOTIF"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_synthesized_by",
+  "subject_sabs": [
+   "GLYCOSYLTRANSFERASE.REACTION"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_has_glycosequence",
+  "subject_sabs": [
+   "GLYGEN.GLYCOSEQUENCE"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_attached_by",
+  "subject_sabs": [
+   "GLYGEN.GLYCOSYLATION"
+  ],
+  "object_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "attached_by",
+  "subject_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "object_sabs": [
+   "GLYGEN.GLYCOSYLATION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "has_parent",
+  "subject_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "object_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_has_canonical_residue",
+  "subject_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_has_parent",
+  "subject_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "object_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "inverse_is_from_source",
+  "subject_sabs": [
+   "GLYGEN.SRC"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "has_canonical_residue",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYGEN.RESIDUE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "has_glycosequence",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYGEN.GLYCOSEQUENCE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "has_motif",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYCAN.MOTIF"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "is_from_source",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYGEN.SRC"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCANS",
+  "predicate": "synthesized_by",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYCOSYLTRANSFERASE.REACTION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCOCOO",
+  "predicate": "isa",
+  "subject_sabs": [
+   "CODAO",
+   "FALDO",
+   "GCO",
+   "GLYCAN",
+   "SIO"
+  ],
+  "object_sabs": [
+   "FALDO",
+   "GLYCAN",
+   "SIO",
+   "UNIPROT"
+  ],
+  "n_subjects": 5,
+  "n_objects": 4,
+  "triples": 6
+ },
+ {
+  "edge_sab": "GLYCOCOO",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "FALDO",
+   "GLYCAN",
+   "SIO",
+   "UNIPROT"
+  ],
+  "object_sabs": [
+   "CODAO",
+   "FALDO",
+   "GCO",
+   "GLYCAN",
+   "SIO"
+  ],
+  "n_subjects": 4,
+  "n_objects": 5,
+  "triples": 6
+ },
+ {
+  "edge_sab": "GLYCOCOO",
+  "predicate": "inverse_refers_to",
+  "subject_sabs": [
+   "SIO"
+  ],
+  "object_sabs": [
+   "SIO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCOCOO",
+  "predicate": "refers_to",
+  "subject_sabs": [
+   "SIO"
+  ],
+  "object_sabs": [
+   "SIO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "FOAF",
+   "GLYCAN",
+   "UNIPROT"
+  ],
+  "object_sabs": [
+   "GLYCAN",
+   "UNIPROT"
+  ],
+  "n_subjects": 3,
+  "n_objects": 2,
+  "triples": 4
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "isa",
+  "subject_sabs": [
+   "GLYCAN",
+   "UNIPROT"
+  ],
+  "object_sabs": [
+   "FOAF",
+   "GLYCAN",
+   "UNIPROT"
+  ],
+  "n_subjects": 2,
+  "n_objects": 3,
+  "triples": 4
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "has_monosaccharide",
+  "subject_sabs": [
+   "GLYCAN"
+  ],
+  "object_sabs": [
+   "GLYCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "has_signal",
+  "subject_sabs": [
+   "GLYCAN"
+  ],
+  "object_sabs": [
+   "GLYCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "inverse_has_monosaccharide",
+  "subject_sabs": [
+   "GLYCAN"
+  ],
+  "object_sabs": [
+   "GLYCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GLYCORDF",
+  "predicate": "inverse_has_signal",
+  "subject_sabs": [
+   "GLYCAN"
+  ],
+  "object_sabs": [
+   "GLYCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GTEXCOEXP",
+  "predicate": "coexpressed_with",
+  "subject_sabs": [
+   "AOT",
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 15,
+  "n_objects": 15,
+  "triples": 188
+ },
+ {
+  "edge_sab": "GTEXCOEXP",
+  "predicate": "inverse_coexpressed_with",
+  "subject_sabs": [
+   "AOT",
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 15,
+  "n_objects": 15,
+  "triples": 188
+ },
+ {
+  "edge_sab": "GTEXEQTL",
+  "predicate": "location_of",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "HGNC",
+   "HL7V2.5",
+   "HSCLO",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "GTEXEQTL"
+  ],
+  "n_subjects": 38,
+  "n_objects": 1,
+  "triples": 38
+ },
+ {
+  "edge_sab": "GTEXEQTL",
+  "predicate": "located_in",
+  "subject_sabs": [
+   "GTEXEQTL"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "HGNC",
+   "HL7V2.5",
+   "HSCLO",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 38,
+  "triples": 38
+ },
+ {
+  "edge_sab": "GTEXEQTL",
+  "predicate": "p_value",
+  "subject_sabs": [
+   "GTEXEQTL"
+  ],
+  "object_sabs": [
+   "PVALUEBINS"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GTEXEQTL",
+  "predicate": "inverse_p_value",
+  "subject_sabs": [
+   "PVALUEBINS"
+  ],
+  "object_sabs": [
+   "GTEXEQTL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GTEXEXP",
+  "predicate": "expresses",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "HGNC",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "GTEXEXP"
+  ],
+  "n_subjects": 37,
+  "n_objects": 1,
+  "triples": 37
+ },
+ {
+  "edge_sab": "GTEXEXP",
+  "predicate": "expressed_in",
+  "subject_sabs": [
+   "GTEXEXP"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "HGNC",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 37,
+  "triples": 37
+ },
+ {
+  "edge_sab": "GTEXEXP",
+  "predicate": "inverse_has_expression",
+  "subject_sabs": [
+   "EXPBINS"
+  ],
+  "object_sabs": [
+   "GTEXEXP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "GTEXEXP",
+  "predicate": "has_expression",
+  "subject_sabs": [
+   "GTEXEXP"
+  ],
+  "object_sabs": [
+   "EXPBINS"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HGNCHPO",
+  "predicate": "inverse_associated_with",
+  "subject_sabs": [
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CCSR_ICD10PCS",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "FMA",
+   "GO",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "HSAPDV",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PATO",
+   "PDQ",
+   "PNDS",
+   "PSY",
+   "PUBCHEM",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UMD",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 60,
+  "n_objects": 19,
+  "triples": 1036
+ },
+ {
+  "edge_sab": "HGNCHPO",
+  "predicate": "associated_with",
+  "subject_sabs": [
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "PUBCHEM",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CCSR_ICD10PCS",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "FMA",
+   "GO",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "HSAPDV",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PATO",
+   "PDQ",
+   "PNDS",
+   "PSY",
+   "PUBCHEM",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UMD",
+   "UWDA"
+  ],
+  "n_subjects": 19,
+  "n_objects": 60,
+  "triples": 1036
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_contains_chromosome",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 15,
+  "n_objects": 1,
+  "triples": 15
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "contains_chromosome",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 15,
+  "triples": 15
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "above_1mbp_band",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 14,
+  "n_objects": 1,
+  "triples": 14
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_above_1mbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 14,
+  "triples": 14
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "above_10kbp_band",
+  "subject_sabs": [
+   "CHV",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "MTH",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 7,
+  "n_objects": 1,
+  "triples": 7
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_above_10kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "CHV",
+   "FMA",
+   "GENCODE_VS",
+   "GO",
+   "HSCLO",
+   "MTH",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 7,
+  "triples": 7
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "above_100kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "above_1kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_above_100kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_above_1kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_precedes_100kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_precedes_10kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_precedes_1kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "inverse_precedes_1mbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "precedes_100kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "precedes_10kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "precedes_1kbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HSCLO",
+  "predicate": "precedes_1mbp_band",
+  "subject_sabs": [
+   "HSCLO"
+  ],
+  "object_sabs": [
+   "HSCLO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "isa",
+  "subject_sabs": [
+   "ALT",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GS",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMFIELD",
+   "HP",
+   "HRAVS",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OBI",
+   "OMIM",
+   "OMS",
+   "PDQ",
+   "PSY",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMFIELD",
+   "HP",
+   "HRAVS",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OBI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 39,
+  "n_objects": 27,
+  "triples": 510
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMFIELD",
+   "HP",
+   "HRAVS",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OBI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ALT",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GS",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMFIELD",
+   "HP",
+   "HRAVS",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OBI",
+   "OMIM",
+   "OMS",
+   "PDQ",
+   "PSY",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 27,
+  "n_objects": 39,
+  "triples": 510
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_laterality",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHV",
+   "HL7V3.0",
+   "HUBMAP",
+   "LNC",
+   "MTH",
+   "NCI",
+   "SENNET",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 26,
+  "n_objects": 8,
+  "triples": 33
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_laterality",
+  "subject_sabs": [
+   "CHV",
+   "HL7V3.0",
+   "HUBMAP",
+   "LNC",
+   "MTH",
+   "NCI",
+   "SENNET",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 8,
+  "n_objects": 26,
+  "triples": 33
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_two_character_code",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 26,
+  "n_objects": 1,
+  "triples": 26
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_two_character_code",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 26,
+  "triples": 26
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_active_status",
+  "subject_sabs": [
+   "HUBMAP",
+   "LCH_NW",
+   "MSH",
+   "NCI",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP",
+   "OBI",
+   "SENNET"
+  ],
+  "n_subjects": 5,
+  "n_objects": 3,
+  "triples": 15
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_active_status",
+  "subject_sabs": [
+   "HUBMAP",
+   "OBI",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP",
+   "LCH_NW",
+   "MSH",
+   "NCI",
+   "SENNET"
+  ],
+  "n_subjects": 3,
+  "n_objects": 5,
+  "triples": 15
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_pdr_category",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 4,
+  "n_objects": 4,
+  "triples": 13
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_pdr_category",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 4,
+  "n_objects": 4,
+  "triples": 13
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_fig2_agg_assay_type",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 4,
+  "n_objects": 3,
+  "triples": 12
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_fig2_agg_assay_type",
+  "subject_sabs": [
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 3,
+  "n_objects": 4,
+  "triples": 12
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_dataset_type",
+  "subject_sabs": [
+   "CHV",
+   "HL7V3.0",
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "LNC",
+   "MTH",
+   "NCI",
+   "SENNET",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 10,
+  "n_objects": 1,
+  "triples": 10
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_dataset_type",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "CHV",
+   "HL7V3.0",
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "LNC",
+   "MTH",
+   "NCI",
+   "SENNET",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 10,
+  "triples": 10
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_fig2_category",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_fig2_modality",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_vitessce_hint",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_assaytype",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_description",
+  "subject_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_assaytype",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_description",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_fig2_category",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_fig2_modality",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_vitessce_hint",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HMFIELD",
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_must_contain",
+  "subject_sabs": [
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 3,
+  "n_objects": 1,
+  "triples": 3
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "must_contain",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HRAVS",
+   "HUBMAP",
+   "SENNET"
+  ],
+  "n_subjects": 1,
+  "n_objects": 3,
+  "triples": 3
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "contains",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_dir_schema",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_pipeline_shorthand",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_process_state",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_provider",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "has_tbl_schema",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_contains",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_dir_schema",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_pipeline_shorthand",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_process_state",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_provider",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "HUBMAP",
+  "predicate": "inverse_has_tbl_schema",
+  "subject_sabs": [
+   "HUBMAP"
+  ],
+  "object_sabs": [
+   "HUBMAP"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "IDGD",
+  "predicate": "inverse_indication",
+  "subject_sabs": [
+   "ALT",
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CCSR_ICD10PCS",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "FMA",
+   "GO",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD10PCS",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCBI",
+   "NCI",
+   "NIC",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PNDS",
+   "PSY",
+   "PUBCHEM",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "USPMG",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 62,
+  "n_objects": 1,
+  "triples": 62
+ },
+ {
+  "edge_sab": "IDGD",
+  "predicate": "indication",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "ALT",
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CCSR_ICD10PCS",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "FMA",
+   "GO",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD10PCS",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCBI",
+   "NCI",
+   "NIC",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PNDS",
+   "PSY",
+   "PUBCHEM",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "USPMG",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 62,
+  "triples": 62
+ },
+ {
+  "edge_sab": "IDGP",
+  "predicate": "bioactivity",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "IDGP",
+  "predicate": "inverse_bioactivity",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "phenotype_of",
+  "subject_sabs": [
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CHV",
+   "CPM",
+   "CSP",
+   "DOID",
+   "EFO",
+   "HL7V3.0",
+   "HP",
+   "HUBMAP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PATO",
+   "PDQ",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "KFPT"
+  ],
+  "n_subjects": 48,
+  "n_objects": 1,
+  "triples": 48
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "has_phenotype",
+  "subject_sabs": [
+   "KFPT"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CCC",
+   "CCS",
+   "CCSR_ICD10CM",
+   "CHV",
+   "CPM",
+   "CSP",
+   "DOID",
+   "EFO",
+   "HL7V3.0",
+   "HP",
+   "HUBMAP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MP",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "MTHICPC2ICD10AE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PATO",
+   "PDQ",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 48,
+  "triples": 48
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "inverse_gene_has_variants",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "KFGENEBIN"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "gene_has_variants",
+  "subject_sabs": [
+   "KFGENEBIN"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "inverse_belongs_to_cohort",
+  "subject_sabs": [
+   "KFCOHORT"
+  ],
+  "object_sabs": [
+   "KFGENEBIN",
+   "KFPT"
+  ],
+  "n_subjects": 1,
+  "n_objects": 2,
+  "triples": 2
+ },
+ {
+  "edge_sab": "KF",
+  "predicate": "belongs_to_cohort",
+  "subject_sabs": [
+   "KFGENEBIN",
+   "KFPT"
+  ],
+  "object_sabs": [
+   "KFCOHORT"
+  ],
+  "n_subjects": 2,
+  "n_objects": 1,
+  "triples": 2
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "negatively_regulated_by",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "positively_regulated_by",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "negatively_regulates",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "positively_regulates",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CSP",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ",
+   "SNOMEDCT_US"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "in_similarity_relationship_with",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "LINCS",
+  "predicate": "inverse_in_similarity_relationship_with",
+  "subject_sabs": [
+   "PUBCHEM"
+  ],
+  "object_sabs": [
+   "PUBCHEM"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "location_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "MOTRPAC"
+  ],
+  "n_subjects": 19,
+  "n_objects": 1,
+  "triples": 19
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "located_in",
+  "subject_sabs": [
+   "MOTRPAC"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 1,
+  "n_objects": 19,
+  "triples": 19
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "inverse_associated_with",
+  "subject_sabs": [
+   "ENSEMBL"
+  ],
+  "object_sabs": [
+   "MOTRPAC"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "associated_with",
+  "subject_sabs": [
+   "MOTRPAC"
+  ],
+  "object_sabs": [
+   "ENSEMBL"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "sex",
+  "subject_sabs": [
+   "MOTRPAC"
+  ],
+  "object_sabs": [
+   "PATO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "MOTRPAC",
+  "predicate": "inverse_sex",
+  "subject_sabs": [
+   "PATO"
+  ],
+  "object_sabs": [
+   "MOTRPAC"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "produced_by",
+  "subject_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DRUGBANK",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "HCPT",
+   "HGNC",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NOC",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "UBERON",
+   "UMD",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "ATC",
+   "AZ",
+   "CHV",
+   "CL",
+   "CSP",
+   "DCTH",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MP",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PAZ",
+   "PSY",
+   "PUBCHEM",
+   "RIBCA",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "n_subjects": 62,
+  "n_objects": 38,
+  "triples": 2007
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "produces",
+  "subject_sabs": [
+   "ATC",
+   "AZ",
+   "CHV",
+   "CL",
+   "CSP",
+   "DCTH",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MP",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "OMS",
+   "PAZ",
+   "PSY",
+   "PUBCHEM",
+   "RIBCA",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "object_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DOID",
+   "DRUGBANK",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "HCPT",
+   "HGNC",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NOC",
+   "OMIM",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "UBERON",
+   "UMD",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 38,
+  "n_objects": 62,
+  "triples": 2007
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "correlated_with_condition",
+  "subject_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMDB",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "OMIM",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "CCS",
+   "CCSR_ICD10CM",
+   "CHV",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "GO",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET"
+  ],
+  "n_subjects": 49,
+  "n_objects": 40,
+  "triples": 1637
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "inverse_correlated_with_condition",
+  "subject_sabs": [
+   "CCS",
+   "CCSR_ICD10CM",
+   "CHV",
+   "CSP",
+   "DOID",
+   "DSM-5",
+   "EFO",
+   "GO",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICD9CM",
+   "ICNP",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHICPC2EAE",
+   "NANDA-I",
+   "NCI",
+   "NOC",
+   "OMIM",
+   "OMS",
+   "ORDO",
+   "ORPHANET",
+   "PDQ",
+   "PSY",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET"
+  ],
+  "object_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "FMA",
+   "GS",
+   "HCPCS",
+   "HCPT",
+   "HL7V2.5",
+   "HL7V3.0",
+   "HMDB",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NOC",
+   "OMIM",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 40,
+  "n_objects": 49,
+  "triples": 1637
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "causally_influenced_by",
+  "subject_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "FMA",
+   "GS",
+   "HCPT",
+   "HL7V2.5",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "UBERON",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ"
+  ],
+  "n_subjects": 50,
+  "n_objects": 14,
+  "triples": 548
+ },
+ {
+  "edge_sab": "MW",
+  "predicate": "causally_influences",
+  "subject_sabs": [
+   "CHV",
+   "EFO",
+   "ENSEMBL",
+   "ENTREZ",
+   "HGNC",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "OMIM",
+   "ORDO",
+   "PDQ"
+  ],
+  "object_sabs": [
+   "ALT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CPT",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "FMA",
+   "GS",
+   "HCPT",
+   "HL7V2.5",
+   "HP",
+   "ICD10",
+   "ICD10AE",
+   "ICD10AM",
+   "ICD10AMAE",
+   "ICD10CM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2EENG",
+   "ICPC2ICD10ENG",
+   "ICPC2P",
+   "LCH_NW",
+   "LNC",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NANDA-I",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "OMIM",
+   "PDQ",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "SPN",
+   "UBERON",
+   "USP",
+   "USPMG",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 14,
+  "n_objects": 50,
+  "triples": 548
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "AOT",
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NIFSTD.NLX.ORG",
+   "OBI",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PAX.PAXSPN",
+   "PR",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "object_sabs": [
+   "AOT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "GS",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NCBI",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "UBERON",
+   "USP",
+   "UWDA",
+   "VANDF",
+   "ZFA"
+  ],
+  "n_subjects": 50,
+  "n_objects": 61,
+  "triples": 808
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "isa",
+  "subject_sabs": [
+   "AOT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "GS",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NCBI",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "UBERON",
+   "USP",
+   "UWDA",
+   "VANDF",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AOT",
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NIFSTD.NLX.ORG",
+   "OBI",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PAX.PAXSPN",
+   "PR",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "n_subjects": 61,
+  "n_objects": 50,
+  "triples": 808
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "part_of",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSTD.NLX",
+   "OMIM",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "OMIM",
+   "PAZ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF",
+   "ZFA"
+  ],
+  "n_subjects": 38,
+  "n_objects": 37,
+  "triples": 714
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "has_part",
+  "subject_sabs": [
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "OMIM",
+   "PAZ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSTD.NLX",
+   "OMIM",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "ZFA"
+  ],
+  "n_subjects": 37,
+  "n_objects": 38,
+  "triples": 714
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "contributes_to_morphology_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 25,
+  "n_objects": 28,
+  "triples": 534
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "inverse_contributes_to_morphology_of",
+  "subject_sabs": [
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 28,
+  "n_objects": 25,
+  "triples": 534
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "inverse_is_part_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ILX",
+   "NIFSTD.NLX"
+  ],
+  "n_subjects": 21,
+  "n_objects": 2,
+  "triples": 36
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "is_part_of",
+  "subject_sabs": [
+   "ILX",
+   "NIFSTD.NLX"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 2,
+  "n_objects": 21,
+  "triples": 36
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "has_role",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "NIFSTD"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "role_of",
+  "subject_sabs": [
+   "NIFSTD"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "delineates",
+  "subject_sabs": [
+   "PAX.PAXRAT"
+  ],
+  "object_sabs": [
+   "UBERON"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "inverse_isdelineatedby",
+  "subject_sabs": [
+   "PAX.PAXRAT"
+  ],
+  "object_sabs": [
+   "UBERON"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "inverse_delineates",
+  "subject_sabs": [
+   "UBERON"
+  ],
+  "object_sabs": [
+   "PAX.PAXRAT"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPO",
+  "predicate": "isdelineatedby",
+  "subject_sabs": [
+   "UBERON"
+  ],
+  "object_sabs": [
+   "PAX.PAXRAT"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "part_of",
+  "subject_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDLINEPLUS",
+   "MMSET1",
+   "MMSET2CN",
+   "MMSET4",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB",
+   "OMIM",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MBA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "OMIM",
+   "PAX.PAXRAT",
+   "PAZ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF",
+   "ZFA"
+  ],
+  "n_subjects": 46,
+  "n_objects": 44,
+  "triples": 867
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "has_part",
+  "subject_sabs": [
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MBA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "OMIM",
+   "PAX.PAXRAT",
+   "PAZ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "VCCF",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AOT",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MDR",
+   "MEDLINEPLUS",
+   "MMSET1",
+   "MMSET2CN",
+   "MMSET4",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB",
+   "OMIM",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA",
+   "ZFA"
+  ],
+  "n_subjects": 44,
+  "n_objects": 46,
+  "triples": 867
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_isa",
+  "subject_sabs": [
+   "AIBS.MUS.LAB",
+   "AOT",
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FBBT",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NIFSTD.NLX.ORG",
+   "NPOKB",
+   "OBI",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PAX.PAXSPN",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "TEMPIND",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "object_sabs": [
+   "AIBS.MUS.LAB",
+   "ALLENTRANSGENICLINE",
+   "AOT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "GETSDS.JSP?MMRRC",
+   "GO",
+   "GS",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "JAX",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MBA",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSET1",
+   "MMSET2CN",
+   "MMSET4",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NCBI",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NPOKB",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PTHR",
+   "PUBCHEM",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "TEMPIND",
+   "UBERON",
+   "USP",
+   "UWDA",
+   "VANDF",
+   "ZFA"
+  ],
+  "n_subjects": 56,
+  "n_objects": 73,
+  "triples": 865
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "isa",
+  "subject_sabs": [
+   "AIBS.MUS.LAB",
+   "ALLENTRANSGENICLINE",
+   "AOT",
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "EFO",
+   "ENTREZ",
+   "FMA",
+   "FTU2D",
+   "GETSDS.JSP?MMRRC",
+   "GO",
+   "GS",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "JAX",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MBA",
+   "MDR",
+   "MEDCIN",
+   "MEDLINEPLUS",
+   "MMSET1",
+   "MMSET2CN",
+   "MMSET4",
+   "MMSL",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "MTHSPL",
+   "NCBI",
+   "NCI",
+   "NDDF",
+   "NEU",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NPOKB",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PTHR",
+   "PUBCHEM",
+   "RXNORM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "TEMPIND",
+   "UBERON",
+   "USP",
+   "UWDA",
+   "VANDF",
+   "ZFA"
+  ],
+  "object_sabs": [
+   "AIBS.MUS.LAB",
+   "AOT",
+   "AZ",
+   "CHEBI",
+   "CHV",
+   "CL",
+   "CPM",
+   "CSP",
+   "EFO",
+   "FBBT",
+   "FMA",
+   "FTU2D",
+   "GO",
+   "HL7V2.5",
+   "HMFIELD",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "ILX",
+   "ILX.TR",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "MTHICD9",
+   "NCBI",
+   "NCI",
+   "NEU",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "NIFSTD.NLX.ORG",
+   "NPOKB",
+   "OBI",
+   "OMIM",
+   "PATO",
+   "PAX.PAXRAT",
+   "PAX.PAXSPN",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "SO",
+   "SRC",
+   "TEMPIND",
+   "UBERON",
+   "UWDA",
+   "VCCF"
+  ],
+  "n_subjects": 73,
+  "n_objects": 56,
+  "triples": 865
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "contributes_to_morphology_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CL",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 25,
+  "n_objects": 27,
+  "triples": 526
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_contributes_to_morphology_of",
+  "subject_sabs": [
+   "CHV",
+   "CL",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MEDLINEPLUS",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "EFO",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICD10AM",
+   "ICF",
+   "ICF-CY",
+   "ICPC2ICD10ENG",
+   "LCH_NW",
+   "LNC",
+   "MONDO",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 27,
+  "n_objects": 25,
+  "triples": 526
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasneurotransmitterphenotype",
+  "subject_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NIFSTD.NIFEXT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "TEMPIND",
+   "USP",
+   "UWDA",
+   "VANDF"
+  ],
+  "object_sabs": [
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 28,
+  "n_objects": 5,
+  "triples": 76
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasneurotransmitterphenotype",
+  "subject_sabs": [
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ATC",
+   "CHEBI",
+   "CHV",
+   "CPM",
+   "CSP",
+   "DRUGBANK",
+   "FMA",
+   "GS",
+   "LCH_NW",
+   "LNC",
+   "MEDCIN",
+   "MMSL",
+   "MSH",
+   "MTH",
+   "MTHSPL",
+   "NCI",
+   "NDDF",
+   "NIFSTD.NIFEXT",
+   "PDQ",
+   "PR",
+   "PSY",
+   "PUBCHEM",
+   "RXNORM",
+   "SNOMEDCT_US",
+   "TEMPIND",
+   "USP",
+   "UWDA",
+   "VANDF"
+  ],
+  "n_subjects": 5,
+  "n_objects": 28,
+  "triples": 76
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasinstanceintaxon",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 12,
+  "n_objects": 6,
+  "triples": 67
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasinstanceintaxon",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "PSY",
+   "SENNET",
+   "SNOMEDCT_US",
+   "SNOMEDCT_VET"
+  ],
+  "n_subjects": 6,
+  "n_objects": 12,
+  "triples": 67
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_is_part_of",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ILX",
+   "NIFSTD.NLX"
+  ],
+  "n_subjects": 21,
+  "n_objects": 2,
+  "triples": 36
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "is_part_of",
+  "subject_sabs": [
+   "ILX",
+   "NIFSTD.NLX"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "FTU2D",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 2,
+  "n_objects": 21,
+  "triples": 36
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasprojectionphenotype",
+  "subject_sabs": [
+   "CSP",
+   "FMA",
+   "ILX.TR",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NPOKB"
+  ],
+  "n_subjects": 10,
+  "n_objects": 5,
+  "triples": 28
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasprojectionphenotype",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "CSP",
+   "FMA",
+   "ILX.TR",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 5,
+  "n_objects": 10,
+  "triples": 28
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_delineates",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FBBT",
+   "FMA",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "MBA",
+   "PAX.PAXRAT",
+   "UBERON"
+  ],
+  "n_subjects": 22,
+  "n_objects": 3,
+  "triples": 26
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "delineates",
+  "subject_sabs": [
+   "MBA",
+   "PAX.PAXRAT",
+   "UBERON"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FBBT",
+   "FMA",
+   "HL7V2.5",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 3,
+  "n_objects": 22,
+  "triples": 26
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "isdelineatedby",
+  "subject_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "object_sabs": [
+   "MBA",
+   "PAX.PAXRAT",
+   "UBERON"
+  ],
+  "n_subjects": 20,
+  "n_objects": 3,
+  "triples": 24
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_isdelineatedby",
+  "subject_sabs": [
+   "MBA",
+   "PAX.PAXRAT",
+   "UBERON"
+  ],
+  "object_sabs": [
+   "CHV",
+   "CSP",
+   "FMA",
+   "HUBMAP",
+   "ICF",
+   "ICF-CY",
+   "LCH_NW",
+   "LNC",
+   "MA",
+   "MSH",
+   "MTH",
+   "NCI",
+   "NEU",
+   "OMIM",
+   "PSY",
+   "PUBCHEM",
+   "SENNET",
+   "SNOMEDCT_US",
+   "UBERON",
+   "UWDA"
+  ],
+  "n_subjects": 3,
+  "n_objects": 20,
+  "triples": 24
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasmolecularphenotype",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "TEMPIND"
+  ],
+  "n_subjects": 6,
+  "n_objects": 6,
+  "triples": 15
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasmolecularphenotype",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NIFSTD.NLX.MOL",
+   "TEMPIND"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 6,
+  "n_objects": 6,
+  "triples": 15
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasmorphologicalphenotype",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSTD"
+  ],
+  "object_sabs": [
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 2,
+  "n_objects": 5,
+  "triples": 7
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasmorphologicalphenotype",
+  "subject_sabs": [
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSTD"
+  ],
+  "n_subjects": 5,
+  "n_objects": 2,
+  "triples": 7
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hascircuitrolephenotype",
+  "subject_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 6,
+  "n_objects": 1,
+  "triples": 6
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hascircuitrolephenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR",
+   "NIFSDT.NLX.CELL",
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 6,
+  "triples": 6
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_ismeasurementof",
+  "subject_sabs": [
+   "CHV",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "SRC"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 5,
+  "n_objects": 1,
+  "triples": 5
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasexpressionphenotype",
+  "subject_sabs": [
+   "ENTREZ",
+   "ILX.TR",
+   "NIFSTD.NIFEXT",
+   "PR",
+   "TEMPIND"
+  ],
+  "object_sabs": [
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 5,
+  "n_objects": 2,
+  "triples": 5
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "ismeasurementof",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "CHV",
+   "MTH",
+   "NCBI",
+   "NCI",
+   "SRC"
+  ],
+  "n_subjects": 1,
+  "n_objects": 5,
+  "triples": 5
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasexpressionphenotype",
+  "subject_sabs": [
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ENTREZ",
+   "ILX.TR",
+   "NIFSTD.NIFEXT",
+   "PR",
+   "TEMPIND"
+  ],
+  "n_subjects": 2,
+  "n_objects": 5,
+  "triples": 5
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdendritemorphologicalphenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 4,
+  "triples": 4
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdendritemorphologicalphenotype",
+  "subject_sabs": [
+   "NIFSTD",
+   "NIFSTD.NIFEXT",
+   "NIFSTD.NLX",
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 4,
+  "n_objects": 1,
+  "triples": 4
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_labelpartof",
+  "subject_sabs": [
+   "MBA",
+   "UBERON"
+  ],
+  "object_sabs": [
+   "MBA",
+   "UBERON"
+  ],
+  "n_subjects": 2,
+  "n_objects": 2,
+  "triples": 3
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "labelpartof",
+  "subject_sabs": [
+   "MBA",
+   "UBERON"
+  ],
+  "object_sabs": [
+   "MBA",
+   "UBERON"
+  ],
+  "n_subjects": 2,
+  "n_objects": 2,
+  "triples": 3
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdriverexpressioninducedphenotype",
+  "subject_sabs": [
+   "GETSDS.JSP?MMRRC",
+   "JAX"
+  ],
+  "object_sabs": [
+   "NPOKB"
+  ],
+  "n_subjects": 2,
+  "n_objects": 1,
+  "triples": 2
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdriverexpressionphenotype",
+  "subject_sabs": [
+   "GETSDS.JSP?MMRRC",
+   "JAX"
+  ],
+  "object_sabs": [
+   "NPOKB"
+  ],
+  "n_subjects": 2,
+  "n_objects": 1,
+  "triples": 2
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdriverexpressioninducedphenotype",
+  "subject_sabs": [
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "GETSDS.JSP?MMRRC",
+   "JAX"
+  ],
+  "n_subjects": 1,
+  "n_objects": 2,
+  "triples": 2
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdriverexpressionphenotype",
+  "subject_sabs": [
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "GETSDS.JSP?MMRRC",
+   "JAX"
+  ],
+  "n_subjects": 1,
+  "n_objects": 2,
+  "triples": 2
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasfunctionalcircuitrolephenotype",
+  "subject_sabs": [
+   "ILX"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "annotates",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdirectionmappedtopositivex",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdirectionmappedtopositivey",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdirectionmappedtopositivez",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasdirection",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasforwardconnectionphenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasfunctionalcircuitrolephenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasinformationinput",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasinformationoutput",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "has_member",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasoppositedirection",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasphenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasresolution",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "has_role",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "NIFSTD"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasspace",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_annotates",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdirectionmappedtopositivex",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdirectionmappedtopositivey",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdirectionmappedtopositivez",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasdirection",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasforwardconnectionphenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasinformationinput",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasinformationoutput",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasoppositedirection",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasphenotype",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasresolution",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasspace",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_names",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_transforms",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "member_of",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "names",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "transforms",
+  "subject_sabs": [
+   "ILX.TR"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasreporterexpressionphenotype",
+  "subject_sabs": [
+   "JAX"
+  ],
+  "object_sabs": [
+   "NPOKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "role_of",
+  "subject_sabs": [
+   "NIFSTD"
+  ],
+  "object_sabs": [
+   "ILX.TR"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasbiologicalsex",
+  "subject_sabs": [
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "PATO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasphenotypemodifier",
+  "subject_sabs": [
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "PATO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "hasreporterexpressionphenotype",
+  "subject_sabs": [
+   "NPOKB"
+  ],
+  "object_sabs": [
+   "JAX"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasbiologicalsex",
+  "subject_sabs": [
+   "PATO"
+  ],
+  "object_sabs": [
+   "NPOKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "NPOSKCAN",
+  "predicate": "inverse_hasphenotypemodifier",
+  "subject_sabs": [
+   "PATO"
+  ],
+  "object_sabs": [
+   "NPOKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_has_amino_acid",
+  "subject_sabs": [
+   "AMINO.ACID"
+  ],
+  "object_sabs": [
+   "GLYGEN.LOCATION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "citation",
+  "subject_sabs": [
+   "GLYCOPROTEIN.EVIDENCE"
+  ],
+  "object_sabs": [
+   "GLYGEN.CITATION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "is_evidence_for",
+  "subject_sabs": [
+   "GLYCOPROTEIN.EVIDENCE"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "glycosylated_at",
+  "subject_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "object_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "has_evidence",
+  "subject_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN.EVIDENCE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "has_pro_entry",
+  "subject_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "object_sabs": [
+   "GP.ID2PRO"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "sequence",
+  "subject_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "object_sabs": [
+   "UNIPROTKB.ISOFORM"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "has_saccharide",
+  "subject_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "object_sabs": [
+   "GLYTOUCAN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_glycosylated_at",
+  "subject_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "location",
+  "subject_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "object_sabs": [
+   "GLYGEN.LOCATION"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_citation",
+  "subject_sabs": [
+   "GLYGEN.CITATION"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN.EVIDENCE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "has_amino_acid",
+  "subject_sabs": [
+   "GLYGEN.LOCATION"
+  ],
+  "object_sabs": [
+   "AMINO.ACID"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_location",
+  "subject_sabs": [
+   "GLYGEN.LOCATION"
+  ],
+  "object_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_has_saccharide",
+  "subject_sabs": [
+   "GLYTOUCAN"
+  ],
+  "object_sabs": [
+   "GLYCOSYLATION.SITE"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_has_pro_entry",
+  "subject_sabs": [
+   "GP.ID2PRO"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "has_isoform",
+  "subject_sabs": [
+   "UNIPROTKB"
+  ],
+  "object_sabs": [
+   "UNIPROTKB.ISOFORM"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_has_isoform",
+  "subject_sabs": [
+   "UNIPROTKB.ISOFORM"
+  ],
+  "object_sabs": [
+   "UNIPROTKB"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ },
+ {
+  "edge_sab": "PROTEOFORM",
+  "predicate": "inverse_sequence",
+  "subject_sabs": [
+   "UNIPROTKB.ISOFORM"
+  ],
+  "object_sabs": [
+   "GLYCOPROTEIN"
+  ],
+  "n_subjects": 1,
+  "n_objects": 1,
+  "triples": 1
+ }
+]
