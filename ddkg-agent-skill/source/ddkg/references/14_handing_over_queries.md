@@ -107,6 +107,11 @@ table or from a resolution the user has run, never from recall.
 
 ## Staged queries: hand over one step, then rebuild the next
 
+A diagnostic stage is a **gate**. If its result shows that the next query is
+not structurally valid — for example, the required source, endpoint type, or
+bridge is absent — do not write the dependent query anyway. Report the failed
+prerequisite and stop or propose a different scientifically valid route.
+
 Some chains genuinely need a decision in the middle. Choosing which pathway
 sets to keep is a scientific judgement — curated cascades and broad supersets
 carry similar names and give very different answers — and it should not be

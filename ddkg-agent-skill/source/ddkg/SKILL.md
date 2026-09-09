@@ -301,6 +301,21 @@ rather than inventing a predicate. A predicate can be one hop from the
 anchor and two from the answer — see the OMIM example in
 `05_entity_resolution.md`.
 
+**A diagnostic is a gate, not a caveat.** If a prerequisite check shows that
+the required anchor, source, entity type, or bridge is absent, do not compose
+the query that depends on it. State what failed and stop, or offer a different
+scientifically valid question.
+
+Before any intersection, subtraction, antijoin, or other cross-source set
+operation, verify that both sides attach to the same biological entity and
+identifier level. A source that reaches variants cannot be subtracted from a
+gene-level source as though both were gene sets.
+
+Likewise, a failed direct-link check establishes only that the direct link is
+absent. Before saying that a requested set must come from outside DDKG, inspect
+the anchor's neighbouring identifier spaces and the documented bridge
+relationships for an indirect graph route.
+
 ### 5. Apply the fixed rules
 
 Ten that decide whether a query returns the right rows. Everything else is
@@ -322,8 +337,11 @@ routed: `route.py <topic>` returns the rules bearing on this question, and
 - **A query spanning groups must aggregate**, not sort differently. If the
   `ORDER BY` column has fewer distinct values than the `LIMIT`, the query is
   wrong.
-- **Labels are decoration.** Reach `Term` with `OPTIONAL MATCH` and
-  `coalesce(t.name, c.CodeID)`. A required term edge kills a valid chain.
+- **Labels are decoration, but display labels still need a verified edge.**
+  Keep the `Term` hop `OPTIONAL`. When the source's preferred-term edge is
+  known, bind that one edge and use `coalesce(t.name, c.CodeID)`. If no
+  preferred-term edge is verified, display the `CodeID` rather than choosing
+  an arbitrary synonym or `collect(...)[0]` from an unbound term fan.
 - **Never filter on an optional property without allowing null** —
   `evidence_class`, and the numeric properties on `Code`.
 - **Constrain with the endpoint, not a SAB allowlist.** Put the SAB in

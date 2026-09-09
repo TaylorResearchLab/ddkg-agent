@@ -22,10 +22,10 @@ Relevant documentation:
 
 The DDKG project is moving toward the [JSON Knowledge Graph (JKG)](https://github.com/x-atlas-consortia/json-knowledge-graph/tree/main) representation. Later DDKG releases will therefore require corresponding skill versions rather than assuming that this release's query rules remain valid.
 
-**Current R7 archive:** 303,258 bytes  
-**SHA-256:** `eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60`
+**Current R8 release candidate:** 305,646 bytes  
+**SHA-256:** `f33334b293a4572b64198e1a7c039c61702bf6182b19ce7f5648d86102530546`
 
-See [`R7_BUILD.md`](R7_BUILD.md) for the build record.
+See [`R8_BUILD.md`](R8_BUILD.md) for the build record and freeze requirement.
 
 ## What the skill does
 
@@ -46,7 +46,7 @@ The graph, not the model, determines the result.
 
 `ddkg.skill` is an installable archive containing a small, self-routed knowledge and validation system. `SKILL.md` is the controller, but most DDKG-specific knowledge is deliberately separated into curated references, primary source documents, machine-readable registries, and a routing layer.
 
-The R7 archive contains **38 bundled files** and **239 routing relationships** checked by `route.py --check`.
+The R8 release candidate contains **38 bundled files** and **258 routing relationships** checked by `route.py --check`.
 
 A simplified view is:
 

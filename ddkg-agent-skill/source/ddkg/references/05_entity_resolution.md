@@ -44,6 +44,14 @@ in its label. Neither can a semantic-type filter on its own. The workable
 route is to enumerate, look, and select CodeIDs, which is why pathway
 selection is a staged decision rather than something to automate.
 
+## Synonym scans are candidate discovery only
+
+Concepts can carry unrelated or misleading synonym Terms. A reverse lookup
+that accepts an entity solely because *any* synonym matched can therefore
+resolve to the wrong Concept while still returning fluent-looking results.
+Treat synonym and substring scans as candidate discovery only: confirm the
+source Code and its preferred term before traversing onward.
+
 ## Species
 
 **The graph is not human-only.** `sources/ubkg_contexts.md` names these

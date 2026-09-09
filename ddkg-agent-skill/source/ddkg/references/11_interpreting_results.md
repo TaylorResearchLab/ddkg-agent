@@ -496,3 +496,17 @@ A result is not an answer until it carries its interpretation. Include:
 
 The user cannot supply these caveats themselves. That is the whole reason
 this skill exists rather than a text-to-Cypher box.
+
+## MED-RT contraindication endpoints are not disease-only
+
+**Confirmed on the target release.** The MED-RT relationship named
+`contraindicated_with_disease` has a looser endpoint range than its name
+suggests. Returned objects can include disease Concepts, but also age,
+life-stage, or pregnancy-related context. A query that keeps only objects
+carrying a disease vocabulary can therefore silently discard valid MED-RT
+contraindication assertions.
+
+What to do: return the endpoint Codes and inspect what each represents before
+applying an object-side vocabulary filter. Treat the predicate name as the
+source's relationship label, not as a guarantee that every object is a
+disease.

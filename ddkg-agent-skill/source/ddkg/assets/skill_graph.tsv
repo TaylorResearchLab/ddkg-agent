@@ -281,3 +281,24 @@ anatomy	answers	06_sab_registry.md#naming-traps	UBERON for species-neutral anato
 anatomy	must_read_with	05_entity_resolution.md#species
 marker	answers	08_dcc_endpoints.md#azimuth-az-and-hmaz
 marker	must_read_with	11_interpreting_results.md#what-each-evidence-type-actually-asserts	Azimuth markers are label-transfer discriminators, not expression profiles
+
+# ---------------------------------------------------------- R8 hardening
+comparison	must_read_with	15_query_rules.md#anchoring-and-cost	set operations require both sources at the same biological identifier level
+set difference	must_read_with	15_query_rules.md#anchoring-and-cost	verify shared entity identity before subtraction
+antijoin	must_read_with	15_query_rules.md#anchoring-and-cost	a failed comparability diagnostic stops the query
+negation	must_read_with	15_query_rules.md#anchoring-and-cost	absence is meaningful only after both sides are comparable
+intersection	must_read_with	15_query_rules.md#anchoring-and-cost	verify shared entity identity before intersecting
+ontology term	must_read_with	05_entity_resolution.md#a-predicate-can-be-one-hop-from-the-anchor-and-two-from-the-answer	no direct gene edge does not establish that no graph route exists
+gene set	must_read_with	05_entity_resolution.md#a-predicate-can-be-one-hop-from-the-anchor-and-two-from-the-answer	inspect neighbouring identifier spaces before requiring an external set
+label	must_read_with	18_row_multiplicity_and_identity_sinks.md#6-label-fans-bind-one-preferred-term-per-source	bind one verified preferred term edge or display CodeID
+display name	must_read_with	18_row_multiplicity_and_identity_sinks.md#6-label-fans-bind-one-preferred-term-per-source	do not select an arbitrary synonym from an unbound term fan
+synonym	must_read_with	05_entity_resolution.md#synonym-scans-are-candidate-discovery-only	confirm Code and preferred term before traversal
+name scan	must_read_with	05_entity_resolution.md#synonym-scans-are-candidate-discovery-only	matching any synonym is candidate discovery, not resolution
+ingest format	answers	04_identifier_conventions.md#ingest-syntax-is-not-stored-identity	submission syntax is normalized and is not a stored CodeID promise
+submission format	answers	04_identifier_conventions.md#ingest-syntax-is-not-stored-identity	do not paste ingest literals directly into Cypher
+stored identifier	must_read_with	04_identifier_conventions.md#ingest-syntax-is-not-stored-identity	separate input syntax, Concept.CUI, and CodeID
+compound	must_read_with	04_identifier_conventions.md#one-code-several-concepts	profile the full Concept fan from a Code before selecting one CUI
+drug	must_read_with	04_identifier_conventions.md#one-code-several-concepts	legitimate multi-CUI splits extend beyond minted twins
+entity	must_read_with	04_identifier_conventions.md#one-code-several-concepts	a Code can attach to several legitimate Concepts
+contraindication	must_read_with	11_interpreting_results.md#med-rt-contraindication-endpoints-are-not-disease-only	inspect endpoint type before filtering to disease vocabularies
+MED-RT	must_read_with	11_interpreting_results.md#med-rt-contraindication-endpoints-are-not-disease-only	predicate name does not guarantee disease-only objects

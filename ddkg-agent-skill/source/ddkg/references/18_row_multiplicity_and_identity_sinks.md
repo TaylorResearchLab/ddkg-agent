@@ -118,9 +118,12 @@ Codes carry several Terms. An unbound term match returns one row per Term.
   `-[:PT]->` match yields nothing and the CodeID fallback prints, which reads
   as missing data rather than as a wrong edge type.
 
-Keep the match `OPTIONAL` with `coalesce(term.name, code.CodeID)`: rule 4
-(labels are decoration) still holds. Binding a type is not the same as
-requiring one.
+Keep the label match `OPTIONAL`: labels are decoration, not constraints.
+For display, bind one verified preferred-term edge for the source being
+reported, then use `coalesce(term.name, code.CodeID)`. If no preferred-term
+edge is verified, display the `CodeID`. Do not choose an arbitrary synonym or
+use `collect(...)[0]` over an unbound term fan as the entity's name. Binding a
+preferred edge is not the same as requiring a label to exist.
 
 ## 7. Stored inverse orientations double rows
 
