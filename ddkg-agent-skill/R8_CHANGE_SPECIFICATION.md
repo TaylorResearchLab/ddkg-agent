@@ -16,10 +16,9 @@ R8 is a hardening release for the December 2025 DDKG (`DataDistillery_2025_04_DE
 8. **Synonym resolution.** Synonym and substring scans are candidate discovery only and require confirmation of the source Code and preferred term before traversal.
 9. **One Code, several Concepts.** Compound, drug, and general entity routing reaches the existing rule that a Code can attach to several legitimate Concepts, not only the minted-twin special case.
 10. **MED-RT endpoint range.** `contraindicated_with_disease` is not assumed to have disease-only objects; endpoint identity is inspected before applying a disease-vocabulary filter.
-11. **Release hygiene.** The formal R8 freeze requires the existing public hygiene checker to be run on both source and archive with an external deployment-specific denylist and `--require-denylist`.
 
 ## Verification before formal evaluation
 
-Static/build checks have passed for the release candidate. The remaining pre-freeze work is listed in `R8_REVIEW_CHECKLIST.md` and includes the external-denylist hygiene run and focused live engineering regressions against the target DDKG instance.
+Static/build checks have passed for the release candidate. The remaining pre-freeze work is listed in `R8_REVIEW_CHECKLIST.md` and consists of focused live engineering regressions against the target DDKG instance plus evaluation-packet preparation.
 
 The formal evaluation begins only after those checks, final archive freeze, prompt contamination audit, and construction of the new orthogonal Tier 8. Once formal evaluation begins, the archive is immutable.
