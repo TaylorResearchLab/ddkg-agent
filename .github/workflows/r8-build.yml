@@ -32,7 +32,22 @@ jobs:
           test "$(stat -c%s ddkg.skill)" = "303258"
 
       - name: Apply reviewed R8 hardening
-        run: python ddkg-agent-skill/apply_r8_hardening.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The R7 source wraps this sentence across two lines; normalize the
+          # one-time implementation helper before executing it.
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('ddkg-agent-skill/apply_r8_hardening.py')
+          text = p.read_text(encoding='utf-8')
+          old = '"""- **Threshold numbers on the Code node**, not the edge. Values live on bin Codes (`EXPBINS`, `PVALUEBINS`).\\n"""'
+          new = '"""- **Threshold numbers on the Code node**, not the edge. Values live on bin\\n  Codes (`EXPBINS`, `PVALUEBINS`).\\n"""'
+          if old not in text:
+              raise SystemExit('Threshold helper pattern not found')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          python ddkg-agent-skill/apply_r8_hardening.py
 
       - name: Validate routing
         shell: bash
@@ -102,7 +117,6 @@ jobs:
 
           This branch artifact is the **R8 release candidate**. Generic public-hygiene checks passed on both the source tree and built archive. Before the evaluation artifact is declared frozen, the release owner must rerun `check_public_skill_hygiene.py` on both source and archive with `--require-denylist` and an external deployment-specific denylist that is not committed to the repository.
           '''
-          # Remove indentation introduced by the workflow YAML block.
           record = '\n'.join(line[10:] if line.startswith('          ') else line for line in record.splitlines()) + '\n'
           (root / 'R8_BUILD.md').write_text(record, encoding='utf-8')
 
