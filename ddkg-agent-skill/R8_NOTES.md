@@ -1,5 +1,5 @@
-# R8 implementation notes
+# R8 notes
 
-R8 retains the December 2025 DDKG target and changes only query guidance, routing, interpretation safeguards, and release-validation procedure. It does not add a new graph schema or new DDKG data source.
+R8 remains a release candidate until the focused live engineering regressions are complete.
 
-The `.skill` archive is built only from `source/ddkg`; the R8 planning, checklist, and regression documents in this directory are repository records and are not bundled into the Agent Skill.
+The formal cross-assistant evaluation begins only after the archive is frozen. Once frozen, R8 is immutable through that evaluation; any new defect is recorded as a result rather than repaired in place.
