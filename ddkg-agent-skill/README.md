@@ -209,10 +209,7 @@ New behavioral results should be stored in a new dated results file and stamped 
 The unpacked public source for the archive is kept under [`source/ddkg/`](source/ddkg/).
 
 - `build_skill.py` rebuilds `ddkg.skill` deterministically after running `route.py --check`.
-- `check_public_skill_hygiene.py` scans a source tree or built archive for generic local/private artifacts and can accept an external deployment-specific denylist at release time.
 - [`R7_BUILD.md`](R7_BUILD.md) records the exact R7 archive size, checksum, routing count, and repair summary.
-
-Deployment-specific denylist terms should be kept outside the repository so that the release check does not itself publish private hostnames or institutional infrastructure names.
 
 ## What the skill does not do
 
@@ -233,7 +230,6 @@ ddkg-agent-skill/
 ├── README.md
 ├── R7_BUILD.md
 ├── build_skill.py
-├── check_public_skill_hygiene.py
 ├── ddkg.skill
 ├── source/
 │   └── ddkg/                    # unpacked source used to build ddkg.skill
