@@ -163,11 +163,14 @@ Ask once per session, not per query.
 
 ### Browser row cap
 
-The Neo4j Browser truncates result tables, in one observed case at exactly
-5,000 rows, with no warning. A result of exactly 5,000 rows should be assumed
-truncated. For large results use `cypher-shell` writing to a file, or raise
-`:config maxRows`. Combined with `ORDER BY`, a row cap amputates cleanly —
-an alphabetically sorted list cut at the limit is the head, not a sample.
+Neo4j Browser display limits are client- and configuration-dependent. Values
+of 1,000 and 5,000 rows were both observed during development, so neither is
+a universal Browser limit. Count first. If a result ends exactly at the
+active display limit, treat it as potentially truncated until the count or an
+export confirms completeness. For large results use `cypher-shell` writing to
+a file, or inspect/raise the active `:config maxRows` setting. Combined with
+`ORDER BY`, any display cap cuts off a clean prefix of the ordered list rather
+than producing a representative sample.
 
 ## Versioning
 

@@ -20,6 +20,11 @@ routed from the topics where it applies rather than held in working memory.
   `predicted_in {ERCCRBP}` has 268 edges against 462K for
   `molecularly_interacts_with`. Run a staged funnel, one leg per statement,
   before composing a multi-leg chain; the first zero is the dead constraint.
+- **Gate set operations on shared identity.** Before an intersection,
+  subtraction, antijoin, or negation, establish that both sources attach to
+  the same biological entity and identifier level. If one side reaches genes
+  and the other reaches variants, stop rather than subtracting the two result
+  sets and interpreting the empty or residual set biologically.
 - **Cap every stage.** `CALL (x) { ... LIMIT n }` per-row subqueries bound
   per-entity expansion, and symmetric predicates need a walk-back guard
   (`WHERE t <> g`) when hops are split across `MATCH` clauses. On Neo4j 5.26,
@@ -73,8 +78,11 @@ all for `ALOX12`.
   so apply a bin filter when the question means expression. Structure and
   occupancy: `17_gtex_bins_addendum.md`.
 
-- **Threshold numbers on the Code node**, not the edge. Values live on bin
-  Codes (`EXPBINS`, `PVALUEBINS`).
+- **Threshold by selecting bin identifiers.** GTEx expression and eQTL
+  thresholds are represented by `EXPBINS` and `PVALUEBINS` Codes. Enumerate
+  the available bin `CodeID` values first and select the bins required by the
+  threshold. Do not assume usable numeric lower/upper properties, and do not
+  construct a bin identifier from memory.
 - **`evidence_class` is heterogeneous.** Numeric strings on LINCS, assay types
   on IDGP, expert classifications on CLINGEN. Report it, never filter on it,
   never assume it is categorical.

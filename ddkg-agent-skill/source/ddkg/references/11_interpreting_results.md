@@ -314,8 +314,10 @@ names include supplier catalogue entries — grade, purity, packaging, vendor
 part numbers — so truncating a name list can leave a row with no recognisable
 chemical name.
 
-Return enough names to be useful, prefer the shortest as a display label, and
-do not assume the first is canonical.
+Use one verified source-specific preferred-term edge as the display label when
+that edge is known. Synonyms may be returned as additional audit information,
+but do not choose the first or shortest synonym as the entity name. If no
+preferred-term edge is verified, display the source `CodeID`.
 
 ## Errors amplify across hops
 
@@ -496,3 +498,17 @@ A result is not an answer until it carries its interpretation. Include:
 
 The user cannot supply these caveats themselves. That is the whole reason
 this skill exists rather than a text-to-Cypher box.
+
+## MED-RT contraindication endpoints are not disease-only
+
+**Confirmed on the target release.** The MED-RT relationship named
+`contraindicated_with_disease` has a looser endpoint range than its name
+suggests. Returned objects can include disease Concepts, but also age,
+life-stage, or pregnancy-related context. A query that keeps only objects
+carrying a disease vocabulary can therefore silently discard valid MED-RT
+contraindication assertions.
+
+What to do: return the endpoint Codes and inspect what each represents before
+applying an object-side vocabulary filter. Treat the predicate name as the
+source's relationship label, not as a guarantee that every object is a
+disease.

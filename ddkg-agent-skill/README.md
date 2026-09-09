@@ -22,10 +22,10 @@ Relevant documentation:
 
 The DDKG project is moving toward the [JSON Knowledge Graph (JKG)](https://github.com/x-atlas-consortia/json-knowledge-graph/tree/main) representation. Later DDKG releases will therefore require corresponding skill versions rather than assuming that this release's query rules remain valid.
 
-**Current R7 archive:** 303,258 bytes  
-**SHA-256:** `eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60`
+**Current R8 release candidate:** 305,719 bytes  
+**SHA-256:** `a8f24199de1855cb95fc2d0391ab6d1674ef00b7942dd40e9dfbdf27eac97486`
 
-See [`R7_BUILD.md`](R7_BUILD.md) for the build record.
+See [`R8_BUILD.md`](R8_BUILD.md) for the build record and freeze requirement.
 
 ## What the skill does
 
@@ -46,7 +46,7 @@ The graph, not the model, determines the result.
 
 `ddkg.skill` is an installable archive containing a small, self-routed knowledge and validation system. `SKILL.md` is the controller, but most DDKG-specific knowledge is deliberately separated into curated references, primary source documents, machine-readable registries, and a routing layer.
 
-The R7 archive contains **38 bundled files** and **239 routing relationships** checked by `route.py --check`.
+The R8 release candidate contains **38 bundled files** and **258 routing relationships** checked by `route.py --check`.
 
 A simplified view is:
 
@@ -209,10 +209,7 @@ New behavioral results should be stored in a new dated results file and stamped 
 The unpacked public source for the archive is kept under [`source/ddkg/`](source/ddkg/).
 
 - `build_skill.py` rebuilds `ddkg.skill` deterministically after running `route.py --check`.
-- `check_public_skill_hygiene.py` scans a source tree or built archive for generic local/private artifacts and can accept an external deployment-specific denylist at release time.
-- [`R7_BUILD.md`](R7_BUILD.md) records the exact R7 archive size, checksum, routing count, and repair summary.
-
-Deployment-specific denylist terms should be kept outside the repository so that the release check does not itself publish private hostnames or institutional infrastructure names.
+- [`R8_BUILD.md`](R8_BUILD.md) records the exact R8 release-candidate archive size, checksum, routing count, and repair summary.
 
 ## What the skill does not do
 
@@ -231,9 +228,8 @@ The public skill:
 ```text
 ddkg-agent-skill/
 ├── README.md
-├── R7_BUILD.md
+├── R8_BUILD.md
 ├── build_skill.py
-├── check_public_skill_hygiene.py
 ├── ddkg.skill
 ├── source/
 │   └── ddkg/                    # unpacked source used to build ddkg.skill

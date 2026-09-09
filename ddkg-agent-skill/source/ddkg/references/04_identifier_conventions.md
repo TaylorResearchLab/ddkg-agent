@@ -20,6 +20,20 @@ source stored, and the conventions disagree:
 
 No single rule converts a CURIE to a `CODE`.
 
+## Ingest syntax is not stored identity
+
+The bundled UBKG ingest-format documentation describes **submission input**.
+Forms such as `HGNC HGNC:9999`, `UBERON 0004086`, and underscore-delimited
+identifiers are accepted by the generation framework and normalized during
+ingestion. They are not a promise that the same literal string is stored in
+`Code.CodeID`, and copying a submission-format identifier into Cypher can
+return zero rows without an error. Query the stored `CodeID` form instead.
+
+A minted Concept identifier such as `UBERON:0002113 CUI` is also not a
+`CodeID`. The string with the ` CUI` suffix belongs in `Concept.CUI`; the Code
+remains `UBERON:0002113`. Keep ingest syntax, Concept identifiers, and Code
+identifiers separate.
+
 ```cypher
 MATCH (c:Code {CodeID:'MONDO:0006664'})          // reliable
 MATCH (c:Code {SAB:'MONDO', CODE:'0006664'})     // nothing — padding stripped
@@ -117,8 +131,9 @@ LIMIT 30
 
 Concepts sourced outside the UMLS carry a minted CUI of the form
 `SAB:CODE CUI` — so one Code can reach both a `C`-prefixed UMLS CUI and a
-minted one such as `HP:0001631 CUI`. Filtering on `CUI STARTS WITH 'C'` drops
-the minted ones.
+minted one such as `HP:0001631 CUI`. The ` CUI` suffix identifies a
+`Concept.CUI`; it is not part of the Code's `CodeID`. Filtering on
+`CUI STARTS WITH 'C'` drops the minted Concepts.
 
 ## One Code, several Concepts
 
