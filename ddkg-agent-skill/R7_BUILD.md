@@ -8,10 +8,10 @@
 
 ## R7 changes
 
-- Removed the private-deployment index assumption from the shipped schema reference.
+- Removed a deployment-specific index assumption from the shipped schema reference.
 - Made index and query-cost guidance deployment-neutral and based on `SHOW INDEXES`.
 - Documented the index consequence of function-wrapped `Term.name` predicates.
 - Reworked entity-resolution and hand-over recipes to reduce candidates before tolerant name matching.
-- Added deterministic source-to-archive rebuilding and a public-release hygiene check.
+- Added deterministic source-to-archive rebuilding.
 
 The DDKG schema target is unchanged. R7 is a skill repair for the December 2025 release.
