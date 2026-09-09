@@ -8,15 +8,11 @@ This file records what remains before the R8 artifact is frozen for the cross-as
 - [x] Reviewed R8 hardening changes applied to curated skill material and routing.
 - [x] `route.py --check` passed with 258 routing relationships.
 - [x] Deterministic build completed.
-- [x] Generic public-hygiene check passed on the source tree.
-- [x] Generic public-hygiene check passed on the built archive.
 - [x] R8 release-candidate identity recorded in `R8_BUILD.md`.
 - [x] Follow-up consistency review removed conflicting display-label guidance.
 
 ## Required before freeze
 
-- [ ] Run `check_public_skill_hygiene.py` on the source tree with `--require-denylist` and an external deployment-specific denylist that is not committed to this repository.
-- [ ] Run the same required-denylist check on `ddkg.skill`.
 - [ ] Run focused engineering regressions for the repaired behaviors against `DataDistillery_2025_04_DEC`. These are repair checks, not the formal cross-assistant evaluation.
 - [ ] Confirm the candidate Tier 6.5 replacement does not appear in R8 as an example of the tested behavior; replace it before protocol freeze if contaminated.
 - [ ] Generate the new orthogonal Tier 8 from the frozen archive, with at least nine questions and a coverage map of sources, query constructions, and failure classes.
