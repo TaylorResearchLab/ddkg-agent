@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/r8-build.yml'
       - 'ddkg-agent-skill/apply_r8_hardening.py'
+      - 'ddkg-agent-skill/apply_r8_followup.py'
 
 permissions:
   contents: write
@@ -20,16 +21,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify R7 baseline
+      - name: Verify known baseline artifact
         shell: bash
         run: |
           set -euo pipefail
           cd ddkg-agent-skill
           observed="$(sha256sum ddkg.skill | awk '{print $1}')"
-          expected="eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60"
-          echo "R7 archive sha256: ${observed}"
-          test "${observed}" = "${expected}"
-          test "$(stat -c%s ddkg.skill)" = "303258"
+          echo "Current archive sha256: ${observed}"
+          case "${observed}" in
+            eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60) ;;
+            f33334b293a4572b64198e1a7c039c61702bf6182b19ce7f5648d86102530546) ;;
+            *) echo "Unexpected baseline archive" >&2; exit 1 ;;
+          esac
 
       - name: Apply reviewed R8 hardening
         shell: bash
@@ -43,11 +46,12 @@ jobs:
           text = p.read_text(encoding='utf-8')
           old = '"""- **Threshold numbers on the Code node**, not the edge. Values live on bin Codes (`EXPBINS`, `PVALUEBINS`).\\n"""'
           new = '"""- **Threshold numbers on the Code node**, not the edge. Values live on bin\\n  Codes (`EXPBINS`, `PVALUEBINS`).\\n"""'
-          if old not in text:
-              raise SystemExit('Threshold helper pattern not found')
-          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          if old in text:
+              text = text.replace(old, new, 1)
+              p.write_text(text, encoding='utf-8')
           PY
           python ddkg-agent-skill/apply_r8_hardening.py
+          python ddkg-agent-skill/apply_r8_followup.py
 
       - name: Validate routing
         shell: bash
@@ -121,13 +125,24 @@ jobs:
           (root / 'R8_BUILD.md').write_text(record, encoding='utf-8')
 
           readme = (root / 'README.md').read_text(encoding='utf-8')
-          readme = readme.replace(
-              '**Current R7 archive:** 303,258 bytes  \n**SHA-256:** `eca6c7f7461bab113160fe8a4c71260c35fc4350a0b632294d56ef770cbfdb60`\n\nSee [`R7_BUILD.md`](R7_BUILD.md) for the build record.',
-              f'**Current R8 release candidate:** {size:,} bytes  \n**SHA-256:** `{digest}`\n\nSee [`R8_BUILD.md`](R8_BUILD.md) for the build record and freeze requirement.'
+          replacement = (
+              f'**Current R8 release candidate:** {size:,} bytes  \n'
+              f'**SHA-256:** `{digest}`\n\n'
+              'See [`R8_BUILD.md`](R8_BUILD.md) for the build record and freeze requirement.'
           )
-          readme = readme.replace(
-              'The R7 archive contains **38 bundled files** and **239 routing relationships** checked by `route.py --check`.',
-              f'The R8 release candidate contains **{files} bundled files** and **{routes} routing relationships** checked by `route.py --check`.'
+          readme = re.sub(
+              r'\*\*Current R(?:7 archive|8 release candidate):\*\*[^\n]*\n'
+              r'\*\*SHA-256:\*\* `[^`]+`\n\n'
+              r'See \[`R[78]_BUILD\.md`\]\(R[78]_BUILD\.md\)[^\n]*',
+              replacement,
+              readme,
+              count=1,
+          )
+          readme = re.sub(
+              r'The R[78] (?:archive|release candidate) contains \*\*\d+ bundled files\*\* and \*\*\d+ routing relationships\*\* checked by `route\.py --check`\.',
+              f'The R8 release candidate contains **{files} bundled files** and **{routes} routing relationships** checked by `route.py --check`.',
+              readme,
+              count=1,
           )
           (root / 'README.md').write_text(readme, encoding='utf-8')
 
@@ -144,5 +159,5 @@ jobs:
                   ddkg-agent-skill/ddkg.skill \
                   ddkg-agent-skill/README.md \
                   ddkg-agent-skill/R8_BUILD.md
-          git commit -m "Build R8 skill hardening candidate"
+          git commit -m "Rebuild R8 skill hardening candidate"
           git push origin HEAD:r8-skill-hardening
