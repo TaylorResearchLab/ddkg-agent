@@ -34,7 +34,7 @@ DCC_TRIPLES = ASSETS / "sab_triples_dcc.csv"
 DICTIONARY_TRIPLES = ASSETS / "data_dictionary_triples.json"
 
 
-@dataclass(frozen=True, order=True)
+@dataclass(frozen=True)
 class Transition:
     subject_sab: str
     predicate: str
@@ -43,9 +43,14 @@ class Transition:
     origin: str
     count: int | None = None
 
-    def label(self) -> str:
-        edge = f" / {self.edge_sab}" if self.edge_sab else ""
-        return f"{self.predicate}{edge}"
+    @property
+    def structural_key(self) -> tuple[str, str, str, str]:
+        return (
+            self.subject_sab,
+            self.predicate,
+            self.edge_sab,
+            self.object_sab,
+        )
 
 
 def load_dcc() -> list[Transition]:
@@ -118,9 +123,30 @@ def load_transitions(source: str) -> list[Transition]:
     if source in {"dictionary", "both"}:
         rows.extend(load_dictionary())
 
-    # Exact duplicate records are not useful to routing. Keep source-qualified
-    # variants distinct because the same predicate can be carried by several SABs.
-    return sorted(set(rows))
+    # Routing only needs one copy of the same structural transition. Prefer the
+    # record with an explicit edge SAB; otherwise keep the higher-count record.
+    chosen: dict[tuple[str, str, str, str], Transition] = {}
+    for row in rows:
+        key = row.structural_key
+        current = chosen.get(key)
+        if current is None:
+            chosen[key] = row
+            continue
+        current_count = current.count if current.count is not None else -1
+        row_count = row.count if row.count is not None else -1
+        if row_count > current_count:
+            chosen[key] = row
+
+    return sorted(
+        chosen.values(),
+        key=lambda t: (
+            t.subject_sab,
+            t.object_sab,
+            t.predicate,
+            t.edge_sab,
+            t.origin,
+        ),
+    )
 
 
 def build_adjacency(
@@ -186,6 +212,13 @@ def all_sabs(transitions: Iterable[Transition]) -> list[str]:
     )
 
 
+def canonical_sab(query: str, sabs: Iterable[str]) -> str:
+    """Resolve a SAB case-insensitively while preserving its stored spelling."""
+    lookup = {sab.upper(): sab for sab in sabs}
+    normalized = query.strip().upper()
+    return lookup.get(normalized, normalized)
+
+
 def export_binary_matrix(transitions: list[Transition], output: Path) -> None:
     """Export A[i,j] = 1 when at least one transition SAB_i -> SAB_j exists."""
     sabs = all_sabs(transitions)
@@ -201,8 +234,7 @@ def export_binary_matrix(transitions: list[Transition], output: Path) -> None:
 
 def print_path(start: str, path: list[Transition], index: int) -> None:
     print(f"Route {index}: {len(path)} transition(s)")
-    current = start
-    print(f"  {current}")
+    print(f"  {start}")
     for transition in path:
         source = f" [{transition.edge_sab}]" if transition.edge_sab else ""
         count = f"; count={transition.count}" if transition.count is not None else ""
@@ -210,7 +242,6 @@ def print_path(start: str, path: list[Transition], index: int) -> None:
             f"    --{transition.predicate}{source}--> {transition.object_sab}"
             f"   ({transition.origin}{count})"
         )
-        current = transition.object_sab
 
 
 def print_neighbors(adjacency: dict[str, list[Transition]], sab: str) -> int:
@@ -263,9 +294,10 @@ def main() -> int:
         transitions, require_edge_sab=args.require_edge_sab
     )
     active = [t for rows in adjacency.values() for t in rows]
+    sabs = all_sabs(active)
 
     if args.stats:
-        print(f"SABs: {len(all_sabs(active))}")
+        print(f"SABs: {len(sabs)}")
         print(f"Transitions: {len(active)}")
         print(
             "Source-qualified transitions: "
@@ -277,27 +309,29 @@ def main() -> int:
         print(f"Wrote {args.matrix_out}")
 
     if args.neighbors:
-        return print_neighbors(adjacency, args.neighbors)
+        return print_neighbors(adjacency, canonical_sab(args.neighbors, sabs))
 
     if args.start or args.target:
         if not (args.start and args.target):
             raise SystemExit("provide both start and target SABs")
+        start = canonical_sab(args.start, sabs)
+        target = canonical_sab(args.target, sabs)
         paths = shortest_paths(
             adjacency,
-            args.start,
-            args.target,
+            start,
+            target,
             top_k=args.top_k,
             max_hops=args.max_hops,
         )
         if not paths:
             print(
-                f"No route found from {args.start} to {args.target} "
+                f"No route found from {start} to {target} "
                 f"within {args.max_hops} transition(s)."
             )
             return 1
-        print(f"# {args.start} -> {args.target}\n")
+        print(f"# {start} -> {target}\n")
         for index, path in enumerate(paths, 1):
-            print_path(args.start, path, index)
+            print_path(start, path, index)
             if index != len(paths):
                 print()
         return 0
