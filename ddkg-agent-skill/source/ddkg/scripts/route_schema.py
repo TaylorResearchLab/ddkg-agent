@@ -12,6 +12,7 @@ Examples:
     python route_schema.py --neighbors HGNC
     python route_schema.py --stats
     python route_schema.py --matrix-out /tmp/ddkg_sab_matrix.tsv
+    python route_schema.py GO HGNC --transition-file /tmp/schema_transitions.csv
 
 A returned path is a structural candidate, not by itself a biologically valid
 query. Production use must add entity-role, species, and other guardrails so
@@ -32,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 DCC_TRIPLES = ASSETS / "sab_triples_dcc.csv"
 DICTIONARY_TRIPLES = ASSETS / "data_dictionary_triples.json"
+COMPILED_TRANSITIONS = ASSETS / "schema_transitions.csv"
 
 
 @dataclass(frozen=True)
@@ -51,6 +53,47 @@ class Transition:
             self.edge_sab,
             self.object_sab,
         )
+
+
+def parse_count(value: object) -> int | None:
+    if value in (None, ""):
+        return None
+    try:
+        return int(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def load_compiled(path: Path) -> list[Transition]:
+    """Load a transition CSV produced by build_schema_transitions.py."""
+    rows: list[Transition] = []
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        required = {"subject_sab", "predicate", "edge_sab", "object_sab"}
+        if not required.issubset(reader.fieldnames or []):
+            raise ValueError(
+                f"{path}: expected columns {sorted(required)}; found {reader.fieldnames}"
+            )
+        for lineno, row in enumerate(reader, 2):
+            subject = (row.get("subject_sab") or "").strip()
+            predicate = (row.get("predicate") or "").strip()
+            edge_sab = (row.get("edge_sab") or "").strip()
+            obj = (row.get("object_sab") or "").strip()
+            if not all((subject, predicate, edge_sab, obj)):
+                raise ValueError(f"{path}:{lineno}: empty required field")
+            origin = (row.get("provenance") or path.name).strip()
+            count = parse_count(row.get("observed_count") or row.get("edge_count"))
+            rows.append(
+                Transition(
+                    subject_sab=subject,
+                    predicate=predicate,
+                    edge_sab=edge_sab,
+                    object_sab=obj,
+                    origin=origin,
+                    count=count,
+                )
+            )
+    return rows
 
 
 def load_dcc() -> list[Transition]:
@@ -85,7 +128,7 @@ def load_dictionary() -> list[Transition]:
 
     This asset does not carry edge SAB as a separate field. Those transitions
     remain useful for reachability but are marked with an empty edge_sab so the
-    caller can distinguish them from fully source-qualified DCC transitions.
+    caller can distinguish them from fully source-qualified transitions.
     """
     raw = json.loads(DICTIONARY_TRIPLES.read_text(encoding="utf-8"))
     rows: list[Transition] = []
@@ -97,11 +140,7 @@ def load_dictionary() -> list[Transition]:
             raise ValueError(
                 f"{DICTIONARY_TRIPLES.name}: record {index} lacks subject/predicate/object"
             )
-        count_raw = item.get("count")
-        try:
-            count = int(count_raw) if count_raw not in (None, "") else None
-        except (TypeError, ValueError):
-            count = None
+        count = parse_count(item.get("count"))
         section = str(item.get("section", "data dictionary")).strip()
         rows.append(
             Transition(
@@ -116,15 +155,8 @@ def load_dictionary() -> list[Transition]:
     return rows
 
 
-def load_transitions(source: str) -> list[Transition]:
-    rows: list[Transition] = []
-    if source in {"dcc", "both"}:
-        rows.extend(load_dcc())
-    if source in {"dictionary", "both"}:
-        rows.extend(load_dictionary())
-
-    # Routing only needs one copy of the same structural transition. Prefer the
-    # record with an explicit edge SAB; otherwise keep the higher-count record.
+def deduplicate(rows: Iterable[Transition]) -> list[Transition]:
+    """Keep one copy of each structural transition, preferring richer records."""
     chosen: dict[tuple[str, str, str, str], Transition] = {}
     for row in rows:
         key = row.structural_key
@@ -132,11 +164,16 @@ def load_transitions(source: str) -> list[Transition]:
         if current is None:
             chosen[key] = row
             continue
-        current_count = current.count if current.count is not None else -1
-        row_count = row.count if row.count is not None else -1
-        if row_count > current_count:
+        current_score = (
+            1 if current.edge_sab else 0,
+            current.count if current.count is not None else -1,
+        )
+        row_score = (
+            1 if row.edge_sab else 0,
+            row.count if row.count is not None else -1,
+        )
+        if row_score > current_score:
             chosen[key] = row
-
     return sorted(
         chosen.values(),
         key=lambda t: (
@@ -147,6 +184,30 @@ def load_transitions(source: str) -> list[Transition]:
             t.origin,
         ),
     )
+
+
+def load_transitions(source: str, transition_file: Path | None) -> list[Transition]:
+    if transition_file is not None:
+        return deduplicate(load_compiled(transition_file))
+
+    if source == "auto":
+        if COMPILED_TRANSITIONS.is_file():
+            return deduplicate(load_compiled(COMPILED_TRANSITIONS))
+        source = "both"
+
+    if source == "compiled":
+        if not COMPILED_TRANSITIONS.is_file():
+            raise FileNotFoundError(
+                f"{COMPILED_TRANSITIONS} does not exist; run build_schema_transitions.py"
+            )
+        return deduplicate(load_compiled(COMPILED_TRANSITIONS))
+
+    rows: list[Transition] = []
+    if source in {"dcc", "both"}:
+        rows.extend(load_dcc())
+    if source in {"dictionary", "both"}:
+        rows.extend(load_dictionary())
+    return deduplicate(rows)
 
 
 def build_adjacency(
@@ -265,9 +326,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("target", nargs="?", help="target node SAB")
     parser.add_argument(
         "--source",
-        choices=("dcc", "dictionary", "both"),
-        default="both",
-        help="which bundled transition assets to use (default: both)",
+        choices=("auto", "compiled", "dcc", "dictionary", "both"),
+        default="auto",
+        help="transition source (default: compiled asset when present, else both seeds)",
+    )
+    parser.add_argument(
+        "--transition-file",
+        type=Path,
+        help="explicit schema transition CSV; overrides --source",
     )
     parser.add_argument("--top-k", type=int, default=3, help="shortest paths to return")
     parser.add_argument("--max-hops", type=int, default=6, help="maximum transitions")
@@ -289,7 +355,7 @@ def main() -> int:
     if args.top_k < 1 or args.max_hops < 1:
         raise SystemExit("--top-k and --max-hops must be >= 1")
 
-    transitions = load_transitions(args.source)
+    transitions = load_transitions(args.source, args.transition_file)
     adjacency = build_adjacency(
         transitions, require_edge_sab=args.require_edge_sab
     )
