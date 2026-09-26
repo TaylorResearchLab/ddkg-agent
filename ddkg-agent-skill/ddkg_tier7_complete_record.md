@@ -631,6 +631,52 @@ substantial loss, treat the mapped subset as a lower bound.
 
 ---
 
+### Recovered original 2 September interaction
+
+A separate original Claude interaction for the formal T7.5 test was recovered on 26 September 2026. This resolves an apparent discrepancy with a different exploratory ciliary-transition-zone chat that used a 19-gene seed list. The formal Tier 7 test used the 17-gene seed list below; the 19-gene interaction is therefore not substituted into this evaluation record.
+
+**User**
+
+> Which mouse phenotypes are associated with human orthologs of genes in the ciliary transition zone?
+
+**Claude**
+
+Claude first treated direct gene membership in `GO:0035869` as an empirical question and generated an anchor profile:
+
+```cypher
+MATCH (a:Concept)-[:HAS_CODE]->(:Code {CodeID:'GO:0035869'})
+MATCH (a)-[r]-(:Concept)
+RETURN type(r) AS predicate, r.SAB AS sab, count(*) AS n
+ORDER BY n DESC
+LIMIT 30
+```
+
+It stated the falsification criterion in advance: if the profile were entirely GO-internal, the graph would not directly supply the gene set; if a gene-bearing predicate appeared, that predicate should be used instead.
+
+For the cross-species query it then supplied a 17-gene seed list:
+
+```cypher
+WITH ['CEP290','TMEM67','MKS1','B9D1','B9D2','CC2D2A','TCTN1','TCTN2','TCTN3',
+      'AHI1','NPHP1','NPHP4','RPGRIP1L','TMEM216','TMEM231','TMEM138','TMEM237'] AS symbols
+MATCH (hc:Code {SAB:'HGNC'})-[:ACR]->(ht:Term)
+WHERE ht.name IN symbols
+MATCH (hg:Concept)-[:HAS_CODE]->(hc)
+MATCH (hg)-[:in_1_to_1_orthology_relationship_with {SAB:'HCOP'}]-(mg:Concept)
+MATCH (mg)-[:involved_in {SAB:'MPMGI'}]-(mp:Concept)
+MATCH (mp)-[:HAS_CODE]->(mpc:Code {SAB:'MP'})
+WITH ht.name AS gene, collect(DISTINCT mpc) AS mp_codes
+UNWIND mp_codes AS mpc
+OPTIONAL MATCH (mpc)-[:PT]->(mt:Term)
+RETURN gene,
+       collect(DISTINCT coalesce(mt.name, mpc.CodeID)) AS mouse_phenotypes
+ORDER BY gene
+LIMIT 50
+```
+
+Claude explicitly characterized the two bridge assertions: HCOP contributes 1:1 orthology, so a human gene without a clean 1:1 mouse ortholog can disappear as a mapping artifact; MPMGI `involved_in` is knockout/mutant-allele phenotype evidence, not expression or generic association evidence. It also noted that the `LIMIT` applies after grouping by gene, so phenotype lists for returned genes are complete even if the gene roster is capped.
+
+This recovered interaction matches the 17-seed formal test summarized in the ledger below. A separate 19-gene exploratory interaction recovered from Claude added `TMEM107` and `TMEM17`; that interaction is retained separately and should not be used to overwrite the formal T7.5 test history.
+
 ## 8 September execution
 
 ### 5a: the skill's falsification criterion was met
