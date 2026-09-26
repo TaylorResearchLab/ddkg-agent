@@ -2,7 +2,7 @@
 
 Nine tests, their design, and every result from both run sessions.
 
-**Scope of this record.** This is the historical evaluation record for the R5b-rebased archive used for the manuscript's Tier 7 evaluation. It records the test design, query-stage ledger, execution status, returned results, and resulting revisions. It is not validation of the later R7 archive. The ledger preserves every query stage and outcome but does not reproduce the full verbatim Cypher text for every generated stage.
+**Scope of this record.** This is the historical evaluation record for the R5b-rebased archive used for the manuscript's Tier 7 evaluation. It records the test design, query-stage ledger, execution status, returned results, and resulting revisions. It is not validation of the later R7 archive. Recovered original interactions are included where available, with generated Cypher preserved verbatim and bulky execution output summarized. The query ledger remains the compact index of stages, execution status, and outcomes.
 
 **Archive under test:** SHA-256
 `c092480a61f2e46efb3586aacfe2240a3cebb83a0c769c5dfa0eb5ea54b8c52b`
@@ -198,6 +198,50 @@ gene shows `n_eqtl = 0`, that is a join failure rather than an eQTL desert.
 
 **The pattern.** Interpretation is working; the mechanical rules are not. Both
 failing rules are in `SKILL.md` and neither fired.
+### Recovered original interaction
+
+**User**
+
+> Which genes are associated with Ehlers-Danlos syndrome in ClinVar but have no reported eQTL in GTEx?
+
+**Claude**
+
+Claude first noted that the ClinVar load was restricted to pathogenic/likely-pathogenic variants with assertion criteria met, and that the GTEx eQTL source was filtered to eQTLs present in every tissue. It therefore framed the requested negative as absence from the filtered DDKG eQTL set rather than absence of all GTEx regulation.
+
+**Stage 1: disease-name resolution**
+
+```cypher
+MATCH (c:Code)-[tr]->(t:Term)
+WHERE toLower(t.name) CONTAINS 'ehlers'
+  AND c.SAB IN ['MONDO','ORDO','OMIM','DOID','HP','MEDGEN','SNOMEDCT_US']
+MATCH (concept:Concept)-[:HAS_CODE]->(c)
+RETURN c.SAB, c.CodeID, concept.CUI, type(tr) AS term_edge, t.name
+ORDER BY c.SAB
+LIMIT 100
+```
+
+Claude instructed the user to scan the returned terms for false friends before continuing.
+
+**Stage 2: ClinVar genes partitioned by GTEx eQTL count**
+
+```cypher
+MATCH (dc:Code)-[]->(t:Term)
+WHERE toLower(t.name) CONTAINS 'ehlers'
+MATCH (d:Concept)-[:HAS_CODE]->(dc)
+MATCH (d)-[r:gene_associated_with_disease_or_phenotype {SAB:'CLINVAR'}]-(g:Concept)
+MATCH (g)-[:HAS_CODE]->(hg:Code {SAB:'HGNC'})
+WITH DISTINCT g, hg
+OPTIONAL MATCH (g)-[:located_in|location_of]-(e:Concept)-[:HAS_CODE]->(:Code {SAB:'GTEXEQTL'})
+WITH g, hg, count(DISTINCT e) AS n_eqtl
+OPTIONAL MATCH (hg)-[:ACR]->(sym:Term)
+RETURN coalesce(sym.name, hg.CodeID) AS gene, n_eqtl,
+       n_eqtl = 0 AS no_gtex_eqtl
+ORDER BY no_gtex_eqtl DESC, gene
+LIMIT 300
+```
+
+Claude explicitly supplied a falsification rule: if every returned gene had `n_eqtl = 0`, that pattern should be treated as a likely disjoint-source failure rather than a biological absence of eQTLs. The later execution showed that Stage 1 was truncated by the low-cardinality sort and Stage 2 did not complete.
+
 
 ---
 
@@ -280,6 +324,59 @@ association classes, their relative volumes for a worked anchor, and the rule
 that a DGN result should be reported by class rather than as a single count.
 Stage 3, which collects `assoc_classes` per gene, is the query shape that
 surfaces it.
+### Recovered original interaction
+
+**User**
+
+> What does DisGeNET say about hypertrophic cardiomyopathy?
+
+**Claude**
+
+Claude treated the internal DisGeNET model as something to inspect rather than assume.
+
+**Stage 1: resolve HCM and count DGN partners**
+
+```cypher
+MATCH (c:Code)-[tr]->(t:Term)
+WHERE toLower(t.name) CONTAINS 'hypertrophic cardiomyopathy'
+  AND c.SAB IN ['HP','MONDO','ORDO','OMIM','DOID','MEDGEN','SNOMEDCT_US','MSH','NCI']
+MATCH (d:Concept)-[:HAS_CODE]->(c)
+OPTIONAL MATCH (d)-[r {SAB:'DGN'}]-(x:Concept)
+RETURN c.SAB, c.CodeID, d.CUI, t.name AS disease_term,
+       type(r) AS dgn_predicate, count(DISTINCT x) AS dgn_partners
+ORDER BY dgn_partners DESC
+LIMIT 50
+```
+
+**Stage 2: inspect the endpoint vocabularies of the DGN partners**
+
+```cypher
+MATCH (d:Concept {CUI:'C0007194'})-[:refers_to {SAB:'DGN'}]-(x:Concept)
+MATCH (x)-[:HAS_CODE]->(xc:Code)
+RETURN xc.SAB AS partner_sab, count(DISTINCT x) AS n
+ORDER BY n DESC
+LIMIT 20
+```
+
+Claude cautioned that `C0007194` should be replaced with the CUI actually returned by Stage 1.
+
+**Stage 3: if the partners are DGN association nodes, traverse through them to genes**
+
+```cypher
+MATCH (d:Concept {CUI:'C0007194'})-[:refers_to {SAB:'DGN'}]-(assoc:Concept)
+MATCH (assoc)-[:refers_to {SAB:'DGN'}]-(g:Concept)-[:HAS_CODE]->(gc:Code {SAB:'HGNC'})
+WHERE g <> d
+OPTIONAL MATCH (gc)-[:ACR]->(sym:Term)
+OPTIONAL MATCH (assoc)-[:HAS_CODE]->(ac:Code)
+RETURN coalesce(sym.name, gc.CodeID) AS gene,
+       collect(DISTINCT ac.SAB) AS assoc_classes,
+       count(DISTINCT assoc) AS n_assoc
+ORDER BY n_assoc DESC
+LIMIT 50
+```
+
+The original response explicitly said that Stage 2, not prior documentation, should determine whether the intermediate association-node hop was required. Stage 3 was composed but not executed in the formal test.
+
 
 ---
 
@@ -560,6 +657,173 @@ and supplied the resolution query for it.
 
 Four rounds is slow, but each round eliminated a specific hypothesis and none
 repeated a failed approach.
+### Recovered original multi-turn interaction
+
+The original T7.4 interaction was iterative. The failed and corrected queries are retained because the test's main finding came from execution exposing two false assumptions in the skill.
+
+**User**
+
+> List genes expressed above 100 TPM in pancreas.
+
+**Claude: initial query**
+
+```cypher
+WITH ['EXPBINS:100.200','EXPBINS:200.300','EXPBINS:300.400','EXPBINS:400.500',
+      'EXPBINS:500.600','EXPBINS:600.700','EXPBINS:700.800','EXPBINS:800.900',
+      'EXPBINS:900.1000','EXPBINS:1000.2000','EXPBINS:2000.3000','EXPBINS:3000.4000',
+      'EXPBINS:4000.5000','EXPBINS:5000.6000','EXPBINS:6000.7000','EXPBINS:7000.8000',
+      'EXPBINS:8000.9000','EXPBINS:9000.10000','EXPBINS:10000.20000','EXPBINS:20000.30000',
+      'EXPBINS:30000.40000','EXPBINS:40000.50000','EXPBINS:50000.60000','EXPBINS:60000.70000',
+      'EXPBINS:70000.80000','EXPBINS:80000.90000','EXPBINS:90000.100000','EXPBINS:100000.300000'] AS hi_bins
+MATCH (tissue:Concept)-[:HAS_CODE]->(:Code {CodeID:'UBERON:0001264'})
+MATCH (tissue)-[:expressed_in {SAB:'GTEXEXP'}]-(m:Concept)
+MATCH (m)-[:has_expression {SAB:'GTEXEXP'}]-(:Concept)-[:HAS_CODE]->(bin:Code {SAB:'EXPBINS'})
+WHERE bin.CodeID IN hi_bins
+MATCH (m)-[:expressed_in {SAB:'GTEXEXP'}]-(g:Concept)
+WHERE g <> tissue
+MATCH (g)-[:HAS_CODE]->(hg:Code {SAB:'HGNC'})
+OPTIONAL MATCH (hg)-[:ACR]->(sym:Term)
+RETURN DISTINCT coalesce(sym.name, hg.CodeID) AS gene, hg.CodeID AS hgnc_id, bin.CodeID AS tpm_bin
+ORDER BY tpm_bin DESC, gene
+LIMIT 500
+```
+
+Claude also generated a bin-format verification:
+
+```cypher
+MATCH (b:Code {SAB:'EXPBINS'})
+WHERE b.CodeID STARTS WITH 'EXPBINS:1' OR b.CodeID STARTS WITH 'EXPBINS:2'
+   OR b.CodeID STARTS WITH 'EXPBINS:3' OR b.CodeID STARTS WITH 'EXPBINS:4'
+   OR b.CodeID STARTS WITH 'EXPBINS:5' OR b.CodeID STARTS WITH 'EXPBINS:6'
+   OR b.CodeID STARTS WITH 'EXPBINS:7' OR b.CodeID STARTS WITH 'EXPBINS:8'
+   OR b.CodeID STARTS WITH 'EXPBINS:9'
+RETURN collect(b.CodeID) AS bins
+```
+
+and an initial pancreas-resolution query:
+
+```cypher
+MATCH (m:Concept)-[:has_expression {SAB:'GTEXEXP'}]-(:Concept)
+WITH m LIMIT 100000
+MATCH (m)-[:expressed_in {SAB:'GTEXEXP'}]-(t:Concept)-[:HAS_CODE]->(uc:Code {SAB:'UBERON'})
+OPTIONAL MATCH (uc)-[:PT]->(tt:Term)
+WITH uc.CodeID AS ub, coalesce(tt.name, uc.CodeID) AS name, count(*) AS n
+WHERE toLower(name) CONTAINS 'pancrea'
+RETURN ub, name, n
+```
+
+**User**
+
+> No changes, no records.
+
+**Claude: discriminate tissue-anchor versus bin failure**
+
+```cypher
+MATCH (tissue:Concept)-[:HAS_CODE]->(:Code {CodeID:'UBERON:0001264'})
+OPTIONAL MATCH (tissue)-[r {SAB:'GTEXEXP'}]-(:Concept)
+RETURN count(DISTINCT tissue) AS anchor_concepts, count(r) AS gtexexp_edges
+```
+
+Claude additionally supplied a no-bin-filter check:
+
+```cypher
+MATCH (tissue:Concept)-[:HAS_CODE]->(:Code {CodeID:'UBERON:0001264'})
+MATCH (tissue)-[:expressed_in {SAB:'GTEXEXP'}]-(m:Concept)
+MATCH (m)-[:has_expression {SAB:'GTEXEXP'}]-(:Concept)-[:HAS_CODE]->(bin:Code {SAB:'EXPBINS'})
+RETURN bin.CodeID AS bin, count(*) AS n
+ORDER BY n DESC
+```
+
+**User**
+
+> anchor concepts =1, gtexexp edges=0
+
+**Claude: resolve the actual GTEx pancreas anchor**
+
+```cypher
+MATCH (uc:Code {SAB:'UBERON'})-[]->(t:Term)
+WHERE toLower(t.name) CONTAINS 'pancrea'
+WITH DISTINCT uc, collect(DISTINCT t.name) AS names
+MATCH (c:Concept)-[:HAS_CODE]->(uc)
+OPTIONAL MATCH (c)-[r {SAB:'GTEXEXP'}]-(:Concept)
+RETURN uc.CodeID AS ub, names, count(r) AS gtexexp_edges
+ORDER BY gtexexp_edges DESC
+LIMIT 50
+```
+
+The returned table identified `UBERON:0001150` (body of pancreas) as the only pancreatic UBERON code with GTEXEXP edges.
+
+Claude then reran the main query with that anchor but still using the original predicate and bin assumptions:
+
+```cypher
+WITH ['EXPBINS:100.200','EXPBINS:200.300','EXPBINS:300.400','EXPBINS:400.500',
+      'EXPBINS:500.600','EXPBINS:600.700','EXPBINS:700.800','EXPBINS:800.900',
+      'EXPBINS:900.1000','EXPBINS:1000.2000','EXPBINS:2000.3000','EXPBINS:3000.4000',
+      'EXPBINS:4000.5000','EXPBINS:5000.6000','EXPBINS:6000.7000','EXPBINS:7000.8000',
+      'EXPBINS:8000.9000','EXPBINS:9000.10000','EXPBINS:10000.20000','EXPBINS:20000.30000',
+      'EXPBINS:30000.40000','EXPBINS:40000.50000','EXPBINS:50000.60000','EXPBINS:60000.70000',
+      'EXPBINS:70000.80000','EXPBINS:80000.90000','EXPBINS:90000.100000','EXPBINS:100000.300000'] AS hi_bins
+MATCH (tissue:Concept)-[:HAS_CODE]->(:Code {CodeID:'UBERON:0001150'})
+MATCH (tissue)-[:expressed_in {SAB:'GTEXEXP'}]-(m:Concept)
+MATCH (m)-[:has_expression {SAB:'GTEXEXP'}]-(:Concept)-[:HAS_CODE]->(bin:Code {SAB:'EXPBINS'})
+WHERE bin.CodeID IN hi_bins
+MATCH (m)-[:expressed_in {SAB:'GTEXEXP'}]-(g:Concept)
+WHERE g <> tissue
+MATCH (g)-[:HAS_CODE]->(hg:Code {SAB:'HGNC'})
+OPTIONAL MATCH (hg)-[:ACR]->(sym:Term)
+RETURN DISTINCT coalesce(sym.name, hg.CodeID) AS gene, hg.CodeID AS hgnc_id, bin.CodeID AS tpm_bin
+ORDER BY tpm_bin DESC, gene
+LIMIT 500
+```
+
+This again returned no records.
+
+**Claude: graph-driven chain diagnostic**
+
+```cypher
+MATCH (tissue:Concept)-[:HAS_CODE]-(:Code {CodeID:'UBERON:0001150'})
+MATCH (tissue)-[r {SAB:'GTEXEXP'}]-(m:Concept)
+WITH type(r) AS tissue_edge, m
+LIMIT 5000
+OPTIONAL MATCH (m)-[r2 {SAB:'GTEXEXP'}]-(b:Concept)-[:HAS_CODE]-(bc:Code {SAB:'EXPBINS'})
+RETURN tissue_edge, type(r2) AS bin_edge,
+       count(DISTINCT m) AS measurements,
+       collect(DISTINCT bc.CodeID)[..30] AS sample_bins
+```
+
+The returned diagnostic showed `expresses` from the tissue side and bins such as `EXPBINS:100.0.200.0`. Claude then verified the corrected four-token parse:
+
+```cypher
+MATCH (bin:Code {SAB:'EXPBINS'})
+WITH bin.CodeID AS id, split(replace(bin.CodeID,'EXPBINS:',''),'.') AS p
+WHERE size(p) = 4 AND toInteger(p[0]) >= 100
+RETURN count(*) AS n_bins, collect(id) AS bins
+```
+
+and generated the final working query:
+
+```cypher
+MATCH (bin:Code {SAB:'EXPBINS'})
+WITH bin, split(replace(bin.CodeID,'EXPBINS:',''),'.') AS p
+WHERE size(p) = 4 AND toInteger(p[0]) >= 100
+WITH collect(bin) AS hi_bins
+MATCH (tissue:Concept)-[:HAS_CODE]-(:Code {CodeID:'UBERON:0001150'})
+MATCH (tissue)-[r1 {SAB:'GTEXEXP'}]-(m:Concept)
+MATCH (m)-[r2 {SAB:'GTEXEXP'}]-(bc:Concept)-[:HAS_CODE]-(bin:Code {SAB:'EXPBINS'})
+WHERE bin IN hi_bins
+MATCH (m)-[r3 {SAB:'GTEXEXP'}]-(g:Concept)-[:HAS_CODE]-(hg:Code {SAB:'HGNC'})
+WHERE g <> tissue
+OPTIONAL MATCH (hg)-[:ACR]-(sym:Term)
+RETURN DISTINCT coalesce(sym.name, hg.CodeID) AS gene,
+       hg.CodeID AS hgnc_id,
+       bin.CodeID AS tpm_bin,
+       toInteger(split(replace(bin.CodeID,'EXPBINS:',''),'.')[0]) AS tpm_lower
+ORDER BY tpm_lower DESC, gene
+LIMIT 500
+```
+
+The final execution returned 314 distinct HGNC genes and did not hit the row cap.
+
 
 ---
 
@@ -824,6 +1088,57 @@ assertion can express doubt:
 
 Sixteen genes carry a `Disputed` call. Counting a ClinGen hit as support would
 invert the finding for those, which is what the skill's guidance says.
+### Recovered original interaction
+
+**User**
+
+> Which genes have ClinGen gene-disease validity assertions but no OTG variant-disease association?
+
+**Claude**
+
+Claude distinguished gene-wide absence from pairwise disease-specific absence and implemented the gene-wide reading. Before differencing, it generated an endpoint-granularity probe:
+
+```cypher
+MATCH (a:Concept)-[r:has_variant_associated_with_disease]-(b:Concept)
+WITH a, b LIMIT 500
+OPTIONAL MATCH (a)-[:HAS_CODE]->(ca:Code)
+OPTIONAL MATCH (b)-[:HAS_CODE]->(cb:Code)
+RETURN collect(DISTINCT ca.SAB) + collect(DISTINCT cb.SAB) AS endpoint_code_sabs
+```
+
+It stated that the set difference was well-posed only if `HGNC` appeared among those endpoint vocabularies.
+
+**Count before listing**
+
+```cypher
+MATCH (g:Concept)-[:gene_disease_validity]-()
+MATCH (g)-[:HAS_CODE]->(:Code {SAB:'HGNC'})
+WITH DISTINCT g
+WITH g, EXISTS { (g)-[:has_variant_associated_with_disease]-() } AS has_otg
+RETURN count(g) AS clingen_genes,
+       sum(CASE WHEN has_otg THEN 1 ELSE 0 END) AS with_otg,
+       sum(CASE WHEN NOT has_otg THEN 1 ELSE 0 END) AS without_otg
+```
+
+**Antijoin listing**
+
+```cypher
+MATCH (g:Concept)-[v:gene_disease_validity]-(d:Concept)
+MATCH (g)-[:HAS_CODE]->(hg:Code {SAB:'HGNC'})
+WHERE NOT EXISTS { (g)-[:has_variant_associated_with_disease]-() }
+WITH g, hg, collect(DISTINCT v.evidence_class) AS clingen_classes,
+     count(DISTINCT d) AS n_disease_assertions
+OPTIONAL MATCH (hg)-[:ACR]->(t:Term)
+RETURN hg.CodeID AS hgnc,
+       coalesce(t.name, hg.CodeID) AS symbol,
+       clingen_classes,
+       n_disease_assertions
+ORDER BY symbol
+LIMIT 500
+```
+
+Claude explicitly returned `evidence_class` because a ClinGen assertion can be `Limited`, `Disputed`, or `Refuted`, and warned that absence from OTG reflects GWAS coverage rather than a biological negative. Execution later showed that OTG did not reach HGNC genes at all, so the requested gene-level antijoin was not meaningful.
+
 
 ---
 
@@ -916,6 +1231,31 @@ Cell types resolve to Azimuth annotation labels
 skill's own guidance to match assertions undirected unless direction is
 verified. It traverses correctly on this build, so the concern raised in review
 was unfounded.
+### Recovered original interaction
+
+**User**
+
+> What cell type marker genes does Azimuth provide for kidney?
+
+**Claude**
+
+Claude distinguished the `AZ` cell-type codes from the `HMAZ` marker assertions and generated:
+
+```cypher
+MATCH (ct:Concept)-[r:has_marker_gene_in_kidney {SAB:'HMAZ'}]->(g:Concept)
+MATCH (ct)-[:HAS_CODE]->(az:Code {SAB:'AZ'})
+MATCH (g)-[:HAS_CODE]->(hgnc:Code {SAB:'HGNC'})
+OPTIONAL MATCH (az)-[:PT]->(ct_term:Term)
+OPTIONAL MATCH (hgnc)-[:ACR]->(sym:Term)
+RETURN coalesce(ct_term.name, az.CodeID) AS cell_type,
+       collect(DISTINCT coalesce(sym.name, hgnc.CodeID)) AS marker_genes,
+       count(DISTINCT g) AS n_markers
+ORDER BY cell_type
+LIMIT 100
+```
+
+Claude stated a falsification bound in advance: the sum of `n_markers` should be at most the 485 kidney-marker relationships recorded for the source. It also characterized the returned genes as Azimuth label-transfer markers rather than a comprehensive kidney expression profile. The formal execution returned 49 cell types and 485 marker assignments.
+
 
 ---
 
@@ -993,6 +1333,51 @@ Fix — prefer a curated vocabulary for the display label:
 ```cypher
 OPTIONAL MATCH (xc)-[]->(t:Term) WHERE xc.SAB IN ['RXNORM','ATC','MSH','DRUGBANK']
 ```
+### Recovered original interaction
+
+**User**
+
+> Which drugs are contraindicated in patients with long QT syndrome?
+
+**Claude**
+
+Claude identified MED-RT as the relevant source and generated a single query spanning individual drugs, classes, mechanisms of action, and physiologic effects:
+
+```cypher
+// Drugs, drug classes, MoAs, and physiologic effects contraindicated
+// with long QT syndrome, per MED-RT
+MATCH (dcode:Code)-[dterm]->(dt:Term)
+WHERE trim(toLower(dt.name)) = 'long qt syndrome'
+  AND dcode.SAB IN ['MSH','SNOMEDCT_US','MONDO','DOID','OMIM','HP','NCI','MED-RT']
+MATCH (dz:Concept)-[:HAS_CODE]->(dcode)
+MATCH (dz)-[r]-(x:Concept)
+WHERE r.SAB = 'MED-RT'
+  AND type(r) IN ['has_contraindicated_drug','has_contraindicated_class',
+                  'has_contraindicated_mechanism_of_action',
+                  'has_contraindicated_physiologic_effect']
+WITH x, type(r) AS relation, collect(DISTINCT dcode.CodeID) AS disease_anchors
+OPTIONAL MATCH (x)-[:HAS_CODE]->(xc:Code)
+OPTIONAL MATCH (xc)-[]->(t:Term)
+WITH x, relation, disease_anchors,
+     collect(DISTINCT xc.SAB) AS code_sabs,
+     collect(DISTINCT coalesce(t.name, xc.CodeID))[0..3] AS names
+RETURN relation, x.CUI AS cui, names, code_sabs, disease_anchors
+ORDER BY relation, names[0]
+LIMIT 300
+```
+
+It also supplied a fallback disease-resolution query if the term match returned no rows:
+
+```cypher
+MATCH (c:Code)-[tr]->(t:Term)
+WHERE toLower(t.name) CONTAINS 'long qt'
+MATCH (concept:Concept)-[:HAS_CODE]->(c)
+RETURN c.SAB, c.CodeID, concept.CUI, type(tr) AS term_edge, t.name
+LIMIT 25
+```
+
+Claude distinguished MED-RT label assertions from independent clinical QT-risk stratification and recommended retaining class-level results if present. The main query executed with 17 distinct contraindicated concepts; for the resolved disease anchor, only `has_contraindicated_drug` returned rows.
+
 
 ---
 
@@ -1139,6 +1524,64 @@ aggregation to materialise before `LIMIT 50` discards anything.
 The composed form takes every HGNC-coded Concept and expands unbound before
 filtering for GO on the far side, which is the shape that crashed the instance
 in 9b. Not run rather than risk a second outage.
+### Recovered original interaction
+
+**User**
+
+> What are the electrophysiological parameters for ion channels associated with epilepsy?
+
+**Claude**
+
+Claude immediately split the question into an answerable gene-association component and an unavailable electrophysiology component. It stated that conductance, gating, kinetics, voltage dependence, and permeability were not represented in the loaded sources, and that IDG bioactivity was pharmacology rather than electrophysiology.
+
+**Stage 1: resolve epilepsy/seizure anchors**
+
+```cypher
+MATCH (t:Term)<-[tr]-(c:Code)<-[:HAS_CODE]-(con:Concept)
+WHERE toLower(t.name) IN ['epilepsy', 'seizure', 'seizures']
+RETURN con.CUI, c.SAB, c.CodeID, type(tr) AS term_edge, t.name
+LIMIT 40
+```
+
+**Stage 2: genes with source audit**
+
+```cypher
+MATCH (dt:Term)<-[dtr]-(dc:Code)<-[:HAS_CODE]-(disease:Concept)
+WHERE toLower(dt.name) = 'epilepsy'
+MATCH (disease)-[r]-(gene:Concept)-[:HAS_CODE]->(gc:Code {SAB:'HGNC'})
+WITH gc,
+     collect(DISTINCT r.SAB)     AS sources,
+     collect(DISTINCT type(r))   AS predicates,
+     collect(DISTINCT dc.CodeID) AS matched_disease_codes
+OPTIONAL MATCH (gc)-[:ACR]->(sym:Term)
+RETURN coalesce(sym.name, gc.CodeID) AS gene,
+       sources, predicates, matched_disease_codes
+ORDER BY size(sources) DESC
+LIMIT 50
+```
+
+**Conditional subtype traversal if the umbrella query were empty**
+
+```cypher
+MATCH (dt:Term)<-[dtr]-(dc:Code)<-[:HAS_CODE]-(disease:Concept)
+WHERE toLower(dt.name) = 'epilepsy'
+MATCH (disease)-[h:isa|inverse_isa]-(sub:Concept)-[:HAS_CODE]->(sc:Code)
+RETURN DISTINCT sub.CUI, sc.SAB, sc.CodeID, h.SAB AS hierarchy_source
+LIMIT 50
+```
+
+**Stage 3: discover the HGNC-to-GO predicate before defining ion-channel genes**
+
+```cypher
+MATCH (g:Concept)-[:HAS_CODE]->(:Code {SAB:'HGNC'})
+MATCH (g)-[r]-(f:Concept)-[:HAS_CODE]->(fc:Code {SAB:'GO'})
+RETURN type(r) AS predicate, r.SAB AS source, count(*) AS n
+ORDER BY n DESC
+LIMIT 20
+```
+
+Claude explicitly rejected symbol-prefix filtering such as `SCN%` or `KCN%` and proposed intersecting with the GO ion-channel activity subtree instead. In the 8 September execution, Stage 1 returned a truncated mixture of vocabularies, Stage 2 crashed the instance, and Stage 3 was not attempted because it shared the same expensive expansion pattern.
+
 
 ---
 
