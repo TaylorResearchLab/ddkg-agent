@@ -1,6 +1,8 @@
 # Tier 7: orthogonal evaluation — complete record
 
-Nine tests, their design, and every result from both run sessions.\n\n**Scope of this record.** This is the historical evaluation record for the R5b-rebased archive used for the manuscript's Tier 7 evaluation. It records the test design, query-stage ledger, execution status, returned results, and resulting revisions. It is not validation of the later R7 archive. The ledger preserves every query stage and outcome but does not reproduce the full verbatim Cypher text for every generated stage.
+Nine tests, their design, and every result from both run sessions.
+
+**Scope of this record.** This is the historical evaluation record for the R5b-rebased archive used for the manuscript's Tier 7 evaluation. It records the test design, query-stage ledger, execution status, returned results, and resulting revisions. It is not validation of the later R7 archive. The ledger preserves every query stage and outcome but does not reproduce the full verbatim Cypher text for every generated stage.
 
 **Archive under test:** SHA-256
 `c092480a61f2e46efb3586aacfe2240a3cebb83a0c769c5dfa0eb5ea54b8c52b`
@@ -333,6 +335,125 @@ named, aggregation before term expansion. Partners are F10, PLG, AGT, C1R, F2,
 SERPINC1, ITIH1, ANG — coagulation, complement, serpins, angiotensinogen:
 the hepatocyte secretory program, which is where PCSK9 sits. The answer's own
 caution about generic housekeeping hits did not materialise.
+
+### Recovered original interaction
+
+The original Claude interaction for T7.3 was recovered on 26 September 2026 from the shared September 2 conversation. UI chrome and repeated interface text are omitted below. The generated Cypher is preserved verbatim; execution outputs are summarized where the full row dump is not needed to identify the stage.
+
+**User**
+
+> Which genes are strongly co-expressed with PCSK9?
+
+**Claude**
+
+Claude first stated that `GTEXCOEXP` is a binary edge indicating a Pearson correlation above 0.99 in at least one GTEx tissue, with no stored coefficient or tissue identity to rank further. It then generated:
+
+```cypher
+MATCH (gc:Code {SAB:'HGNC'})-[:ACR]->(gt:Term)
+WHERE trim(gt.name) = 'PCSK9'
+MATCH (g:Concept)-[:HAS_CODE]->(gc)
+MATCH (g)-[r:coexpressed_with]-(p:Concept)
+MATCH (p)-[:HAS_CODE]->(pc:Code {SAB:'HGNC'})
+OPTIONAL MATCH (pc)-[:ACR]->(pt:Term)
+RETURN DISTINCT coalesce(trim(pt.name), pc.CodeID) AS partner,
+       pc.CodeID AS hgnc, r.SAB AS source
+ORDER BY partner
+LIMIT 100
+```
+
+It also supplied a truncation check:
+
+```cypher
+MATCH (gc:Code {SAB:'HGNC'})-[:ACR]->(gt:Term)
+WHERE trim(gt.name) = 'PCSK9'
+MATCH (g:Concept)-[:HAS_CODE]->(gc)
+MATCH (g)-[r:coexpressed_with]-(p:Concept)
+RETURN count(DISTINCT p) AS n_partners
+```
+
+**User**
+
+> It returns 0
+
+**Claude**
+
+Claude then generated three diagnostics in sequence.
+
+**1. Schema discriminator**
+
+```cypher
+CALL db.relationshipTypes() YIELD relationshipType
+WHERE relationshipType IN ['CODE','HAS_CODE']
+RETURN collect(relationshipType) AS concept_code_edge
+```
+
+**2. PCSK9 resolution**
+
+```cypher
+MATCH (gc:Code {SAB:'HGNC'})-[:ACR]->(gt:Term)
+WHERE trim(gt.name) STARTS WITH 'PCSK9'
+RETURN gc.CodeID, gt.name
+LIMIT 10
+```
+
+**3. Unfiltered anchor profile**
+
+```cypher
+MATCH (gc:Code {SAB:'HGNC'})-[:ACR]->(gt:Term)
+WHERE trim(gt.name) STARTS WITH 'PCSK9'
+MATCH (g:Concept)-[:HAS_CODE]->(gc)
+MATCH (g)-[r]-(:Concept)
+RETURN type(r) AS predicate, r.SAB AS source, count(*) AS n
+ORDER BY n DESC
+LIMIT 50
+```
+
+The schema check returned `HAS_CODE`. PCSK9 resolved to `HGNC:20001`, `PCSK9`. The anchor profile returned exactly 50 rows and was therefore truncated; the pasted tail contained only relationships with counts of two or one.
+
+Claude then generated a direct source-specific confirmation:
+
+```cypher
+MATCH (g:Concept)-[:HAS_CODE]->(:Code {CodeID:'HGNC:20001'})
+MATCH (g)-[r]-(p:Concept)
+WHERE r.SAB = 'GTEXCOEXP'
+RETURN type(r) AS predicate, count(DISTINCT p) AS n_partners
+```
+
+and, separately, an alternative-source inspection:
+
+```cypher
+MATCH (g:Concept)-[:HAS_CODE]->(:Code {CodeID:'HGNC:20001'})
+MATCH (g)-[r]-(p:Concept)
+WHERE r.SAB IN ['STRING','MSIGDB']
+MATCH (p)-[:HAS_CODE]->(pc:Code)
+OPTIONAL MATCH (pc)-[:ACR]->(pt:Term)
+RETURN type(r) AS predicate, r.SAB AS source,
+       coalesce(trim(pt.name), pc.CodeID) AS partner
+LIMIT 100
+```
+
+**User**
+
+The `GTEXCOEXP` confirmation returned no records. The STRING/MSigDB inspection returned 80 rows; the visible tail was dominated by MSigDB gene-set nodes, including `inverse_targets_expression_of_gene`, `inverse_has_marker_gene`, and `inverse_has_signature_gene`.
+
+**Claude**
+
+Claude treated the zero as a confirmed negative for `GTEXCOEXP` in this release, then explained that the MSigDB neighbors were gene-set nodes rather than partner genes. It generated a two-hop co-membership query restricted to signature and marker sets:
+
+```cypher
+MATCH (g:Concept)-[:HAS_CODE]->(:Code {CodeID:'HGNC:20001'})
+MATCH (g)-[r1:inverse_has_signature_gene|inverse_has_marker_gene]-(s:Concept)
+MATCH (s)-[r2:has_signature_gene|has_marker_gene]-(p:Concept)
+WHERE p <> g
+MATCH (p)-[:HAS_CODE]->(pc:Code {SAB:'HGNC'})
+WITH pc, count(DISTINCT s) AS shared_sets
+ORDER BY shared_sets DESC
+LIMIT 40
+OPTIONAL MATCH (pc)-[:ACR]->(pt:Term)
+RETURN coalesce(trim(pt.name), pc.CodeID) AS partner, pc.CodeID AS hgnc, shared_sets
+```
+
+This is the eight-stage sequence summarized in the query ledger below: initial query, optional count check, schema check, resolution check, anchor profile, explicit `GTEXCOEXP` confirmation, STRING/MSigDB inspection, and MSigDB co-membership query.
 
 ### Two observations
 
