@@ -195,12 +195,13 @@ The public test materials include:
 - [`ddkg_test_protocol.md`](ddkg_test_protocol.md)
 - [`ddkg_test_results_TEMPLATE.md`](ddkg_test_results_TEMPLATE.md)
 - [`ddkg_test_results_2026-08-18.md`](ddkg_test_results_2026-08-18.md)
+- [`ddkg_tier7_complete_record.md`](ddkg_tier7_complete_record.md)
 
 The protocol requires fresh conversations, verbatim query capture, and execution of generated queries against a real DDKG instance. The model's own statement that a query is correct is not a pass criterion.
 
 The 18 August 2026 results file predates later repairs and is retained only as an example of the testing method. Its pass/fail results do not transfer to R7.
 
-The orthogonal Tier 7 evaluation discussed in the accompanying manuscript was performed on an earlier R5b-rebased archive, SHA-256 `c092480a61f2e46efb3586aacfe2240a3cebb83a0c769c5dfa0eb5ea54b8c52b`. Those results likewise must not be presented as validation of R7. The complete Tier 7 record accompanies the manuscript as supplementary material.
+The orthogonal Tier 7 evaluation discussed in the accompanying manuscript was performed on an earlier R5b-rebased archive, SHA-256 `c092480a61f2e46efb3586aacfe2240a3cebb83a0c769c5dfa0eb5ea54b8c52b`. Those results likewise must not be presented as validation of R7. The historical evaluation record is available in [`ddkg_tier7_complete_record.md`](ddkg_tier7_complete_record.md). It records the test design, query-stage ledger, execution status, returned results, and revisions from that evaluation.
 
 New behavioral results should be stored in a new dated results file and stamped with the SHA-256 of the exact `ddkg.skill` archive under test.
 
@@ -235,7 +236,8 @@ ddkg-agent-skill/
 │   └── ddkg/                    # unpacked source used to build ddkg.skill
 ├── ddkg_test_protocol.md
 ├── ddkg_test_results_2026-08-18.md
-└── ddkg_test_results_TEMPLATE.md
+├── ddkg_test_results_TEMPLATE.md
+└── ddkg_tier7_complete_record.md
 ```
 
 `ddkg.skill` is the installable artifact. The source tree makes the archive inspectable and reproducible rather than leaving the public skill as an opaque binary package.
