@@ -1750,7 +1750,7 @@ is wrong. Query 4 stopped constructing and asked the graph.
 | # | Query | Status | Outcome |
 | --- | --- | --- | --- |
 | 5a | `GO:0035869` neighbourhood profile | ran | 8 rows. No HGNC. `has_part`/`part_of` UNIPROTKB 67, GO 7, `ro` GO 4, `isa` MP 3, GO 2 |
-| 5b | 17 seed symbols → HCOP 1:1 → MPMGI → MP | ran | **16 of 17 genes.** Only TMEM216 dropped |
+| 5b | 17 seed symbols → HCOP 1:1 → MPMGI → MP | ran | **16 of 17 genes.** Only TMEM216 was absent; later direct follow-up found 1 HCOP ortholog and 0 MPMGI phenotype assertions |
 
 5a satisfied the skill's falsification criterion. The 67 UniProtKB `part_of`
 edges are a protein-layer route the skill's conclusion did not allow for.
