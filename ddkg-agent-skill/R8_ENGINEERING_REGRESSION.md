@@ -15,5 +15,10 @@ Run each against `DataDistillery_2025_04_DEC` using the R8 release candidate. Ex
 | Synonym candidate discovery | Resolve an entity from a broad synonym/name scan | Treat the scan as candidate discovery and confirm source Code/preferred term before traversal. |
 | One Code, several Concepts | Compound/drug identifier attached to more than one Concept | Carry/profile the full Concept fan; do not select one arbitrary CUI with `LIMIT 1`. |
 | MED-RT endpoint range | Contraindications with contextual endpoints | Inspect returned endpoint Codes before filtering to disease vocabularies; retain valid non-disease context assertions. |
+| Query-cost/index-aware resolution | Broad entity resolution followed by a potentially expensive traversal | Inspect active indexes when cost matters, avoid function-wrapped indexed-name scans where possible, stage resolution before fan-out, and use EXPLAIN/PROFILE when appropriate. |
+| Scientific adverse-result reporting | A task where a valid positive component coexists with a negative, impossible, incomplete, failed, or unsupported component | Surface the adverse component prominently, classify it correctly, and do not let the positive branch erase or soften it. Distinguish validated negative, data absence, unsupported derivation, execution failure, incomplete result, and evidence conflict. |
+| Clean-result control | A fully supported task with no material negative or failed component | Do not invent a defect or manufacture uncertainty merely to satisfy the critical-reporting rule. Ordinary evidence caveats remain allowed when grounded in the source. |
 
 A regression is complete only when the generated query or refusal/stop behavior is inspected against execution output where execution is applicable. These checks are completed before the archive is declared frozen.
+
+The adverse-result reporting regression is a scientific integrity check. Passing requires the final answer, not just the internal reasoning, to disclose any narrative-changing negative or impossible component. A hidden or end-loaded caveat is a failure when it would materially change the user's scientific interpretation.
