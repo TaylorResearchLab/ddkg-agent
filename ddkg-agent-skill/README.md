@@ -25,7 +25,7 @@ The DDKG project is moving toward the [JSON Knowledge Graph (JKG)](https://githu
 **Current R8 release candidate:** 305,719 bytes  
 **SHA-256:** `a8f24199de1855cb95fc2d0391ab6d1674ef00b7942dd40e9dfbdf27eac97486`
 
-See [`R8_DESIGN_SPEC.md`](R8_DESIGN_SPEC.md) for the pre-freeze design authority and [`R8_BUILD.md`](R8_BUILD.md) for the current candidate build record.
+See [`R8_BUILD.md`](R8_BUILD.md) for the current candidate build record and freeze requirement.
 
 ## What the skill does
 
