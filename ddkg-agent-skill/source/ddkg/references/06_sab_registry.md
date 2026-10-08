@@ -2,13 +2,18 @@
 
 Derived from the live December 2025 build, not from the User Guide's examples.
 **289 node SABs**, **143 edge SABs**, 109 appearing as both.
-20,599,990 Code nodes and 186,651,416 relationships in total.
+There are 20,599,990 Code nodes, all carrying an SAB. Of 186,651,416 total
+relationships, 131,710,076 carry a source SAB and 54,941,340 are structural or
+lexical relationships without an SAB.
 
 The guide demonstrates 42 of these. The rest are mostly UMLS vocabularies
 that no DCC use case happens to touch — real, queryable, and invisible to
 anyone working from the examples alone.
 
-Full lists: `assets/node_sabs.csv`, `assets/edge_sabs.csv`.
+Full lists: `assets/node_sabs.csv`, `assets/edge_sabs.csv`. The unified
+count-and-annotation table is `assets/sab_manifest.csv`; see
+`19_sab_inventory_and_standards.md` for counting semantics and curated
+community-standard annotations.
 
 ## Contents
 
