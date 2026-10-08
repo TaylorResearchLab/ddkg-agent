@@ -1,0 +1,324 @@
+sab,code_node_count,source_edge_count,presence,common_name,resource_class,domain,common_standard_or_vocabulary,notes
+0000016542,1,0,node_only,,other_or_unclassified,,no,
+127230,1,0,node_only,,other_or_unclassified,,no,
+127231,1,0,node_only,,other_or_unclassified,,no,
+127232,1,0,node_only,,other_or_unclassified,,no,
+127234,1,0,node_only,,other_or_unclassified,,no,
+127235,1,0,node_only,,other_or_unclassified,,no,
+203750,1,0,node_only,,other_or_unclassified,,no,
+22-RDF-SYNTAX-NS,1,0,node_only,,other_or_unclassified,,no,
+231670,1,0,node_only,,other_or_unclassified,,no,
+246450,1,0,node_only,,other_or_unclassified,,no,
+251000,1,0,node_only,,other_or_unclassified,,no,
+251110,1,0,node_only,,other_or_unclassified,,no,
+3B75,1,0,node_only,,other_or_unclassified,,no,
+4DN,0,2589950,edge_only,4D Nucleome (4DN),common_fund_dataset,3d_genomics,no,Edge SAB; 4DN node content uses separate 4DN* SABs
+4DND,12,0,node_only,,other_or_unclassified,,no,
+4DNF,12,0,node_only,,other_or_unclassified,,no,
+4DNL,215822,0,node_only,4D Nucleome loop records,common_fund_dataset,3d_genomics,no,4DN loop nodes
+4DNQ,354,0,node_only,,other_or_unclassified,,no,
+9606,1,0,node_only,,other_or_unclassified,,no,
+AIBS.MUS.LAB,1,0,node_only,,other_or_unclassified,,no,
+ALLENTRANSGENICLINE,2,0,node_only,,other_or_unclassified,,no,
+ALT,4669,9312,both,,other_or_unclassified,,no,
+AMINO.ACID,7,0,node_only,,other_or_unclassified,,no,
+AOT,240,1550,both,,other_or_unclassified,,no,
+APOLLO,2,0,node_only,,other_or_unclassified,,no,
+ATC,6897,13608,both,Anatomical Therapeutic Chemical Classification,clinical_standard,drugs,yes,Drug classification
+AZ,730,2912,both,Azimuth,research_resource,cell_type_annotation,no,Azimuth cell-type annotation nodes
+BAO,4,0,node_only,BioAssay Ontology,community_ontology,bioassays,yes,Bioassay description
+BIOMARKER,183546,907912,both,,other_or_unclassified,,no,
+BTO,66,0,node_only,,other_or_unclassified,,no,
+CARO,1,0,node_only,,other_or_unclassified,,no,
+CCC,382,4538,both,,other_or_unclassified,,no,
+CCS,1188,46588,both,,other_or_unclassified,,no,
+CCSR_ICD10CM,555,469986,both,,other_or_unclassified,,no,
+CCSR_ICD10PCS,361,158532,both,,other_or_unclassified,,no,
+CDCREC,1324,6580,both,,other_or_unclassified,,no,
+CDT,918,1838,both,,other_or_unclassified,,no,
+CEDAR,260,3410,both,,other_or_unclassified,,no,
+CEDAR_ENTITY,0,88,edge_only,,other_or_unclassified,,no,
+CHEBI,202642,741148,both,ChEBI,community_ontology,chemicals,yes,Chemical Entities of Biological Interest
+CHMO,4,0,node_only,,other_or_unclassified,,no,
+CHV,57795,0,node_only,,other_or_unclassified,,no,
+CL,3232,19946,both,Cell Ontology,community_ontology,cell_types,yes,Cell type ontology
+CLINGEN,0,6090,edge_only,ClinGen,research_resource,clinical_genomics,no,Edge-only ClinGen assertions
+CLINGEN.ALLELE.REGISTRY,63051,0,node_only,,other_or_unclassified,,no,
+CLINVAR,0,123344,edge_only,ClinVar,research_resource,clinical_variants,no,Edge-only ClinVar assertions
+CLM,41,0,node_only,,other_or_unclassified,,no,
+CLO,434,0,node_only,,other_or_unclassified,,no,
+CMAP,0,2451782,edge_only,Connectivity Map,research_dataset,perturbation,no,Edge-only Connectivity Map assertions
+COB,2,0,node_only,,other_or_unclassified,,no,
+CODAO,1,0,node_only,,other_or_unclassified,,no,
+CONJUGATE,3,0,node_only,,other_or_unclassified,,no,
+CORE,2,0,node_only,,other_or_unclassified,,no,
+CPM,3099,11692,both,,other_or_unclassified,,no,
+CPT,15245,288802,both,Current Procedural Terminology (CPT),clinical_standard,procedures,yes,Procedure terminology
+CSP,8912,71244,both,,other_or_unclassified,,no,
+CVX,287,848,both,,other_or_unclassified,,no,
+DBSNP,309035,0,node_only,dbSNP,community_vocabulary,variants,yes,NCBI variant identifiers
+DCTH,43,164,both,,other_or_unclassified,,no,
+DGN,0,15741306,edge_only,DisGeNET,research_resource,gene_disease,no,Edge-only source with multiple DGN association-node vocabularies
+DGNAGE,638378,0,node_only,,other_or_unclassified,,no,
+DGNBM,1705576,0,node_only,,other_or_unclassified,,no,
+DGNCM,65588,0,node_only,,other_or_unclassified,,no,
+DGNCR,223,0,node_only,,other_or_unclassified,,no,
+DGNFU,315,0,node_only,,other_or_unclassified,,no,
+DGNGCM,6275,0,node_only,,other_or_unclassified,,no,
+DGNGDA,29135,0,node_only,,other_or_unclassified,,no,
+DGNGMM,65,0,node_only,,other_or_unclassified,,no,
+DGNGV,800444,0,node_only,,other_or_unclassified,,no,
+DGNMM,326,0,node_only,,other_or_unclassified,,no,
+DGNSCM,285,0,node_only,,other_or_unclassified,,no,
+DGNSM,1260,0,node_only,,other_or_unclassified,,no,
+DGNTH,10744,0,node_only,,other_or_unclassified,,no,
+DGNV,736241,0,node_only,,other_or_unclassified,,no,
+DOID,12000,42478,both,Disease Ontology,community_ontology,diseases,yes,Human disease ontology
+DRON,1,0,node_only,,other_or_unclassified,,no,
+DRUGBANK,10903,0,node_only,,other_or_unclassified,,no,
+DSM-5,873,2202,both,,other_or_unclassified,,no,
+EDAM,2403,8200,both,EDAM,community_ontology,bioinformatics,yes,"Bioinformatics operations, data, topics, and formats"
+EFO,16424,193336,both,Experimental Factor Ontology,community_ontology,experimental_factors,yes,Experimental variables and traits
+EFO-0000572,1,0,node_only,,other_or_unclassified,,no,
+EFO-0002009,1,0,node_only,,other_or_unclassified,,no,
+EMAPA,8004,44560,both,EMAPA,community_ontology,mouse_developmental_anatomy,yes,Mouse developmental anatomy
+ENCODE.CCRE,342850,0,node_only,ENCODE candidate cis-Regulatory Elements,research_dataset,regulatory_genomics,no,ENCODE cCRE identifiers
+ENCODE.CCRE.ACTIVITY,2196935,0,node_only,ENCODE cCRE activity,research_dataset,regulatory_genomics,no,ENCODE cCRE activity records
+ENCODE.CCRE.CTCF,2,0,node_only,,other_or_unclassified,,no,
+ENCODE.CCRE.H3K27AC,2,0,node_only,,other_or_unclassified,,no,
+ENCODE.CCRE.H3K4ME3,2,0,node_only,,other_or_unclassified,,no,
+ENCODE.RBS.150.NO.OVERLAP,462297,0,node_only,ENCODE RNA-binding sites,research_dataset,regulatory_genomics,no,ENCODE RNA-binding-site layer
+ENSEMBL,336662,0,node_only,Ensembl,community_vocabulary,genes_genomics,yes,Genome and gene annotation identifiers
+ENTREZ,25806,0,node_only,,other_or_unclassified,,no,
+ENVO,7,0,node_only,Environment Ontology,community_ontology,environment,yes,Environmental entities and features
+EO,43,0,node_only,,other_or_unclassified,,no,
+ERCCRBP,0,1908926,edge_only,,other_or_unclassified,,no,
+ERCCREG,0,29794186,edge_only,,other_or_unclassified,,no,
+ERO,1,0,node_only,,other_or_unclassified,,no,
+EXPBINS,159,0,node_only,,other_or_unclassified,,no,
+FALDO,18,40,both,,other_or_unclassified,,no,
+FBBT,108,0,node_only,,other_or_unclassified,,no,
+FBDV,1,0,node_only,,other_or_unclassified,,no,
+FLU,1,0,node_only,,other_or_unclassified,,no,
+FMA,104379,366852,both,Foundational Model of Anatomy,community_ontology,anatomy,yes,Human anatomy ontology
+FOAF,1,0,node_only,,other_or_unclassified,,no,
+FTU2D,186,724,both,,other_or_unclassified,,no,
+GCO,4,0,node_only,,other_or_unclassified,,no,
+GENCODE,0,3530426,edge_only,GENCODE,research_resource,genome_annotation,no,Edge-only GENCODE assertions
+GENCODE_VS,108,214,both,,other_or_unclassified,,no,
+GENCODEHSCLO,0,1181976,edge_only,GENCODE-HSCLO bridge,ddkg_bridge,genome_annotation,no,Connects GENCODE features to HSCLO
+GEO,6,0,node_only,,other_or_unclassified,,no,
+GETSDS.JSP?MMRRC,9,0,node_only,,other_or_unclassified,,no,
+GLYCAN,135,0,node_only,,other_or_unclassified,,no,
+GLYCAN.MOTIF,120,0,node_only,,other_or_unclassified,,no,
+GLYCANS,0,929318,edge_only,GlyGen glycan assertions,common_fund_dataset,glycomics,no,Edge-only GlyGen glycan relations
+GLYCOCOO,0,38,edge_only,,other_or_unclassified,,no,
+GLYCOPROTEIN,61353,0,node_only,,other_or_unclassified,,no,
+GLYCOPROTEIN.EVIDENCE,2088,0,node_only,,other_or_unclassified,,no,
+GLYCORDF,0,192,edge_only,,other_or_unclassified,,no,
+GLYCOSYLATION.SITE,52450,0,node_only,,other_or_unclassified,,no,
+GLYCOSYLTRANSFERASE.REACTION,91,0,node_only,,other_or_unclassified,,no,
+GLYGEN.CITATION,2088,0,node_only,,other_or_unclassified,,no,
+GLYGEN.GLYCOSEQUENCE,117146,0,node_only,GlyGen glycan sequences,common_fund_dataset,glycomics,no,GlyGen sequence nodes
+GLYGEN.GLYCOSYLATION,91,0,node_only,,other_or_unclassified,,no,
+GLYGEN.LOCATION,52450,0,node_only,,other_or_unclassified,,no,
+GLYGEN.RESIDUE,80,0,node_only,,other_or_unclassified,,no,
+GLYGEN.SRC,30986,0,node_only,,other_or_unclassified,,no,
+GLYTOUCAN,33755,0,node_only,GlyTouCan,community_vocabulary,glycans,yes,Glycan accession vocabulary used by GlyGen
+GO,40278,238658,both,Gene Ontology,community_ontology,function_process_component,yes,"Molecular function, biological process, cellular component"
+GP.ID2PRO,61353,0,node_only,,other_or_unclassified,,no,
+GS,40893,0,node_only,,other_or_unclassified,,no,
+GTEXCOEXP,0,1078034,edge_only,GTEx co-expression,research_dataset,coexpression,no,Edge-only source
+GTEXEQTL,1270900,8237366,both,GTEx eQTL,research_dataset,eqtl,no,GTEx eQTL records
+GTEXEXP,2073492,12437928,both,GTEx expression,research_dataset,gene_expression,no,GTEx expression measurements
+HANCESTRO,33,0,node_only,Human Ancestry Ontology,community_ontology,ancestry,yes,Human ancestry terminology
+HAS.PRO.ENTRY,1,0,node_only,,other_or_unclassified,,no,
+HCDT,800,10,both,,other_or_unclassified,,no,
+HCOP,0,135868,edge_only,HCOP orthology,research_resource,orthology,no,Edge-only human-mouse 1:1 orthology assertions
+HCPCS,7925,20272,both,Healthcare Common Procedure Coding System (HCPCS),clinical_standard,procedures,yes,US procedure/supply coding
+HCPT,11388,438,both,,other_or_unclassified,,no,
+HGNC,44245,0,node_only,HUGO Gene Nomenclature Committee,community_vocabulary,genes,yes,Standard human gene nomenclature
+HGNCHPO,0,1314616,edge_only,HGNC-HPO associations,ddkg_bridge,gene_phenotype,no,Edge-only HGNC/HPO association layer
+HL7V2.5,3430,9926,both,,other_or_unclassified,,no,
+HL7V3.0,9631,20096,both,,other_or_unclassified,,no,
+HMAZ,0,1820,edge_only,HuBMAP/Azimuth marker assertions,ddkg_bridge,cell_type_markers,no,Edge-only marker relationships
+HMDB,18,0,node_only,,other_or_unclassified,,no,
+HMFIELD,484,9336,both,,other_or_unclassified,,no,
+HP,20730,51414,both,Human Phenotype Ontology (HPO),community_ontology,phenotypes,yes,Human phenotypic abnormalities
+HPOMP,0,2452,edge_only,HPO-MP cross-species phenotype mapping,ddkg_bridge,phenotype_mapping,no,Edge-only MP-HPO mapping
+HRA,1473,53276,both,Human Reference Atlas,common_fund_resource,human_anatomy_atlas,no,Human Reference Atlas content
+HRAVS,428,1548,both,,other_or_unclassified,,no,
+HSAPDV,239,1402,both,,other_or_unclassified,,no,
+HSCLO,3431265,13724374,both,Homo Sapiens Chromosomal Location Ontology,ddkg_ontology,genomic_locations,yes,Shared human genomic location layer used for cross-dataset joins
+HUBMAP,733,4548,both,HuBMAP,common_fund_dataset,human_tissue_atlas,no,Human BioMolecular Atlas Program
+ICD10,12318,23280,both,ICD-10,clinical_standard,diagnoses,yes,International Classification of Diseases
+ICD10AE,1065,0,node_only,,other_or_unclassified,,no,
+ICD10AM,25658,86880,both,,other_or_unclassified,,no,
+ICD10AMAE,2390,0,node_only,,other_or_unclassified,,no,
+ICD10CM,98506,215452,both,ICD-10-CM,clinical_standard,diagnoses,yes,US clinical modification of ICD-10
+ICD10PCS,192560,385118,both,ICD-10-PCS,clinical_standard,procedures,yes,US procedure coding system
+ICD9CM,22406,42142,both,ICD-9-CM,clinical_standard,diagnoses_procedures,yes,Legacy US ICD-9 clinical modification
+ICF,1495,2876,both,,other_or_unclassified,,no,
+ICF-CY,1726,3340,both,,other_or_unclassified,,no,
+ICNP,1936,0,node_only,,other_or_unclassified,,no,
+ICO,8,0,node_only,,other_or_unclassified,,no,
+ICPC2EENG,693,1376,both,,other_or_unclassified,,no,
+ICPC2ICD10ENG,81799,158708,both,,other_or_unclassified,,no,
+ICPC2P,7410,650,both,,other_or_unclassified,,no,
+IDGD,0,14572,edge_only,,other_or_unclassified,,no,
+IDGP,0,857272,edge_only,Illuminating the Druggable Genome,common_fund_dataset,drug_target_bioactivity,no,IDG protein/bioactivity assertions
+IDO,12,0,node_only,,other_or_unclassified,,no,
+ILX,225,0,node_only,,other_or_unclassified,,no,
+ILX.TR,328,0,node_only,,other_or_unclassified,,no,
+JAX,26,0,node_only,,other_or_unclassified,,no,
+KF,0,153380,edge_only,Kids First,common_fund_dataset,pediatric_genomics,no,Edge-only Kids First assertions
+KFCOHORT,15,0,node_only,Kids First cohort,common_fund_dataset,pediatric_genomics,no,Kids First cohort nodes
+KFGENEBIN,13375,0,node_only,Kids First gene-bin,common_fund_dataset,pediatric_genomics,no,Kids First gene-bin nodes
+KFPT,5329,0,node_only,Kids First participant,common_fund_dataset,pediatric_genomics,no,Kids First participant nodes
+LA2-8,1,0,node_only,,other_or_unclassified,,no,
+LA3-6,1,0,node_only,,other_or_unclassified,,no,
+LCH_NW,13329,5872,both,,other_or_unclassified,,no,
+LINCS,0,487288,edge_only,LINCS,common_fund_dataset,perturbation,no,Library of Integrated Network-based Cellular Signatures
+LMHA,1,0,node_only,,other_or_unclassified,,no,
+LNC,297596,4020948,both,LOINC,clinical_standard,labs_observations,yes,Laboratory and clinical observation identifiers
+LP20607-5,1,0,node_only,,other_or_unclassified,,no,
+LP6121-0,1,0,node_only,,other_or_unclassified,,no,
+LP6310-9,1,0,node_only,,other_or_unclassified,,no,
+LP6368-7,1,0,node_only,,other_or_unclassified,,no,
+LP6443-8,1,0,node_only,,other_or_unclassified,,no,
+LP6537-7,1,0,node_only,,other_or_unclassified,,no,
+LP6562-5,1,0,node_only,,other_or_unclassified,,no,
+LP75287-0,1,0,node_only,,other_or_unclassified,,no,
+MA,2,0,node_only,,other_or_unclassified,,no,
+MBA,1327,0,node_only,,other_or_unclassified,,no,
+MDR,82781,282072,both,,other_or_unclassified,,no,
+MED-RT,3640,172998,both,Medication Reference Terminology (MED-RT),clinical_standard,drugs,yes,VA medication terminology
+MEDCIN,422303,2288978,both,,other_or_unclassified,,no,
+MEDGEN,7293,0,node_only,,other_or_unclassified,,no,
+MEDLINEPLUS,3884,17986,both,MedlinePlus,community_resource,consumer_health,no,NLM consumer health resource
+MGI,22244,0,node_only,,other_or_unclassified,,no,
+MI,1474,3330,both,Molecular Interactions Ontology,community_ontology,molecular_interactions,yes,Molecular interaction terminology
+MMSET1,11,0,node_only,,other_or_unclassified,,no,
+MMSET2CN,10,0,node_only,,other_or_unclassified,,no,
+MMSET4,4,0,node_only,,other_or_unclassified,,no,
+MMSL,37787,219340,both,,other_or_unclassified,,no,
+MMX,15255,0,node_only,,other_or_unclassified,,no,
+MOD,1,0,node_only,,other_or_unclassified,,no,
+MONDO,27575,0,node_only,Mondo Disease Ontology,community_ontology,diseases,yes,Integrated disease ontology
+MONDO_SIMPLE,0,85410,edge_only,,other_or_unclassified,,no,
+MOTRPAC,8571,51424,both,MoTrPAC,common_fund_dataset,exercise_molecular_transducers,no,Molecular Transducers of Physical Activity Consortium
+MP,14515,239828,both,Mammalian Phenotype Ontology,community_ontology,mouse_phenotypes,yes,Mammalian/mouse phenotype terminology
+MPATH,137,0,node_only,,other_or_unclassified,,no,
+MPMGI,0,438984,edge_only,MGI/IMPC mouse genotype-phenotype,research_resource,mouse_phenotypes,no,Edge-only mouse gene/phenotype assertions
+MRNA,17,0,node_only,,other_or_unclassified,,no,
+MRO,33,0,node_only,,other_or_unclassified,,no,
+MS,3,0,node_only,,other_or_unclassified,,no,
+MSH,355278,2554072,both,Medical Subject Headings (MeSH),community_vocabulary,biomedical_indexing,yes,NLM biomedical indexing vocabulary
+MSIGDB,9990,2584008,both,Molecular Signatures Database (MSigDB),research_resource,gene_sets,no,Gene sets and signatures
+MTH,2658,1070878,both,,other_or_unclassified,,no,
+MTHCMSFRF,1,0,node_only,,other_or_unclassified,,no,
+MTHICD9,9779,26946,both,,other_or_unclassified,,no,
+MTHICPC2EAE,27,0,node_only,,other_or_unclassified,,no,
+MTHICPC2ICD10AE,137,0,node_only,,other_or_unclassified,,no,
+MTHSPL,125690,1333678,both,,other_or_unclassified,,no,
+MVX,89,368,both,,other_or_unclassified,,no,
+MW,0,157502,edge_only,Metabolomics Workbench,common_fund_dataset,metabolomics,no,Edge-only source
+NANDA-I,3527,12512,both,,other_or_unclassified,,no,
+NBO,162,0,node_only,,other_or_unclassified,,no,
+NCBI,762055,1523110,both,,other_or_unclassified,,no,
+NCI,194625,2700740,both,NCI Thesaurus,community_ontology,cancer_biomedicine,yes,NCI biomedical terminology
+NDC,250589,0,node_only,National Drug Code,clinical_standard,drugs,yes,US drug product identifiers
+NDDF,33456,73292,both,,other_or_unclassified,,no,
+NEU,3269,4174,both,,other_or_unclassified,,no,
+NIC,15617,33392,both,,other_or_unclassified,,no,
+NIFSDT.NLX.CELL,17,0,node_only,,other_or_unclassified,,no,
+NIFSTD,41,0,node_only,,other_or_unclassified,,no,
+NIFSTD.NIFEXT,61,0,node_only,,other_or_unclassified,,no,
+NIFSTD.NLX,24,0,node_only,,other_or_unclassified,,no,
+NIFSTD.NLX.MOL,15,0,node_only,,other_or_unclassified,,no,
+NIFSTD.NLX.ORG,1,0,node_only,,other_or_unclassified,,no,
+NOC,15691,31372,both,,other_or_unclassified,,no,
+NODE1GMBSNJ22X1,1,0,node_only,,other_or_unclassified,,no,
+NPO,0,7932,edge_only,,other_or_unclassified,,no,
+NPOKB,436,0,node_only,,other_or_unclassified,,no,
+NPOSKCAN,0,24334,edge_only,,other_or_unclassified,,no,
+NUCCHCPT,855,0,node_only,,other_or_unclassified,,no,
+OAE,1,0,node_only,,other_or_unclassified,,no,
+OBA,5152,0,node_only,,other_or_unclassified,,no,
+OBCI,6,0,node_only,,other_or_unclassified,,no,
+OBI,3973,21310,both,Ontology for Biomedical Investigations,community_ontology,experimental_methods,yes,Biomedical investigations and assays
+OBIB,461,3740,both,,other_or_unclassified,,no,
+OGMS,10,0,node_only,,other_or_unclassified,,no,
+OLAM,3,0,node_only,,other_or_unclassified,,no,
+OMIABIS,2,0,node_only,,other_or_unclassified,,no,
+OMIM,111086,534874,both,Online Mendelian Inheritance in Man (OMIM),community_vocabulary,disease_genetics,yes,Mendelian disease and gene catalog
+OMIT,5,0,node_only,,other_or_unclassified,,no,
+OMRSE,25,0,node_only,,other_or_unclassified,,no,
+OMS,509,1596,both,,other_or_unclassified,,no,
+OPL,2,0,node_only,,other_or_unclassified,,no,
+ORDO,15348,98768,both,Orphanet Rare Disease Ontology (ORDO),community_ontology,rare_diseases,yes,Rare disease ontology
+ORPHANET,9793,37890,both,Orphanet,community_vocabulary,rare_diseases,yes,Orphanet rare disease identifiers
+OTG,0,360466,edge_only,,other_or_unclassified,,no,
+PATO,1888,0,node_only,Phenotype and Trait Ontology (PATO),community_ontology,phenotypes_traits,yes,Phenotypic qualities
+PATO_BASE,0,5148,edge_only,,other_or_unclassified,,no,
+PAX.PAXRAT,2,0,node_only,,other_or_unclassified,,no,
+PAX.PAXSPN,1,0,node_only,,other_or_unclassified,,no,
+PAZ,464,1848,both,,other_or_unclassified,,no,
+PCL,584,0,node_only,,other_or_unclassified,,no,
+PCO,1,0,node_only,,other_or_unclassified,,no,
+PDQ,13325,40084,both,,other_or_unclassified,,no,
+PGO,23,38,both,,other_or_unclassified,,no,
+PNDS,281,590,both,,other_or_unclassified,,no,
+PO,215,0,node_only,,other_or_unclassified,,no,
+PR,5353,0,node_only,Protein Ontology,community_ontology,proteins,yes,Protein forms and entities
+PROTEOFORM,0,910938,edge_only,GlyGen proteoform assertions,common_fund_dataset,glycoproteomics,no,Edge-only proteoform relations
+PSY,7961,51694,both,,other_or_unclassified,,no,
+PTHR,2,0,node_only,,other_or_unclassified,,no,
+PUBCHEM,336189,0,node_only,PubChem,community_vocabulary,chemicals,yes,Chemical identifiers
+PVALUEBINS,17,0,node_only,,other_or_unclassified,,no,
+RATHCOP,0,84740,edge_only,HCOP human-rat orthology,research_resource,orthology,no,Edge-only human-rat orthology assertions
+REACTOME,29197,778778,both,Reactome,community_pathway_resource,pathways,yes,Pathway resource; human and mouse content share the SAB
+REACTOME_VS,12,22,both,,other_or_unclassified,,no,
+REFSEQ,140124,0,node_only,NCBI RefSeq,community_vocabulary,genes_genomics,yes,Reference sequence identifiers
+REPUBLIC,1,0,node_only,,other_or_unclassified,,no,
+RIBCA,19,68,both,,other_or_unclassified,,no,
+RNA,45,0,node_only,,other_or_unclassified,,no,
+RRID,120,0,node_only,,other_or_unclassified,,no,
+RXNORM,128583,1660156,both,RxNorm,clinical_standard,drugs,yes,Normalized clinical drug vocabulary
+SBO,694,1490,both,Systems Biology Ontology,community_ontology,systems_biology,yes,Systems biology terms
+SENNET,737,4564,both,SenNet,common_fund_dataset,cellular_senescence,no,Cellular Senescence Network
+SIO,5,0,node_only,,other_or_unclassified,,no,
+SNOMEDCT_US,382258,3020296,both,SNOMED CT US Edition,clinical_standard,clinical_terminology,yes,Clinical terminology
+SNOMEDCT_VET,35701,104398,both,,other_or_unclassified,,no,
+SO,18,0,node_only,Sequence Ontology,community_ontology,sequence_features,yes,Genomic sequence features
+SOP,167,334,both,,other_or_unclassified,,no,
+SOUTH,1,0,node_only,,other_or_unclassified,,no,
+SPN,4881,0,node_only,,other_or_unclassified,,no,
+SRC,286,696,both,,other_or_unclassified,,no,
+STELLAR,29,108,both,,other_or_unclassified,,no,
+STRING,0,918992,edge_only,STRING,research_resource,protein_interactions,no,Edge-only protein/gene interaction source
+TEMPIND,35,0,node_only,,other_or_unclassified,,no,
+TO,2,0,node_only,,other_or_unclassified,,no,
+TS,29,0,node_only,,other_or_unclassified,,no,
+UBERON,14671,0,node_only,Uberon,community_ontology,anatomy,yes,Cross-species anatomy ontology
+UBERON_BASE,0,84422,edge_only,,other_or_unclassified,,no,
+UBERONEMAPA,0,26084,edge_only,,other_or_unclassified,,no,
+UBKGSOURCE,796,3538,both,,other_or_unclassified,,no,
+UMD,17921,103088,both,,other_or_unclassified,,no,
+UMLS,3,0,node_only,,other_or_unclassified,,no,
+UNIPROT,160,294,both,,other_or_unclassified,,no,
+UNIPROTKB,38180,1020330,both,UniProtKB,community_vocabulary,proteins,yes,Protein knowledgebase identifiers
+UNIPROTKB.ISOFORM,8406,0,node_only,,other_or_unclassified,,no,
+UNITED,2,0,node_only,,other_or_unclassified,,no,
+UO,574,1348,both,Units of Measurement Ontology,community_ontology,units,yes,Measurement units
+USP,5086,1932,both,,other_or_unclassified,,no,
+USPMG,1668,3674,both,,other_or_unclassified,,no,
+UWDA,62285,176944,both,,other_or_unclassified,,no,
+VANDF,31210,187038,both,,other_or_unclassified,,no,
+VCCF,548,2174,both,,other_or_unclassified,,no,
+VO,1,0,node_only,,other_or_unclassified,,no,
+WBLS,1,0,node_only,,other_or_unclassified,,no,
+WP,809,37550,both,,other_or_unclassified,,no,
+XSD,15,0,node_only,,other_or_unclassified,,no,
+ZEA,1,0,node_only,,other_or_unclassified,,no,
+ZFA,34,0,node_only,,other_or_unclassified,,no,
