@@ -302,3 +302,13 @@ drug	must_read_with	04_identifier_conventions.md#one-code-several-concepts	legit
 entity	must_read_with	04_identifier_conventions.md#one-code-several-concepts	a Code can attach to several legitimate Concepts
 contraindication	must_read_with	11_interpreting_results.md#med-rt-contraindication-endpoints-are-not-disease-only	inspect endpoint type before filtering to disease vocabularies
 MED-RT	must_read_with	11_interpreting_results.md#med-rt-contraindication-endpoints-are-not-disease-only	predicate name does not guarantee disease-only objects
+source inventory	answers	19_sab_inventory_and_standards.md#full-sab-manifest	complete node/edge count table and curated source annotations
+sab counts	answers	19_sab_inventory_and_standards.md#release-wide-accounting	Code-node and source-edge counts by SAB
+nodes and edges by sab	answers	19_sab_inventory_and_standards.md#full-sab-manifest	Code nodes and source-attributed relationships are counted separately
+community standards	answers	19_sab_inventory_and_standards.md#common-community-standards-and-vocabularies-represented	common clinical, ontology, gene, pathway, anatomy, and chemical standards
+vocabularies	answers	19_sab_inventory_and_standards.md#common-community-standards-and-vocabularies-represented	curated common vocabulary list
+source counts	must_read_with	19_sab_inventory_and_standards.md#counting-semantics	Concepts do not belong to one SAB; edge counts are stored relationships
+sab counts	must_read_with	06_sab_registry.md#the-three-populations	edge-only SABs legitimately have zero Code nodes
+community standards	must_read_with	06_sab_registry.md#naming-traps	dataset names and SAB names are not always the same
+assets/sab_manifest.csv	invalidated_by	source refresh	SAB counts and curated source presence may drift
+19_sab_inventory_and_standards.md	invalidated_by	source refresh	counts and source coverage are release-specific
