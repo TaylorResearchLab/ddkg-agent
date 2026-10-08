@@ -29,9 +29,11 @@ on `HAS_CODE`.
 
 | | Count |
 | --- | --- |
-| Code nodes | 20,644,187 |
+| Code nodes | 20,599,990 |
 | Concepts (with at least one Code) | 19,437,089 |
 | Relationships | 186,651,416 |
+| Relationships with SAB | 131,710,076 |
+| Relationships without SAB | 54,941,340 |
 | Node SABs | 289 |
 | Edge SABs | 143 |
 | Relationship types | 2,101 |
