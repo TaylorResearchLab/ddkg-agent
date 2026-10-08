@@ -25,3 +25,13 @@ R8 hardens the December 2025 release skill around silent-failure modes identifie
 ## Release status
 
 This branch artifact is the **R8 release candidate**. Routing validation and deterministic build checks passed. Focused live engineering regressions against the target DDKG remain before the evaluation artifact is declared frozen.
+
+
+## Post-candidate source changes
+
+The checksum above identifies the last built R8 release candidate, not the current
+branch-tip source tree. Pre-freeze source work after that build now includes the
+scientific adverse-result reporting requirement and a unified SAB inventory
+resource. The source tree currently contains 40 files and 268 routing
+relationships. Rebuild the archive and replace the identity above only after the
+remaining R8 source changes and focused regressions are complete.
