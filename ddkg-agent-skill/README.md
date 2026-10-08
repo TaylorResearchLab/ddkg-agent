@@ -25,7 +25,7 @@ The DDKG project is moving toward the [JSON Knowledge Graph (JKG)](https://githu
 **Current R8 release candidate:** 305,719 bytes  
 **SHA-256:** `a8f24199de1855cb95fc2d0391ab6d1674ef00b7942dd40e9dfbdf27eac97486`
 
-See [`R8_BUILD.md`](R8_BUILD.md) for the current candidate build record and freeze requirement.
+See [`R8_BUILD.md`](R8_BUILD.md) for the last built candidate identity and freeze requirement. The branch source now contains additional pre-freeze R8 work and must be rebuilt before a new candidate checksum is cited.
 
 ## What the skill does
 
@@ -46,7 +46,7 @@ The graph, not the model, determines the result.
 
 `ddkg.skill` is an installable archive containing a small, self-routed knowledge and validation system. `SKILL.md` is the controller, but most DDKG-specific knowledge is deliberately separated into curated references, primary source documents, machine-readable registries, and a routing layer.
 
-The R8 release candidate contains **38 bundled files** and **258 routing relationships** checked by `route.py --check`.
+The last built R8 release candidate contains **38 bundled files** and **258 routing relationships**. The branch source now contains **40 source files** and **268 routing relationships** after adding the SAB inventory resource and other pre-freeze work; it has not yet been rebuilt into a new `ddkg.skill` archive.
 
 A simplified view is:
 
@@ -55,9 +55,9 @@ ddkg/
 ├── SKILL.md                  # controller, behavior contract, workflow, output rules
 ├── scripts/
 │   └── route.py              # topic routing and internal consistency checks
-├── references/               # 18 curated working-knowledge documents
+├── references/               # 19 curated working-knowledge documents
 ├── sources/                  # 8 primary DDKG/UBKG documentation sources
-└── assets/                   # 10 machine-readable registries and routing assets
+└── assets/                   # 11 machine-readable registries and routing assets
     └── skill_graph.tsv       # topic-to-evidence relationship index
 ```
 
