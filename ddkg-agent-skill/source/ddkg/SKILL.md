@@ -53,7 +53,7 @@ release-specific registries still apply.
 Document-derived facts in `references/` trace to the primary copies in
 `sources/`. Release-specific counts, endpoint inventories, and query behaviour
 trace instead to live enumerations and executed validation recorded in
-`assets/` and references 13, 16, 17, and 18. The precedence when they disagree is
+`assets/` and references 13, 16, 17, 18, and 19. The precedence when they disagree is
 in `01_sources_and_precedence.md`. The critical case: UBKG documentation names
 the structural edges `CODE`,
 `PREF_TERM`, `STY`, `DEF`. **This build uses `HAS_CODE`, `HAS_TERM`,
@@ -95,7 +95,7 @@ not distinguish the gene leg from the tissue leg in this source.
 
 ## Before opening any reference: route
 
-This skill has eighteen references, eight source documents, and ten assets —
+This skill has nineteen references, eight source documents, and eleven assets —
 far more than fits in context. Choosing what to read by filename is how the
 gene-symbol lookup sat unread in the query examples while the same problem was
 solved from scratch.
